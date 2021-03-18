@@ -16,6 +16,9 @@ import BlackjackDashboard from './pages/BlackjackDashboard';
 import BaccaratDashboard from './pages/BaccaratDashboard';
 import RouletteDashboard from './pages/RouletteDashboard';
 import ContactsPage from './pages/ContactsPage';
+import GcaKioskPage from './pages/GcaKioskPage';
+import CageDashboard from './pages/CageDashboard';
+import SlotsDashboard from './pages/SlotsDashboard';
 
 //styled-components
 const Root = styled.div`
@@ -47,6 +50,15 @@ function App() {
           </Route>
           <Route path='/contacts'>
             <ContactsPage />
+          </Route>
+          <Route path='/gca-kiosks'>
+            <GcaKioskPage />
+          </Route>
+          <Route path='/cage'>
+            <CageDashboard />
+          </Route>
+          <Route path='/slots'>
+            <SlotsDashboard />
           </Route>
           <Route path='/'>
             <HomePage />

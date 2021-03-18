@@ -22,7 +22,7 @@ const WagerName = styled.div``;
 
 const WagerWin = styled.div``;
 
-function RouletteCalculator(props) {
+const RouletteCalculator = props => {
   //states
   const [wagers, setWagers] = useState({
     straightUpWager: 0,
@@ -354,6 +354,6 @@ function RouletteCalculator(props) {
       </Container>
     </>
   );
-}
+};
 
 export default RouletteCalculator;

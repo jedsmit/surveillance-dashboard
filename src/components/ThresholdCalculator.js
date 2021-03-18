@@ -6,6 +6,10 @@ import NumberFormat from 'react-number-format';
 
 const Form = styled.form``;
 
+const NumberField = styled.div`
+  width: 80%;
+`;
+
 const ThresholdCalculator = props => {
   const { houseAdvantage, hph, betVolatility, gameVariant } = props;
   const [averageWager, setAverageWager] = useState('');
@@ -36,7 +40,20 @@ const ThresholdCalculator = props => {
     <Form>
       <div className='form-group'>
         <label for='averageWager'>Average Wager</label>
-        <input
+        <NumberField
+          as={NumberFormat}
+          isNumericString
+          // className={numberFormat}
+          thousandSeparator
+          name='averageWager'
+          onChange={e => {
+            e.stopPropagation();
+            setAverageWager(e.target.value);
+            // console.log(averageWager);
+          }}
+          displayType={'input'}
+        />
+        {/* <input
           type='string'
           className='form-control'
           id='averageWager'
@@ -47,11 +64,24 @@ const ThresholdCalculator = props => {
             setAverageWager(e.target.value);
             // console.log(averageWager);
           }}
-        />
+        /> */}
       </div>
       <div className='form-group'>
         <label for='hoursPlayed'>Hours Played</label>
-        <input
+        <NumberField
+          as={NumberFormat}
+          isNumericString
+          // className={numberFormat}
+          thousandSeparator
+          name='hoursPlayed'
+          onChange={e => {
+            e.stopPropagation();
+            setHoursPlayed(e.target.value);
+            // console.log(averageWager);
+          }}
+          displayType={'input'}
+        />
+        {/* <input
           type='string'
           className='form-control'
           id='hoursPlayed'
@@ -61,12 +91,29 @@ const ThresholdCalculator = props => {
             setHoursPlayed(e.target.value);
             // console.log(hoursPlayed);
           }}
-        />
+        /> */}
       </div>
       <div className='form-group'>
         <label for='thresholdRange'>Acceptable Threshold Range</label>
         <div>
-          {lowerThreshold} to {upperThreshold}
+          <NumberField
+            as={NumberFormat}
+            // className={numberFormat}
+            value={lowerThreshold}
+            thousandSeparator
+            prefix={'$'}
+            displayType={'text'}
+          />{' '}
+          -{' '}
+          <NumberField
+            as={NumberFormat}
+            // className={numberFormat}
+            value={upperThreshold}
+            thousandSeparator
+            prefix={'$'}
+            displayType={'text'}
+          />
+          {/* {lowerThreshold} to {upperThreshold} */}
         </div>
       </div>
       {/* <button className='btn btn-primary' onClick={handleSubmit}>

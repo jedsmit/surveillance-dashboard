@@ -56,6 +56,28 @@ const DashboardPage = () => {
             <MenuButton className='btn btn-lg'>Contacts</MenuButton>
           </MenuLink>
         </div>
+        <div className='col-sm-4'>
+          <MenuLink as={Link} to='/gca-kiosks'>
+            <MenuButton className='btn btn-lg'>GCA & Kiosks</MenuButton>
+          </MenuLink>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col-sm-4'>
+          <MenuLink as={Link} to='/cage'>
+            <MenuButton className='btn btn-lg'>Cage</MenuButton>
+          </MenuLink>
+        </div>
+        <div className='col-sm-4'>
+          <MenuLink as={Link} to='/slots'>
+            <MenuButton className='btn btn-lg'>Slots</MenuButton>
+          </MenuLink>
+        </div>
+        {/* <div className='col-sm-4'>
+          <MenuLink as={Link} to='/gca-kiosks'>
+            <MenuButton className='btn btn-lg'>GCA & Kiosks</MenuButton>
+          </MenuLink>
+        </div> */}
       </div>
     </Container>
   );
