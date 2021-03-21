@@ -8,6 +8,7 @@ const TableContainer = styled.div`
   color: ${Colors.backgroundColor};
   height: 100%;
   width: 100%;
+  border-radius: 5px;
 `;
 const Title = styled.h3``;
 const ViolationsTable = styled.table`
@@ -19,12 +20,12 @@ const ViolationReferences = props => {
   const violationData = props.violationData;
   console.log(props);
   return (
-    <TableContainer className='container-fluid p-1 m-0'>
+    <TableContainer className='container-fluid'>
       <div className='row justify-content-center'>
         <Title className='text-center'>Common Violations</Title>
       </div>
       <div className='row justify-content-center'>
-        <ViolationsTable>
+        <ViolationsTable className='container-fluid'>
           <tr>
             <th className='text-left'>Violation</th>
             <th className='text-right'>Reference</th>

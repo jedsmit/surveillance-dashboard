@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 //styled-components
 const TableContainer = styled.div`
-  background: ${Colors.primaryTextColor};
+  background: ${Colors.accentColor};
   width: 100%;
   color: ${Colors.backgroundColor};
+  border-radius: 5px;
 `;
 const Title = styled.h3`
   text-align: center;

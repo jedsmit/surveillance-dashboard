@@ -10,7 +10,7 @@ import { blackjack } from '../data/violationData';
 
 //styled-components
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
@@ -26,26 +26,27 @@ const TitleText = styled.h1`
   color: ${Colors.primaryTextColor};
 `;
 
+const MenuButton = styled.button``;
+
 const BasicStrategyContainer = styled.div`
-  margin-right: 8rem;
-  margin-top: 5rem;
-  width: 30rem;
+  margin-top: 3rem;
+  width: 100%;
 `;
 const IndexPlayContainer = styled.div`
-  margin-top: 5rem;
+  width: 100%;
 `;
 
 const ViolationsContainer = styled.div`
-  margin-top: 5rem;
   width: 100%;
-  margin: 0;
 `;
 
 const ThresholdCalculatorContainer = styled.div`
-  margin-top: 5rem;
+  margin-top: 3rem;
+  width: 100%;
 `;
 
 const BlackjackDashboard = () => {
+  //game data
   const {
     strategySixDeckBJ,
     averageSixDeckBJ,
@@ -110,8 +111,6 @@ const BlackjackDashboard = () => {
     }
   }, [gameVariant]);
 
-  //handles index play toggle
-
   return (
     <Container className='container-fluid'>
       <TitleText>Blackjack Dashboard</TitleText>
@@ -120,17 +119,16 @@ const BlackjackDashboard = () => {
       <div className='row'>
         <div className='col'>
           <div className='dropdown'>
-            <button
+            <MenuButton
               className='btn btn-secondary dropdown-toggle'
               type='button'
               id='dropdownMenuButton'
               data-toggle='dropdown'
               aria-haspopup='true'
               aria-expanded='false'
-              sty
             >
               {gameVariant}
-            </button>
+            </MenuButton>
             <div
               className='dropdown-menu'
               aria-labelledby='dropdownMenuButton'
@@ -140,39 +138,42 @@ const BlackjackDashboard = () => {
                 console.log(gameVariant);
               }}
             >
-              <button className='dropdown-item' value='Six Deck Average Player'>
+              <MenuButton
+                className='dropdown-item'
+                value='Six Deck Average Player'
+              >
                 Six Deck Average Player
-              </button>
-              <button
+              </MenuButton>
+              <MenuButton
                 className='dropdown-item'
                 value='Six Deck Strategy Player'
               >
                 Six Deck Strategy Player
-              </button>
-              <button
+              </MenuButton>
+              <MenuButton
                 className='dropdown-item'
                 value='Double Deck Average Player'
               >
                 Double Deck Average Player
-              </button>
-              <button
+              </MenuButton>
+              <MenuButton
                 className='dropdown-item'
                 value='Double Deck Strategy Player'
               >
                 Double Deck Strategy Player
-              </button>
-              <button
+              </MenuButton>
+              <MenuButton
                 className='dropdown-item'
                 value='Single Deck Average Player'
               >
                 Single Deck Average Player
-              </button>
-              <button
+              </MenuButton>
+              <MenuButton
                 className='dropdown-item'
                 value='Single Deck Strategy Player'
               >
                 Single Deck Strategy Player
-              </button>
+              </MenuButton>
             </div>
           </div>
         </div>
@@ -180,19 +181,8 @@ const BlackjackDashboard = () => {
       {/* end drop down  */}
 
       <div className='row justify-content-end'>
-        <div className='col-sm-2'>
-          <ThresholdCalculatorContainer>
-            <ThresholdCalculator
-              hph={gameData.hph}
-              houseAdvantage={gameData.houseAdvantage}
-              betVolatility={gameData.betVolatility}
-              gameVariant={gameVariant}
-            />
-          </ThresholdCalculatorContainer>
-        </div>
-
-        <div className='col-sm-6'>
-          <div className='row justify-content-left pt-5 m-0'>
+        <div className='col-sm-5 col-xs-12'>
+          <div className='row justify-content-left m-0'>
             <div class='custom-control custom-switch m-0'>
               <input
                 type='checkbox'
@@ -210,6 +200,7 @@ const BlackjackDashboard = () => {
               </label>
             </div>
           </div>
+
           <div className='row'>
             {/* Index Play Table or Violations References */}
             {checked ? (
@@ -224,11 +215,22 @@ const BlackjackDashboard = () => {
           </div>
         </div>
 
-        <div className='col-sm-4'>
+        <div className='col-sm-4 col-xs-12'>
           {/* Basic Strategy Chart */}
           <BasicStrategyContainer className='container-fluid'>
             <BasicStrategyTable />
           </BasicStrategyContainer>
+        </div>
+
+        <div className='col-sm-3 col-xs-12'>
+          <ThresholdCalculatorContainer className='container-fluid'>
+            <ThresholdCalculator
+              hph={gameData.hph}
+              houseAdvantage={gameData.houseAdvantage}
+              betVolatility={gameData.betVolatility}
+              gameVariant={gameVariant}
+            />
+          </ThresholdCalculatorContainer>
         </div>
       </div>
     </Container>

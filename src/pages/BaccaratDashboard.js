@@ -25,12 +25,17 @@ const TitleText = styled.h1`
 `;
 
 const DrawingRulesContainer = styled.div`
+  margin-top: 3rem;
   margin-right: 8rem;
-  width: 25vw;
 `;
 
 const ThresholdCalculatorContainer = styled.div`
-  width: 15vw;
+  margin-top: 3rem;
+  font-size: 0.7em;
+`;
+
+const CommissionCalculatorContainer = styled.div`
+  margin-top: 3rem;
   font-size: 0.7em;
 `;
 
@@ -100,7 +105,7 @@ const BaccaratDashboard = () => {
       </div>
       <div className='row justify-content-center'>
         <div className='col-sm-4'>
-          <ThresholdCalculatorContainer>
+          <ThresholdCalculatorContainer className='container-fluid'>
             <ThresholdCalculator
               hph={gameData.hph}
               houseAdvantage={gameData.houseAdvantage}
@@ -111,11 +116,13 @@ const BaccaratDashboard = () => {
         </div>
         <div className='col-sm-2'>
           {/* Commission Calculator */}
-          <CommissionCalculator />
+          <CommissionCalculatorContainer>
+            <CommissionCalculator />
+          </CommissionCalculatorContainer>
         </div>
         <div className='col-sm-6'>
           {/* Drawing Rules */}
-          <DrawingRulesContainer className='container-fluid p-5'>
+          <DrawingRulesContainer className='container-fluid'>
             <BaccaratDrawingRulesTable />
           </DrawingRulesContainer>
         </div>

@@ -7,6 +7,7 @@ const TableContainer = styled.div`
   background: ${Colors.accentColor};
   width: 100%;
   color: ${Colors.backgroundColor};
+  border-radius: 5px;
   font-size: 0.5em;
   font-weight: bold;
   padding: 5px;

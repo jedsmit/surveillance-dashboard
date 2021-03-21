@@ -21,7 +21,7 @@ const TitleText = styled.h1`
 const HomePage = () => {
   return (
     <Container>
-      <TitleText>Surveillance Web App</TitleText>
+      <TitleText>Surveillance Dashboard</TitleText>
     </Container>
   );
 };

@@ -1,4 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import Colors from '../constants/Colors';
+
+// styled components
+const Container = styled.div`
+  width: 100%;
+  color: ${Colors.backgroundColor};
+  background-color: ${Colors.accentColor};
+  border-radius: 5px;
+`;
 
 const CommissionCalculator = () => {
   const [winTotal, setWinTotal] = useState('');
@@ -14,9 +24,9 @@ const CommissionCalculator = () => {
   }, [winTotal]);
 
   return (
-    <div>
+    <Container className='container-fluid'>
       <div className='form-group'>
-        <label for='exampleInputEmail1'>Win total</label>
+        <label for='win'>Win total</label>
         <input
           type='string'
           className='form-control'
@@ -29,7 +39,7 @@ const CommissionCalculator = () => {
         ></input>
         <div>Commission: ${commission}</div>
       </div>
-    </div>
+    </Container>
   );
 };
 
