@@ -4,7 +4,6 @@ import NumberFormat from 'react-number-format';
 import Colors from '../constants/Colors';
 
 //styled-components
-
 const Container = styled.div`
   height: 100%;
   width: 100%;
@@ -14,11 +13,24 @@ const Container = styled.div`
   border-radius: 5px;
 `;
 
-const Form = styled.form`
+const Form = styled.form``;
+
+const AverageWagerInput = styled.div`
+  width: 80%;
   font-size: 0.7em;
 `;
 
-const NumberField = styled.div`
+const HoursPlayedInput = styled.div`
+  width: 80%;
+  font-size: 0.7em;
+`;
+
+const LowerThresholdDisplay = styled.div`
+  width: 80%;
+  font-size: 0.7em;
+`;
+
+const UpperThresholdDisplay = styled.div`
   width: 80%;
   font-size: 0.7em;
 `;
@@ -45,17 +57,9 @@ const ThresholdCalculator = props => {
     console.log('twin: ' + tWin);
     console.log('sd: ' + standardDeviation);
 
-    // setUpperThreshold(tWin + standardDeviation * 2);
-    // setLowerThreshold(tWin - standardDeviation * 2);
+    setUpperThreshold(tWin + standardDeviation * 2);
+    setLowerThreshold(tWin - standardDeviation * 2);
   }, [averageWager, hoursPlayed, gameVariant]);
-
-  // const handleWagerChange = e => {
-  //   setAverageWager(e.target.value);
-  // };
-
-  // const handleHoursChange = e => {
-  //   setHoursPlayed(e.target.value);
-  // };
 
   return (
     <Container className='container-fluid'>
@@ -63,10 +67,8 @@ const ThresholdCalculator = props => {
       <Form>
         <div className='form-group'>
           <label for='averageWager'>Average Wager</label>
-          <NumberField
-            isNumericString
+          <AverageWagerInput
             as={NumberFormat}
-            // className={numberFormat}
             thousandSeparator
             name='averageWager'
             value={averageWager}
@@ -77,25 +79,11 @@ const ThresholdCalculator = props => {
             prefix={'$'}
             displayType={'input'}
           />
-          {/* <input
-          type='string'
-          className='form-control'
-          id='averageWager'
-          aria-describedby='averageWager'
-          placeholder='$'
-          onChange={e => {
-            e.stopPropagation();
-            setAverageWager(e.target.value);
-            // console.log(averageWager);
-          }}
-        /> */}
         </div>
         <div className='form-group'>
           <label for='hoursPlayed'>Hours Played</label>
-          <NumberField
-            isNumericString
+          <HoursPlayedInput
             as={NumberFormat}
-            // className={numberFormat}
             thousandSeparator
             name='hoursPlayed'
             value={hoursPlayed}
@@ -105,35 +93,20 @@ const ThresholdCalculator = props => {
             }}
             displayType={'input'}
           />
-          {/* <input
-          type='string'
-          className='form-control'
-          id='hoursPlayed'
-          placeholder='hrs'
-          onChange={e => {
-            e.stopPropagation();
-            setHoursPlayed(e.target.value);
-            // console.log(hoursPlayed);
-          }}
-        /> */}
         </div>
         <div className='form-group'>
           <label for='thresholdRange'>Acceptable Threshold Range</label>
           <div>
-            <NumberField
-              isNumericString
+            <LowerThresholdDisplay
               as={NumberFormat}
-              // className={numberFormat}
               value={lowerThreshold}
               thousandSeparator
               prefix={'$'}
               displayType={'text'}
             />{' '}
             -{' '}
-            <NumberField
-              isNumericString
+            <UpperThresholdDisplay
               as={NumberFormat}
-              // className={numberFormat}
               value={upperThreshold}
               thousandSeparator
               prefix={'$'}

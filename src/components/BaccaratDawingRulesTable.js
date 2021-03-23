@@ -19,11 +19,7 @@ const BaccaratDrawingRulesTable = () => {
       <div className='row justify-content-center'>
         <Title className='text-center p-0'>Drawing Rules</Title>
       </div>
-      {/* <div className='row'>
-        <div className='col-sm-4 h6 text-left'>Starting Hand</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Rule</div>
-      </div> */}
+
       <div className='row'>
         <div className='col h6' style={{ textDecorationLine: 'underline' }}>
           Player's Hand

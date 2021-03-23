@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Colors from '../constants/Colors';
+import NumberFormat from 'react-number-format';
 
 // styled components
 const Container = styled.div`
@@ -8,6 +9,10 @@ const Container = styled.div`
   color: ${Colors.backgroundColor};
   background-color: ${Colors.accentColor};
   border-radius: 5px;
+`;
+
+const WinInput = styled.div`
+  width: 100%;
 `;
 
 const CommissionCalculator = () => {
@@ -27,17 +32,23 @@ const CommissionCalculator = () => {
     <Container className='container-fluid'>
       <div className='form-group'>
         <label for='win'>Win total</label>
-        <input
-          type='string'
-          className='form-control'
-          id='win'
-          aria-describedby='win total'
-          placeholder='Enter win total'
-          onChange={e => {
-            setWinTotal(e.target.value);
+        <WinInput
+          as={NumberFormat}
+          value={winTotal}
+          thousandSeparator={true}
+          prefix={'$'}
+          onValueChange={values => {
+            const { formattedValue, value } = values;
+            setWinTotal(value);
           }}
-        ></input>
-        <div>Commission: ${commission}</div>
+        />
+
+        <NumberFormat
+          value={commission}
+          thousandSeparator={true}
+          prefix={'$'}
+          displayType='text'
+        />
       </div>
     </Container>
   );
