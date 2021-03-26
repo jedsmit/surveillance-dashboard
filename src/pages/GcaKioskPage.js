@@ -2,15 +2,17 @@ import React from 'react';
 import Colors from '../constants/Colors';
 import styled from 'styled-components';
 import {
-  tgaContacts,
-  surveillanceTechContacts,
-  surveillanceSupContacts,
-  surveillanceAgentContacts,
-} from '../data/contacts';
+  cxcMachines,
+  atmMachines,
+  jxcMachines,
+  promoKiosks,
+  enrollmentKiosks,
+} from '../data/gcaKioskLocations';
+import GCAKioskLocationTable from '../components/GCAKioskLocationTable';
 
 //styled-components
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   padding: 1em;
   background: ${Colors.backgroundColor};
@@ -24,18 +26,8 @@ const TitleText = styled.h1`
   padding: 10px;
 `;
 
-const Name = styled.td`
-  font-size: 0.75em;
-`;
-const PhoneNumber = styled.td`
-  font-size: 0.75em;
-`;
-const Extension = styled.td`
-  font-size: 0.75em;
-`;
-
-const TableHeader = styled.tr`
-  font-size: 0.75em;
+const CategoryTitle = styled.h3`
+  padding-top: 2em;
 `;
 
 const GcaKioskPage = () => {
@@ -43,146 +35,78 @@ const GcaKioskPage = () => {
     <Container>
       <div className='row'>
         <div className='col'>
-          <TitleText>Contacts</TitleText>
+          <TitleText>GCA/Kiosk Locations</TitleText>
         </div>
       </div>
 
       <div className='row'>
-        <div className='col-sm-4'>
+        {/* cxc machines */}
+
+        <div className='col justify-content-center'>
           <div className='row'>
             <div className='col'>
-              <h3 className='text-center'>TGA</h3>
+              <CategoryTitle>CXC Machines</CategoryTitle>
             </div>
           </div>
-
           <div className='row'>
-            <div className='col justify-content-center'>
-              <table>
-                <TableHeader>
-                  <th className='px-2 text-left'>Name</th>
-                  <th className='px-2'>Extension</th>
-                  <th className='px-2'>Cell #</th>
-                </TableHeader>
-
-                {tgaContacts.map(contact => {
-                  return (
-                    <tr>
-                      <Name className='text-left px-2'>
-                        {contact.contactName}
-                      </Name>
-                      <Extension className='px-2'>
-                        {contact.extension}
-                      </Extension>
-                      <PhoneNumber className='text-right px-2'>
-                        {contact.cellNumber}
-                      </PhoneNumber>
-                    </tr>
-                  );
-                })}
-              </table>
+            <div className='col'>
+              <GCAKioskLocationTable machines={cxcMachines} />
             </div>
           </div>
         </div>
 
-        <div className='col-sm-4'>
+        {/* atm machines */}
+        <div className='col justify-content-center'>
           <div className='row'>
             <div className='col'>
-              <h3 className='text-center'>Surveillance Technicians</h3>
+              <CategoryTitle>ATM Machines</CategoryTitle>
             </div>
           </div>
           <div className='row'>
-            <div className='col d-flex justify-content-center'>
-              <table>
-                <TableHeader>
-                  <th className='px-2 text-left'>Name</th>
-                  <th className='px-2'>Extension</th>
-                  <th className='px-2'>Cell #</th>
-                </TableHeader>
-
-                {surveillanceTechContacts.map(contact => {
-                  return (
-                    <tr>
-                      <Name className='text-left px-2'>
-                        {contact.contactName}
-                      </Name>
-                      <Extension className='px-2'>
-                        {contact.extension}
-                      </Extension>
-                      <PhoneNumber className='text-right px-2'>
-                        {contact.cellNumber}
-                      </PhoneNumber>
-                    </tr>
-                  );
-                })}
-              </table>
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col mt-3'>
-              <h3 className='text-center'>Surveillance Agents</h3>
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col d-flex justify-content-center'>
-              <table>
-                <TableHeader>
-                  <th className='px-2 text-left'>Name</th>
-                  <th className='px-2'>Extension</th>
-                  <th className='px-2'>Cell #</th>
-                </TableHeader>
-                {surveillanceAgentContacts.map(contact => {
-                  return (
-                    <tr>
-                      <Name className='text-left px-2'>
-                        {contact.contactName}
-                      </Name>
-                      <Extension className='px-2'>
-                        {contact.extension}
-                      </Extension>
-                      <PhoneNumber className='text-right px-2'>
-                        {contact.cellNumber}
-                      </PhoneNumber>
-                    </tr>
-                  );
-                })}
-              </table>
+            <div className='col'>
+              <GCAKioskLocationTable machines={atmMachines} />
             </div>
           </div>
         </div>
 
-        <div className='col-sm-4'>
+        {/* jxc machines */}
+        <div className='col justify-content-center'>
           <div className='row'>
             <div className='col'>
-              <h3 className='text-center'>Surveillance Supervisors</h3>
+              <CategoryTitle>JXC Machines</CategoryTitle>
             </div>
           </div>
           <div className='row'>
-            <div className='col d-flex justify-content-center'>
-              <table>
-                <TableHeader>
-                  <th className='px-2 text-left'>Name</th>
-                  <th className='px-2'>Extension</th>
-                  <th className='px-2'>Cell #</th>
-                </TableHeader>
+            <div className='col'>
+              <GCAKioskLocationTable machines={jxcMachines} />
+            </div>
+          </div>
+        </div>
 
-                {surveillanceSupContacts.map(contact => {
-                  return (
-                    <tr>
-                      <Name className='text-left px-2'>
-                        {contact.contactName}
-                      </Name>
-                      <Extension className='px-2'>
-                        {contact.extension}
-                      </Extension>
-                      <PhoneNumber className='text-right px-2'>
-                        {contact.cellNumber}
-                      </PhoneNumber>
-                    </tr>
-                  );
-                })}
-              </table>
+        {/*  promotional kiosks*/}
+        <div className='col justify-content-center'>
+          <div className='row'>
+            <div className='col'>
+              <CategoryTitle>Promotional Kiosks</CategoryTitle>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <GCAKioskLocationTable machines={promoKiosks} />
+            </div>
+          </div>
+        </div>
+
+        {/* enrollment kiosks */}
+        <div className='col justify-content-center'>
+          <div className='row'>
+            <div className='col'>
+              <CategoryTitle>Enrollment Kiosks</CategoryTitle>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <GCAKioskLocationTable machines={enrollmentKiosks} />
             </div>
           </div>
         </div>
