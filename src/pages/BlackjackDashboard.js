@@ -114,6 +114,7 @@ const BlackjackDashboard = () => {
   return (
     <Container className='container-fluid'>
       <TitleText>Blackjack Dashboard</TitleText>
+      <p>todo: side bets</p>
 
       {/* Dropdown game selector */}
       <div className='row'>

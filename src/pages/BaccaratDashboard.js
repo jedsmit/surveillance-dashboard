@@ -8,7 +8,7 @@ import CommissionCalculator from '../components/CommissionCalculator';
 
 //styled-components
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
@@ -70,7 +70,7 @@ const BaccaratDashboard = () => {
   return (
     <Container className='container-fluid'>
       <TitleText>Baccarat Dashboard</TitleText>
-
+      <p>todo: side bets</p>
       <div className='row'>
         <div className='col'>
           <div className='dropdown'>

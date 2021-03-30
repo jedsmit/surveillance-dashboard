@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 //styled-components
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
@@ -95,6 +95,34 @@ const TableGamesDashboard = () => {
                 <MenuButton className='btn btn-lg'>
                   <MenuLink as={Link} to='/tiles'>
                     Pai Gow Tiles
+                  </MenuLink>
+                </MenuButton>
+              </li>
+              <li>
+                <MenuButton className='btn btn-lg'>
+                  <MenuLink as={Link} to='/threecardpoker'>
+                    Three Card Poker
+                  </MenuLink>
+                </MenuButton>
+              </li>
+              <li>
+                <MenuButton className='btn btn-lg'>
+                  <MenuLink as={Link} to='/fourcardpoker'>
+                    Four Card Poker
+                  </MenuLink>
+                </MenuButton>
+              </li>
+              <li>
+                <MenuButton className='btn btn-lg'>
+                  <MenuLink as={Link} to='/utholdem'>
+                    UT Hold'em
+                  </MenuLink>
+                </MenuButton>
+              </li>
+              <li>
+                <MenuButton className='btn btn-lg'>
+                  <MenuLink as={Link} to='/casinowar'>
+                    Casino War
                   </MenuLink>
                 </MenuButton>
               </li>

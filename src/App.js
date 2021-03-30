@@ -19,6 +19,13 @@ import ContactsPage from './pages/ContactsPage';
 import GcaKioskPage from './pages/GcaKioskPage';
 import CageDashboard from './pages/CageDashboard';
 import SlotsDashboard from './pages/SlotsDashboard';
+import CrapsDashboard from './pages/CrapsDashboard';
+import TilesDashboard from './pages/TilesDashboard';
+import PaiGowDashboard from './pages/PaiGowDashboard';
+import ThreeCardPokerDashboard from './pages/ThreeCardPokerDashboard';
+import FourCardPokerDashboard from './pages/FourCardPokerDashboard';
+import UTHoldemDashboard from './pages/UTHoldemDashboard';
+import CasinoWarDashboard from './pages/CasinoWarDashboard';
 
 //styled-components
 const Root = styled.div`
@@ -47,6 +54,27 @@ function App() {
           </Route>
           <Route path='/roulette'>
             <RouletteDashboard />
+          </Route>
+          <Route path='/craps'>
+            <CrapsDashboard />
+          </Route>
+          <Route path='/paigow'>
+            <PaiGowDashboard />
+          </Route>
+          <Route path='/tiles'>
+            <TilesDashboard />
+          </Route>
+          <Route path='/threecardpoker'>
+            <ThreeCardPokerDashboard />
+          </Route>
+          <Route path='/fourcardpoker'>
+            <FourCardPokerDashboard />
+          </Route>
+          <Route path='/utholdem'>
+            <UTHoldemDashboard />
+          </Route>
+          <Route path='/casinowar'>
+            <CasinoWarDashboard />
           </Route>
           <Route path='/contacts'>
             <ContactsPage />
