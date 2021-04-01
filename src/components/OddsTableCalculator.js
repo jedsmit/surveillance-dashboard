@@ -11,32 +11,30 @@ const Container = styled.div`
   border-radius: 5px;
 `;
 
-const TitleText = styled.h1`
-  fontsize: 5em;
+const Title = styled.h3`
   margin: 0;
   padding: 10px;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
 `;
 
-const Text = styled.h3``;
+const Text = styled.h6``;
 
-const testWager = {
-  wagerName: 'bonus wager',
-  winCombo: 'some cards',
-  payoutMultiplier: 100,
-};
-
-const OddsTableCalculator = ({ gameName, wager, unitsBet }) => {
-  const { wagerName, winCombo, payoutMultiplier } = wager;
-  let win = unitsBet * payoutMultiplier;
+const OddsTableCalculator = ({ wagerName, wagers, unitsBet }) => {
+  console.log(wagers);
   return (
     <Container>
-      <TitleText>{gameName}</TitleText>
-      <TitleText>Payout Odds Calculator </TitleText>
-      <Text>
-        {unitsBet} unit {wagerName} wins {win} units
-      </Text>
+      <div className='row justify-content-center'>
+        <Title className='text-center'>{wagerName} Odds Calculator</Title>
+      </div>
+      {wagers.map(wager => {
+        let payoutMultiplier = wager.payoutMultiplier;
+        let winCombo = wager.winCombo;
+        let win = unitsBet * payoutMultiplier;
+        return (
+          <Text>
+            {unitsBet} unit with {winCombo} wins {win} units
+          </Text>
+        );
+      })}
     </Container>
   );
 };

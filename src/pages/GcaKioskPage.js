@@ -4,9 +4,10 @@ import styled from 'styled-components';
 import {
   cxcMachines,
   atmMachines,
-  jxcMachines,
-  promoKiosks,
+  jxcKiosks,
   enrollmentKiosks,
+  fjpMachines,
+  gpMachines,
 } from '../data/gcaKioskLocations';
 import GCAKioskLocationTable from '../components/GCAKioskLocationTable';
 
@@ -17,7 +18,7 @@ const Container = styled.div`
   padding: 1em;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 2em;
+  font-size: 1em;
 `;
 
 const TitleText = styled.h1`
@@ -27,7 +28,7 @@ const TitleText = styled.h1`
 `;
 
 const CategoryTitle = styled.h3`
-  padding-top: 2em;
+  padding-top: 1em;
 `;
 
 const GcaKioskPage = () => {
@@ -67,38 +68,22 @@ const GcaKioskPage = () => {
               <GCAKioskLocationTable machines={atmMachines} />
             </div>
           </div>
-        </div>
 
-        {/* jxc machines */}
-        <div className='col justify-content-center'>
-          <div className='row'>
-            <div className='col'>
-              <CategoryTitle>JXC Machines</CategoryTitle>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col'>
-              <GCAKioskLocationTable machines={jxcMachines} />
-            </div>
-          </div>
-        </div>
+          {/*  promotional kiosks*/}
 
-        {/*  promotional kiosks*/}
-        <div className='col justify-content-center'>
           <div className='row'>
             <div className='col'>
-              <CategoryTitle>Promotional Kiosks</CategoryTitle>
+              <CategoryTitle>JXC Kiosks</CategoryTitle>
             </div>
           </div>
           <div className='row'>
             <div className='col'>
-              <GCAKioskLocationTable machines={promoKiosks} />
+              <GCAKioskLocationTable machines={jxcKiosks} />
             </div>
           </div>
-        </div>
 
-        {/* enrollment kiosks */}
-        <div className='col justify-content-center'>
+          {/* enrollment kiosks */}
+
           <div className='row'>
             <div className='col'>
               <CategoryTitle>Enrollment Kiosks</CategoryTitle>
@@ -107,6 +92,30 @@ const GcaKioskPage = () => {
           <div className='row'>
             <div className='col'>
               <GCAKioskLocationTable machines={enrollmentKiosks} />
+            </div>
+          </div>
+
+          {/* fjp kiosks */}
+          <div className='row'>
+            <div className='col'>
+              <CategoryTitle>FJP/Coin Banks</CategoryTitle>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <GCAKioskLocationTable machines={fjpMachines} />
+            </div>
+          </div>
+
+          {/* gp machines */}
+          <div className='row'>
+            <div className='col'>
+              <CategoryTitle>GP Machines</CategoryTitle>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <GCAKioskLocationTable machines={gpMachines} />
             </div>
           </div>
         </div>

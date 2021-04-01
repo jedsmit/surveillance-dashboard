@@ -4,12 +4,15 @@ import styled from 'styled-components';
 import BasicStrategyTable from '../components/BasicStrategyTable';
 import IndexPlayTable from '../components/IndexPlayTable';
 import ThresholdCalculator from '../components/ThresholdCalculator';
+import OddsTableCalculator from '../components/OddsTableCalculator';
 import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 import ViolationReferences from '../components/ViolationReferences';
 import { blackjack } from '../data/violationData';
+import { luckyLuckyOdds } from '../data/bonusBetOdds';
 
 //styled-components
 const Container = styled.div`
+  min-height: 100vh;
   height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
@@ -41,7 +44,10 @@ const ViolationsContainer = styled.div`
 `;
 
 const ThresholdCalculatorContainer = styled.div`
-  margin-top: 3rem;
+  width: 100%;
+`;
+
+const OddsCalculatorContainer = styled.div`
   width: 100%;
 `;
 
@@ -55,7 +61,7 @@ const BlackjackDashboard = () => {
     strategySingleDeckBJ,
     averageSingleDeckBJ,
   } = thresholdCalculatorData;
-
+  const { wagerName, wagers } = luckyLuckyOdds;
   //state
   const [gameVariant, setGameVariant] = useState('Select Variant');
   const [gameData, setGameData] = useState({
@@ -64,6 +70,7 @@ const BlackjackDashboard = () => {
     hph: 0,
   });
   const [checked, setChecked] = useState(false);
+  const [toggled, setToggled] = useState(false);
 
   //sets the game type for threshold calculator use
   useEffect(() => {
@@ -115,9 +122,8 @@ const BlackjackDashboard = () => {
     <Container className='container-fluid'>
       <TitleText>Blackjack Dashboard</TitleText>
       <p>todo: side bets</p>
-
       {/* Dropdown game selector */}
-      <div className='row'>
+      <div className='row mb-2'>
         <div className='col'>
           <div className='dropdown'>
             <MenuButton
@@ -182,7 +188,7 @@ const BlackjackDashboard = () => {
       {/* end drop down  */}
 
       <div className='row justify-content-end'>
-        <div className='col-sm-5 col-xs-12'>
+        <div className='col-sm-4 col-xs-12'>
           <div className='row justify-content-left m-0'>
             <div class='custom-control custom-switch m-0'>
               <input
@@ -197,7 +203,7 @@ const BlackjackDashboard = () => {
                 for='customSwitch1'
                 style={{ fontSize: '.7em' }}
               >
-                Toggle Index Plays/Common Violations
+                Toggle Common Violations/Index Plays
               </label>
             </div>
           </div>
@@ -217,21 +223,52 @@ const BlackjackDashboard = () => {
         </div>
 
         <div className='col-sm-4 col-xs-12'>
-          {/* Basic Strategy Chart */}
+          <div className='row justify-content-left m-0'>
+            <div class='custom-control custom-switch m-0'>
+              <input
+                type='checkbox'
+                class='custom-control-input'
+                id='customSwitch2'
+                checked={toggled}
+                onChange={() => setToggled(!toggled)}
+              />
+              <label
+                class='custom-control-label'
+                for='customSwitch2'
+                style={{ fontSize: '.7em' }}
+              >
+                Toggle Lucky Luck Odds/Threshold Calculator
+              </label>
+            </div>
+          </div>
+
+          <div className='row'>
+            {/* Odds Table or Basic Strategy*/}
+            {toggled ? (
+              <ThresholdCalculatorContainer className='container-fluid'>
+                <ThresholdCalculator
+                  hph={gameData.hph}
+                  houseAdvantage={gameData.houseAdvantage}
+                  betVolatility={gameData.betVolatility}
+                  gameVariant={gameVariant}
+                />
+              </ThresholdCalculatorContainer>
+            ) : (
+              <OddsCalculatorContainer className='container-fluid'>
+                <OddsTableCalculator
+                  wagerName='Lucky Lucky'
+                  wagers={wagers}
+                  unitsBet={2}
+                />
+              </OddsCalculatorContainer>
+            )}
+          </div>
+        </div>
+
+        <div className='col-sm-4 col-xs-12'>
           <BasicStrategyContainer className='container-fluid'>
             <BasicStrategyTable />
           </BasicStrategyContainer>
-        </div>
-
-        <div className='col-sm-3 col-xs-12'>
-          <ThresholdCalculatorContainer className='container-fluid'>
-            <ThresholdCalculator
-              hph={gameData.hph}
-              houseAdvantage={gameData.houseAdvantage}
-              betVolatility={gameData.betVolatility}
-              gameVariant={gameVariant}
-            />
-          </ThresholdCalculatorContainer>
         </div>
       </div>
     </Container>

@@ -39,6 +39,12 @@ const LeftMenuColumn = styled.div`
   list-style-type: none;
   text-align: left;
 `;
+
+const RightMenuColumn = styled.div`
+  text-decoration: none;
+  list-style-type: none;
+  text-align: left;
+`;
 const MenuLink = styled.h3`
   color: ${Colors.backgroundColor};
   text-decoration: none;
@@ -53,82 +59,87 @@ const TableGamesDashboard = () => {
     <Container>
       <TitleText>Table Games</TitleText>
       <div className='row'>
-        <div className='col-sm-3'>
+        <div className='col-sm-6'>
           <SubtitleText>Game Dashboards</SubtitleText>
           <MenuContainer>
-            <div className='left'></div>
-            <LeftMenuColumn as='ul' className='left-menu-column'>
-              <li>
-                <MenuLink as={Link} to='/blackjack'>
-                  <MenuButton className='btn btn-lg'>Blackjack</MenuButton>
-                </MenuLink>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/baccarat'>
-                    Baccarat
-                  </MenuLink>
-                </MenuButton>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/craps'>
-                    Craps
-                  </MenuLink>
-                </MenuButton>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/roulette'>
-                    Roulette
-                  </MenuLink>
-                </MenuButton>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/paigow'>
-                    Fortune Pai Gow
-                  </MenuLink>
-                </MenuButton>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/tiles'>
-                    Pai Gow Tiles
-                  </MenuLink>
-                </MenuButton>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/threecardpoker'>
-                    Three Card Poker
-                  </MenuLink>
-                </MenuButton>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/fourcardpoker'>
-                    Four Card Poker
-                  </MenuLink>
-                </MenuButton>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/utholdem'>
-                    UT Hold'em
-                  </MenuLink>
-                </MenuButton>
-              </li>
-              <li>
-                <MenuButton className='btn btn-lg'>
-                  <MenuLink as={Link} to='/casinowar'>
-                    Casino War
-                  </MenuLink>
-                </MenuButton>
-              </li>
-            </LeftMenuColumn>
-
-            <div className='right'></div>
+            <div className='row'>
+              <div className='col left'>
+                <LeftMenuColumn as='ul' className='left-menu-column'>
+                  <li>
+                    <MenuLink as={Link} to='/blackjack'>
+                      <MenuButton className='btn btn-lg'>Blackjack</MenuButton>
+                    </MenuLink>
+                  </li>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/baccarat'>
+                        Baccarat
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/craps'>
+                        Craps
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/roulette'>
+                        Roulette
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/paigow'>
+                        Fortune Pai Gow
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/tiles'>
+                        Pai Gow Tiles
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/threecardpoker'>
+                        Three Card Poker
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                </LeftMenuColumn>
+              </div>
+              <div className='col right'>
+                <RightMenuColumn>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/fourcardpoker'>
+                        Four Card Poker
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/utholdem'>
+                        UT Hold'em
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                  <li>
+                    <MenuButton className='btn btn-lg'>
+                      <MenuLink as={Link} to='/casinowar'>
+                        Casino War
+                      </MenuLink>
+                    </MenuButton>
+                  </li>
+                </RightMenuColumn>
+              </div>
+            </div>
           </MenuContainer>
         </div>
       </div>

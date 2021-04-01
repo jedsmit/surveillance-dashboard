@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Colors from '../constants/Colors';
 import styled from 'styled-components';
 import OddsTableCalculator from '../components/OddsTableCalculator';
+import { luckyLuckyOdds } from './../data/bonusBetOdds';
 
 //styled-components
 const Container = styled.div`
@@ -22,30 +23,31 @@ const TitleText = styled.h1`
 `;
 
 const CalculatorContainer = styled.div`
-  width: 30%;
+  width: 75%;
   font-size: 0.7em;
 `;
 
 const testWager = {
-  wagerName: 'bonus wager',
+  wagerName: 'Luck Lucky',
   winCombo: 'some cards',
   payoutMultiplier: 100,
 };
 
 const CasinoWarDashboard = () => {
+  const { wagerName, wagers } = luckyLuckyOdds;
   return (
     <Container className='container-fluid'>
       <TitleText>Casino War Dashboard</TitleText>
       <p>To do: odds table, violations</p>
       <div className='row'>
         <div className='col'>
-          <CalculatorContainer>
+          {/* <CalculatorContainer>
             <OddsTableCalculator
               gameName='Casino War'
-              wager={testWager}
+              wagers={wagers}
               unitsBet={2}
             />
-          </CalculatorContainer>
+          </CalculatorContainer> */}
         </div>
       </div>
     </Container>
