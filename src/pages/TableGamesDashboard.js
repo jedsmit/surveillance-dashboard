@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
+//
+import Colors from '../constants/Colors';
+import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
@@ -9,17 +11,15 @@ const Container = styled.div`
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 2em;
 `;
 
 const TitleText = styled.h1`
-  font-size: 2em;
-  margin: 0;
-  padding: 10px;
+  font-size: ${fontSizes.lg};
+  padding: ${spacing.xs};
 `;
 
 const SubtitleText = styled.h2`
-  font-size: 1em;
+  font-size: ${fontSizes.md};
 `;
 
 const MenuContainer = styled.div``;
@@ -27,8 +27,9 @@ const MenuContainer = styled.div``;
 const MenuButton = styled.div`
   background-color: ${Colors.accentColor};
   border-radius: 40px;
-  width: 80%;
-  margin: 10px;
+  width: 100%;
+  max-width: 15vw;
+  margin: ${spacing.xs};
   :hover {
     background-color: ${Colors.highlightTextColor};
   }
@@ -53,7 +54,7 @@ const MenuLink = styled.h3`
     color: inherit;
   }
 `;
-
+//
 const TableGamesDashboard = () => {
   return (
     <Container>

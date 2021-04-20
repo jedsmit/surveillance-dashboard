@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
+
+//
 import BasicStrategyTable from '../components/BasicStrategyTable';
 import IndexPlayTable from '../components/IndexPlayTable';
 import ThresholdCalculator from '../components/ThresholdCalculator';
 import OddsTableCalculator from '../components/OddsTableCalculator';
-import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 import ViolationReferences from '../components/ViolationReferences';
+//
+import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 import { blackjack } from '../data/violationData';
 import { luckyLuckyOdds } from '../data/bonusBetOdds';
+import Colors from '../constants/Colors';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
@@ -17,14 +21,12 @@ const Container = styled.div`
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 2em;
   justify-content: center;
 `;
 
 const TitleText = styled.h1`
-  fontsize: 5em;
   margin: 0;
-  padding: 10px;
+  padding: ${spacing.xxs};
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
 `;
@@ -32,22 +34,26 @@ const TitleText = styled.h1`
 const MenuButton = styled.button``;
 
 const BasicStrategyContainer = styled.div`
-  margin-top: 3rem;
+  margin-top: ${spacing.md};
   width: 100%;
 `;
 const IndexPlayContainer = styled.div`
+  margin-top: ${spacing.md};
   width: 100%;
 `;
 
 const ViolationsContainer = styled.div`
+  margin-top: ${spacing.md};
   width: 100%;
 `;
 
 const ThresholdCalculatorContainer = styled.div`
+  margin-top: ${spacing.md};
   width: 100%;
 `;
 
 const OddsCalculatorContainer = styled.div`
+  margin-top: ${spacing.md};
   width: 100%;
 `;
 
@@ -223,6 +229,12 @@ const BlackjackDashboard = () => {
         </div>
 
         <div className='col-sm-4 col-xs-12'>
+          <BasicStrategyContainer className='container-fluid'>
+            <BasicStrategyTable />
+          </BasicStrategyContainer>
+        </div>
+
+        <div className='col-sm-4 col-xs-12'>
           <div className='row justify-content-left m-0'>
             <div class='custom-control custom-switch m-0'>
               <input
@@ -263,12 +275,6 @@ const BlackjackDashboard = () => {
               </OddsCalculatorContainer>
             )}
           </div>
-        </div>
-
-        <div className='col-sm-4 col-xs-12'>
-          <BasicStrategyContainer className='container-fluid'>
-            <BasicStrategyTable />
-          </BasicStrategyContainer>
         </div>
       </div>
     </Container>

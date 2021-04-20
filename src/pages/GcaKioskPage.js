@@ -1,6 +1,8 @@
 import React from 'react';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
+//
+import GCAKioskLocationTable from '../components/GCAKioskLocationTable';
+//
 import {
   cxcMachines,
   atmMachines,
@@ -9,27 +11,27 @@ import {
   fjpMachines,
   gpMachines,
 } from '../data/gcaKioskLocations';
-import GCAKioskLocationTable from '../components/GCAKioskLocationTable';
+import Colors from '../constants/Colors';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
+  min-height: 100vh;
   height: 100%;
   width: 100%;
-  padding: 1em;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 1em;
+  justify-content: center;
 `;
 
 const TitleText = styled.h1`
-  fontsize: 5em;
   margin: 0;
-  padding: 10px;
+  padding: ${spacing.xxs};
+  background: ${Colors.backgroundColor};
+  color: ${Colors.primaryTextColor};
 `;
 
-const CategoryTitle = styled.h3`
-  padding-top: 1em;
-`;
+const CategoryTitle = styled.h3``;
 
 const GcaKioskPage = () => {
   return (

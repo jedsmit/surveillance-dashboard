@@ -1,42 +1,33 @@
 import React from 'react';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
+//
 import {
   tgaContacts,
   surveillanceTechContacts,
   surveillanceSupContacts,
   surveillanceAgentContacts,
 } from '../data/contacts';
+import Colors from '../constants/Colors';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  padding: 1em;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 2em;
 `;
 
 const TitleText = styled.h1`
-  fontsize: 5em;
   margin: 0;
-  padding: 10px;
+  padding: ${spacing.xs};
 `;
 
-const Name = styled.td`
-  font-size: 0.75em;
-`;
-const PhoneNumber = styled.td`
-  font-size: 0.75em;
-`;
-const Extension = styled.td`
-  font-size: 0.75em;
-`;
+const Name = styled.td``;
+const PhoneNumber = styled.td``;
+const Extension = styled.td``;
 
-const TableHeader = styled.tr`
-  font-size: 0.75em;
-`;
+const TableHeader = styled.tr``;
 
 const ContactsPage = () => {
   return (

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Colors from '../constants/Colors';
 import NumberFormat from 'react-number-format';
+//
+import Colors from '../constants/Colors';
 
 // styled components
 const Container = styled.div`
@@ -14,7 +15,7 @@ const Container = styled.div`
 const WinInput = styled.div`
   width: 100%;
 `;
-
+//
 const CommissionCalculator = () => {
   const [winTotal, setWinTotal] = useState('');
   const [commission, setCommission] = useState('');

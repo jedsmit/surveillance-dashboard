@@ -1,6 +1,7 @@
 import React from 'react';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
+//
+import Colors from '../constants/Colors';
 
 //styled-components
 const TableContainer = styled.div`
@@ -12,7 +13,7 @@ const TableContainer = styled.div`
 const Title = styled.h3`
   text-align: center;
 `;
-
+//
 const BaccaratDrawingRulesTable = () => {
   return (
     <TableContainer className='container-fluid justify-content-center px-4'>

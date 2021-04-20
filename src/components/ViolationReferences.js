@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+//
 import Colors from '../constants/Colors';
 
 //styled-components
@@ -12,13 +13,10 @@ const TableContainer = styled.div`
 `;
 const Title = styled.h3``;
 const ViolationsTable = styled.table`
-  font-size: 0.7em;
   width: 90%;
 `;
-
-const ViolationReferences = props => {
-  const violationData = props.violationData;
-  console.log(props);
+//
+const ViolationReferences = ({ violationData }) => {
   return (
     <TableContainer className='container-fluid'>
       <div className='row justify-content-center'>
@@ -30,7 +28,7 @@ const ViolationReferences = props => {
             <th className='text-left'>Violation</th>
             <th className='text-right'>Reference</th>
           </tr>
-          {props.violationData.map(data => {
+          {violationData.map(data => {
             return (
               <tr>
                 <td className='text-left'>{data.violation}</td>

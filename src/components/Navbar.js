@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
-
+//
+import Colors from '../constants/Colors';
 //styled-components
 const NavContainer = styled.div`
 display: grid;
@@ -27,7 +27,7 @@ const NavbarText = styled.h3`
     color: ${Colors.accentColor};
   }
 `;
-
+//
 const Navbar = () => {
   return (
     <NavContainer className='navbar sticky-top'>

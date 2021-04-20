@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
-import ThresholdCalculator from '../components/ThresholdCalculator';
-import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
-import ViolationReferences from '../components/ViolationReferences';
+//
+import Colors from '../constants/Colors';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
+  min-height: 100vh;
   height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 2em;
   justify-content: center;
 `;
 
 const TitleText = styled.h1`
-  fontsize: 5em;
   margin: 0;
-  padding: 10px;
+  padding: ${spacing.xs};
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
 `;

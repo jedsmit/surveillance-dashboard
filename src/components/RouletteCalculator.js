@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NumberFormat from 'react-number-format';
+//
 import Colors from '../constants/Colors';
+import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
   height: 100%;
   width: 100%;
-  font-size: 1em;
   color: ${Colors.backgroundColor};
   background-color: ${Colors.accentColor};
-  padding: 1em;
+  padding: ${spacing.xxs};
   border-radius: 5px;
+  overflow: hidden;
 `;
 
 const NumberField = styled.div`
@@ -164,7 +166,6 @@ const RouletteCalculator = props => {
           <div className='col-sm-4'>
             <NumberField
               as={NumberFormat}
-              // className={numberFormat}
               thousandSeparator
               name='straightUpWager'
               onChange={handleWagerChange}
@@ -178,7 +179,6 @@ const RouletteCalculator = props => {
               Win{' '}
               <NumberField
                 as={NumberFormat}
-                // className={numberFormat}
                 value={wins.straightUpWin}
                 thousandSeparator
                 suffix={' units'}
@@ -195,7 +195,6 @@ const RouletteCalculator = props => {
           <div className='col-sm-4'>
             <NumberField
               as={NumberFormat}
-              // className={numberFormat}
               thousandSeparator
               name='splitWager'
               onChange={handleWagerChange}
@@ -209,7 +208,6 @@ const RouletteCalculator = props => {
               Win{' '}
               <NumberField
                 as={NumberFormat}
-                // className={numberFormat}
                 value={wins.splitWin}
                 thousandSeparator
                 suffix={' units'}
@@ -227,7 +225,6 @@ const RouletteCalculator = props => {
           <div className='col-sm-4'>
             <NumberField
               as={NumberFormat}
-              // className={numberFormat}
               thousandSeparator
               name='streetWager'
               onChange={handleWagerChange}
@@ -241,7 +238,6 @@ const RouletteCalculator = props => {
               Win{' '}
               <NumberField
                 as={NumberFormat}
-                // className={numberFormat}
                 value={wins.streetWin}
                 thousandSeparator
                 suffix={' units'}
@@ -259,7 +255,6 @@ const RouletteCalculator = props => {
           <div className='col-sm-4'>
             <NumberField
               as={NumberFormat}
-              // className={numberFormat}
               thousandSeparator
               name='cornerWager'
               onChange={handleWagerChange}
@@ -273,7 +268,6 @@ const RouletteCalculator = props => {
               Win{' '}
               <NumberField
                 as={NumberFormat}
-                // className={numberFormat}
                 value={wins.cornerWin}
                 thousandSeparator
                 suffix={' units'}
@@ -291,7 +285,6 @@ const RouletteCalculator = props => {
           <div className='col-sm-4'>
             <NumberField
               as={NumberFormat}
-              // className={numberFormat}
               thousandSeparator
               name='doubleStreetWager'
               onChange={handleWagerChange}
@@ -305,7 +298,6 @@ const RouletteCalculator = props => {
               Win{' '}
               <NumberField
                 as={NumberFormat}
-                // className={numberFormat}
                 value={wins.doubleStreetWin}
                 thousandSeparator
                 suffix={' units'}
@@ -319,7 +311,7 @@ const RouletteCalculator = props => {
           className='row p-1'
           style={{
             backgroundColor: Colors.highlightTextColor,
-            borderRadius: '5px',
+            overflow: 'hidden',
           }}
         >
           <div className='col-sm-4'>
@@ -328,7 +320,6 @@ const RouletteCalculator = props => {
           <div className='col-sm-4'>
             <NumberField
               as={NumberFormat}
-              // className={numberFormat}
               thousandSeparator
               value={totalWin}
               onChange={handleWagerChange}
@@ -342,7 +333,6 @@ const RouletteCalculator = props => {
               Win{' '}
               <NumberField
                 as={NumberFormat}
-                // className={numberFormat}
                 value={totalWin * chipDenom}
                 thousandSeparator
                 prefix={'$'}

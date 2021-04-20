@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
-import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
+//
 import BaccaratDrawingRulesTable from '../components/BaccaratDawingRulesTable';
 import ThresholdCalculator from '../components/ThresholdCalculator';
 import CommissionCalculator from '../components/CommissionCalculator';
+//
+import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
+import Colors from '../constants/Colors';
+import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
@@ -12,33 +15,28 @@ const Container = styled.div`
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 2em;
   justify-content: center;
 `;
 
 const TitleText = styled.h1`
-  fontsize: 5em;
   margin: 0;
-  padding: 10px;
+  padding: ${spacing.xxs};
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
 `;
 
 const DrawingRulesContainer = styled.div`
-  margin-top: 3rem;
-  margin-right: 8rem;
+  margin-top: ${spacing.md};
 `;
 
 const ThresholdCalculatorContainer = styled.div`
-  margin-top: 3rem;
-  font-size: 0.7em;
+  margin-top: ${spacing.md};
 `;
 
 const CommissionCalculatorContainer = styled.div`
-  margin-top: 3rem;
-  font-size: 0.7em;
+  margin-top: ${spacing.md};
 `;
-
+//
 const BaccaratDashboard = () => {
   const { beanBaccarat, miniBaccarat } = thresholdCalculatorData;
   const [gameVariant, setGameVariant] = useState('Select Variant');

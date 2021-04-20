@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+//
 import Colors from '../constants/Colors';
 
 // styled components
@@ -17,7 +18,7 @@ const Title = styled.h3`
 `;
 
 const Text = styled.h6``;
-
+//
 const OddsTableCalculator = ({ wagerName, wagers, unitsBet }) => {
   console.log(wagers);
   return (

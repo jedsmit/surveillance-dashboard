@@ -1,21 +1,23 @@
 import React from 'react';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
-
+//
+import Colors from '../constants/Colors';
+import { spacing } from '../constants/Sizes';
 //styled-components
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 2em;
+  justify-content: center;
 `;
 
 const TitleText = styled.h1`
-  fontsize: 5em;
   margin: 0;
-  padding: 10px;
-  color: ${Colors.mainTextColor};
+  padding: ${spacing.xxs};
+  background: ${Colors.backgroundColor};
+  color: ${Colors.primaryTextColor};
 `;
 
 const HomePage = () => {

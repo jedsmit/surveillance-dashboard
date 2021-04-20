@@ -1,34 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Colors from '../constants/Colors';
 import styled from 'styled-components';
+//
+import Colors from '../constants/Colors';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: 2em;
+  justify-content: center;
 `;
 
 const TitleText = styled.h1`
-  fontsize: 5em;
   margin: 0;
-  padding: 20px 20px 50px 20px;
-  backgroundColor: ${Colors.accentColor}
+  padding: ${spacing.xxs};
+  background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
 `;
 
 const MenuButton = styled.div`
   background-color: ${Colors.accentColor};
   border-radius: 40px;
-  font-size: 1em;
-  width: 80%;
-  margin: 10px;
+  width: 100%;
+  max-width: 15vw;
+  margin: ${spacing.xs};
   :hover {
     background-color: ${Colors.highlightTextColor};
-    color: inherit;
   }
 `;
 
