@@ -3,7 +3,7 @@ import styled from 'styled-components';
 //
 import OddsTableCalculator from '../components/OddsTableCalculator';
 //
-import { luckyLuckyOdds } from './../data/bonusBetOdds';
+
 import Colors from '../constants/Colors';
 import { spacing } from '../constants/Sizes';
 
@@ -26,7 +26,6 @@ const TitleText = styled.h1`
 
 //
 const CasinoWarDashboard = () => {
-  const { wagerName, wagers } = luckyLuckyOdds;
   return (
     <Container className='container-fluid'>
       <TitleText>Casino War Dashboard</TitleText>

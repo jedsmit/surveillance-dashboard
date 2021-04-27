@@ -7,15 +7,19 @@ import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
+  min-height: 100vh;
   height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
+  justify-content: center;
 `;
 
 const TitleText = styled.h1`
-  font-size: ${fontSizes.lg};
-  padding: ${spacing.xs};
+  margin: 0;
+  padding: ${spacing.xxs};
+  background: ${Colors.backgroundColor};
+  color: ${Colors.primaryTextColor};
 `;
 
 const SubtitleText = styled.h2`

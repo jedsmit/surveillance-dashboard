@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
@@ -26,7 +26,7 @@ const TilesDashboard = () => {
   return (
     <Container className='container-fluid'>
       <TitleText>Tiles Dashboard</TitleText>
-      <p>todo: house way, tiles chart, comission calc</p>
+      <p>todo: house way, tiles chart, commission calc</p>
     </Container>
   );
 };

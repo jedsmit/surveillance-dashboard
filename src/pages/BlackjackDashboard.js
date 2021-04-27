@@ -10,7 +10,7 @@ import ViolationReferences from '../components/ViolationReferences';
 //
 import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 import { blackjack } from '../data/violationData';
-import { luckyLuckyOdds } from '../data/bonusBetOdds';
+import { bjOdds } from '../data/bonusBetOdds';
 import Colors from '../constants/Colors';
 import { spacing } from '../constants/Sizes';
 
@@ -67,7 +67,7 @@ const BlackjackDashboard = () => {
     strategySingleDeckBJ,
     averageSingleDeckBJ,
   } = thresholdCalculatorData;
-  const { wagerName, wagers } = luckyLuckyOdds;
+  const { luckyLuckyOdds, blazingSevenOdds } = bjOdds;
   //state
   const [gameVariant, setGameVariant] = useState('Select Variant');
   const [gameData, setGameData] = useState({
@@ -266,13 +266,23 @@ const BlackjackDashboard = () => {
                 />
               </ThresholdCalculatorContainer>
             ) : (
-              <OddsCalculatorContainer className='container-fluid'>
-                <OddsTableCalculator
-                  wagerName='Lucky Lucky'
-                  wagers={wagers}
-                  unitsBet={2}
-                />
-              </OddsCalculatorContainer>
+              <>
+                <OddsCalculatorContainer className='container-fluid'>
+                  <OddsTableCalculator
+                    wagers={luckyLuckyOdds.wagers}
+                    wagerName={luckyLuckyOdds.wagerName}
+                    defaultWager={1}
+                  />
+                </OddsCalculatorContainer>
+
+                <OddsCalculatorContainer className='container-fluid'>
+                  <OddsTableCalculator
+                    wagers={blazingSevenOdds.wagers}
+                    wagerName={blazingSevenOdds.wagerName}
+                    defaultWager={2}
+                  />
+                </OddsCalculatorContainer>
+              </>
             )}
           </div>
         </div>
