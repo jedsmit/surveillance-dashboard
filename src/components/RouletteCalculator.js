@@ -14,6 +14,7 @@ const Container = styled.div`
   padding: ${spacing.xxs};
   border-radius: 5px;
   overflow: hidden;
+  padding-bottom: 0px;
 `;
 
 const NumberField = styled.div`

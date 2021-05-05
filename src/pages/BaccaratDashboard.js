@@ -13,6 +13,7 @@ import { spacing, fontSizes } from '../constants/Sizes';
 const Container = styled.div`
   height: 100%;
   width: 100%;
+  min-height: 100vh;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
   justify-content: center;

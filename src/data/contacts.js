@@ -180,3 +180,52 @@ export const surveillanceAgentContacts = [
     cellNumber: '530-312-3581',
   },
 ];
+
+export const tableGamesContacts = [
+  {
+    contactName: 'Kathleen Jackson',
+    extension: '5364',
+  },
+  {
+    contactName: 'Liliana Castaneda',
+    extension: '5357',
+  },
+];
+
+export const slotContacts = [
+  {
+    contactName: 'Oliver Shoemaker',
+    extension: '5302',
+  },
+  {
+    contactName: 'Olivia Hernandez',
+    extension: '5293',
+  },
+  {
+    contactName: 'James Alexander',
+    extension: '5593',
+  },
+  {
+    contactName: 'Slot Office',
+    extension: '5257',
+  },
+  {
+    contactName: 'Slot Tech Supervisor',
+    extension: '5590',
+  },
+];
+
+export const cageContacts = [
+  {
+    contactName: 'Tanya Munoz',
+    extension: '5259',
+  },
+  {
+    contactName: 'Kathleen Jackson',
+    extension: '5364',
+  },
+  {
+    contactName: 'Kathleen Jackson',
+    extension: '5364',
+  },
+];

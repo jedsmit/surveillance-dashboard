@@ -61,7 +61,7 @@ const ThresholdCalculator = ({
 
     setUpperThreshold(tWin + standardDeviation * 2);
     setLowerThreshold(tWin - standardDeviation * 2);
-  }, [averageWager, hoursPlayed, gameVariant]);
+  }, [averageWager, hoursPlayed, gameVariant, calcStandardDeviation, calcTWin]);
 
   return (
     <Container className='container-fluid'>
@@ -113,7 +113,7 @@ const ThresholdCalculator = ({
                   prefix={'$'}
                   displayType={'text'}
                 />{' '}
-                -{' '}
+                to{' '}
                 <UpperThresholdDisplay
                   as={NumberFormat}
                   value={upperThreshold}

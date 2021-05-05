@@ -7,6 +7,7 @@ import IndexPlayTable from '../components/IndexPlayTable';
 import ThresholdCalculator from '../components/ThresholdCalculator';
 import OddsTableCalculator from '../components/OddsTableCalculator';
 import ViolationReferences from '../components/ViolationReferences';
+import HoleCardStrategyTable from '../components/HoleCardStrategyTable';
 //
 import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 import { blackjack } from '../data/violationData';
@@ -37,6 +38,12 @@ const BasicStrategyContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
 `;
+
+const HoleCardStrategyContainer = styled.div`
+  margin-top: ${spacing.md};
+  width: 100%;
+`;
+
 const IndexPlayContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
@@ -75,8 +82,16 @@ const BlackjackDashboard = () => {
     betVolatility: 0,
     hph: 0,
   });
-  const [checked, setChecked] = useState(false);
-  const [toggled, setToggled] = useState(false);
+  const [indexPlayViolationToggle, setIndexPlayViolationToggle] = useState(
+    false
+  );
+  const [luckyLuckyThresholdToggled, setLuckyLuckyThresholdToggled] = useState(
+    false
+  );
+  const [
+    basicHoleCardStrategyToggle,
+    setBasicHoleCardStrategyToggle,
+  ] = useState(false);
 
   //sets the game type for threshold calculator use
   useEffect(() => {
@@ -122,172 +137,231 @@ const BlackjackDashboard = () => {
         hph: strategySingleDeckBJ.hph,
       });
     }
-  }, [gameVariant]);
+  }, [
+    gameVariant,
+    averageDoubleDeckBJ.betVolatility,
+    averageDoubleDeckBJ.houseAdvantage,
+    averageDoubleDeckBJ.hph,
+    averageSingleDeckBJ.betVolatility,
+    averageSingleDeckBJ.houseAdvantage,
+    averageSingleDeckBJ.hph,
+    averageSixDeckBJ.betVolatility,
+    averageSixDeckBJ.houseAdvantage,
+    averageSixDeckBJ.hph,
+    strategyDoubleDeckBJ.betVolatility,
+    strategyDoubleDeckBJ.houseAdvantage,
+    strategyDoubleDeckBJ.hph,
+    strategySingleDeckBJ.betVolatility,
+    strategySingleDeckBJ.houseAdvantage,
+    strategySingleDeckBJ.hph,
+    strategySixDeckBJ.houseAdvantage,
+  ]);
 
   return (
-    <Container className='container-fluid'>
-      <TitleText>Blackjack Dashboard</TitleText>
-      <p>todo: side bets</p>
-      {/* Dropdown game selector */}
-      <div className='row mb-2'>
-        <div className='col'>
-          <div className='dropdown'>
-            <MenuButton
-              className='btn btn-secondary dropdown-toggle'
-              type='button'
-              id='dropdownMenuButton'
-              data-toggle='dropdown'
-              aria-haspopup='true'
-              aria-expanded='false'
-            >
-              {gameVariant}
-            </MenuButton>
-            <div
-              className='dropdown-menu'
-              aria-labelledby='dropdownMenuButton'
-              onClick={e => {
-                e.stopPropagation();
-                setGameVariant(e.target.value);
-                console.log(gameVariant);
-              }}
-            >
-              <MenuButton
-                className='dropdown-item'
-                value='Six Deck Average Player'
-              >
-                Six Deck Average Player
-              </MenuButton>
-              <MenuButton
-                className='dropdown-item'
-                value='Six Deck Strategy Player'
-              >
-                Six Deck Strategy Player
-              </MenuButton>
-              <MenuButton
-                className='dropdown-item'
-                value='Double Deck Average Player'
-              >
-                Double Deck Average Player
-              </MenuButton>
-              <MenuButton
-                className='dropdown-item'
-                value='Double Deck Strategy Player'
-              >
-                Double Deck Strategy Player
-              </MenuButton>
-              <MenuButton
-                className='dropdown-item'
-                value='Single Deck Average Player'
-              >
-                Single Deck Average Player
-              </MenuButton>
-              <MenuButton
-                className='dropdown-item'
-                value='Single Deck Strategy Player'
-              >
-                Single Deck Strategy Player
-              </MenuButton>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* end drop down  */}
+    <>
+      <Container className='container-fluid'>
+        <TitleText>Blackjack Dashboard</TitleText>
+        <p>todo: side bets</p>
 
-      <div className='row justify-content-end'>
-        <div className='col-sm-4 col-xs-12'>
-          <div className='row justify-content-left m-0'>
-            <div class='custom-control custom-switch m-0'>
-              <input
-                type='checkbox'
-                class='custom-control-input'
-                id='customSwitch1'
-                checked={checked}
-                onChange={() => setChecked(!checked)}
-              />
-              <label
-                class='custom-control-label'
-                for='customSwitch1'
-                style={{ fontSize: '.7em' }}
-              >
-                Toggle Common Violations/Index Plays
-              </label>
-            </div>
-          </div>
-
-          <div className='row'>
-            {/* Index Play Table or Violations References */}
-            {checked ? (
-              <IndexPlayContainer className='container-fluid'>
-                <IndexPlayTable />
-              </IndexPlayContainer>
-            ) : (
-              <ViolationsContainer className='container-fluid'>
-                <ViolationReferences violationData={blackjack} />
-              </ViolationsContainer>
-            )}
-          </div>
-        </div>
-
-        <div className='col-sm-4 col-xs-12'>
-          <BasicStrategyContainer className='container-fluid'>
-            <BasicStrategyTable />
-          </BasicStrategyContainer>
-        </div>
-
-        <div className='col-sm-4 col-xs-12'>
-          <div className='row justify-content-left m-0'>
-            <div class='custom-control custom-switch m-0'>
-              <input
-                type='checkbox'
-                class='custom-control-input'
-                id='customSwitch2'
-                checked={toggled}
-                onChange={() => setToggled(!toggled)}
-              />
-              <label
-                class='custom-control-label'
-                for='customSwitch2'
-                style={{ fontSize: '.7em' }}
-              >
-                Toggle Lucky Luck Odds/Threshold Calculator
-              </label>
-            </div>
-          </div>
-
-          <div className='row'>
-            {/* Odds Table or Basic Strategy*/}
-            {toggled ? (
-              <ThresholdCalculatorContainer className='container-fluid'>
-                <ThresholdCalculator
-                  hph={gameData.hph}
-                  houseAdvantage={gameData.houseAdvantage}
-                  betVolatility={gameData.betVolatility}
-                  gameVariant={gameVariant}
+        <div className='row justify-content-end'>
+          {/* Index Play Table or Violations References */}
+          <div className='col-sm-4 col-xs-12'>
+            <div className='row justify-content-left m-0'>
+              <div class='custom-control custom-switch m-0'>
+                <input
+                  type='checkbox'
+                  class='custom-control-input'
+                  id='customSwitch1'
+                  checked={indexPlayViolationToggle}
+                  onChange={() =>
+                    setIndexPlayViolationToggle(!indexPlayViolationToggle)
+                  }
                 />
-              </ThresholdCalculatorContainer>
-            ) : (
-              <>
-                <OddsCalculatorContainer className='container-fluid'>
-                  <OddsTableCalculator
-                    wagers={luckyLuckyOdds.wagers}
-                    wagerName={luckyLuckyOdds.wagerName}
-                    defaultWager={1}
-                  />
-                </OddsCalculatorContainer>
+                <label
+                  class='custom-control-label'
+                  for='customSwitch1'
+                  style={{ fontSize: '.7em' }}
+                >
+                  Toggle Common Violations/Index Plays
+                </label>
+              </div>
+            </div>
 
-                <OddsCalculatorContainer className='container-fluid'>
-                  <OddsTableCalculator
-                    wagers={blazingSevenOdds.wagers}
-                    wagerName={blazingSevenOdds.wagerName}
-                    defaultWager={2}
+            <div className='row'>
+              {indexPlayViolationToggle ? (
+                <IndexPlayContainer className='container-fluid'>
+                  <IndexPlayTable />
+                </IndexPlayContainer>
+              ) : (
+                <ViolationsContainer className='container-fluid'>
+                  <ViolationReferences violationData={blackjack} />
+                </ViolationsContainer>
+              )}
+            </div>
+          </div>
+
+          {/* Basic Strategy or Hole Card Strategy */}
+          <div className='col-sm-5 col-xs-12'>
+            <div className='row justify-content-left m-0'>
+              <div class='custom-control custom-switch m-0'>
+                <input
+                  type='checkbox'
+                  class='custom-control-input'
+                  id='customSwitch2'
+                  checked={basicHoleCardStrategyToggle}
+                  onChange={() =>
+                    setBasicHoleCardStrategyToggle(!basicHoleCardStrategyToggle)
+                  }
+                />
+                <label
+                  class='custom-control-label'
+                  for='customSwitch2'
+                  style={{ fontSize: '.7em' }}
+                >
+                  Toggle Basic Strategy/Hole Card Strategy
+                </label>
+              </div>
+            </div>
+
+            <div className='row'>
+              {basicHoleCardStrategyToggle ? (
+                <HoleCardStrategyContainer className='container-fluid'>
+                  <HoleCardStrategyTable />
+                </HoleCardStrategyContainer>
+              ) : (
+                <BasicStrategyContainer className='container-fluid'>
+                  <BasicStrategyTable />
+                </BasicStrategyContainer>
+              )}
+            </div>
+          </div>
+
+          {/* Lucky Lucky odds Table or Threshold Calculator*/}
+          <div className='col-sm-3 col-xs-12'>
+            <div className='row justify-content-left m-0'>
+              <div class='custom-control custom-switch m-0'>
+                <input
+                  type='checkbox'
+                  class='custom-control-input'
+                  id='customSwitch3'
+                  checked={luckyLuckyThresholdToggled}
+                  onChange={() =>
+                    setLuckyLuckyThresholdToggled(!luckyLuckyThresholdToggled)
+                  }
+                />
+                <label
+                  class='custom-control-label'
+                  for='customSwitch3'
+                  style={{ fontSize: '.7em' }}
+                >
+                  Toggle Lucky Luck Odds/Threshold Calculator
+                </label>
+              </div>
+            </div>
+
+            <div className='row'>
+              {luckyLuckyThresholdToggled ? (
+                <ThresholdCalculatorContainer className='container-fluid'>
+                  {/* Dropdown game selector */}
+                  <div className='row mb-2'>
+                    <div className='col'>
+                      <div className='dropdown'>
+                        <MenuButton
+                          className='btn btn-secondary dropdown-toggle'
+                          type='button'
+                          id='dropdownMenuButton'
+                          data-toggle='dropdown'
+                          aria-haspopup='true'
+                          aria-expanded='false'
+                        >
+                          {gameVariant}
+                        </MenuButton>
+                        <div
+                          className='dropdown-menu'
+                          aria-labelledby='dropdownMenuButton'
+                          onClick={e => {
+                            setGameVariant(e.target.value);
+                            console.log(gameVariant);
+                          }}
+                        >
+                          <MenuButton
+                            className='dropdown-item'
+                            value='Six Deck Average Player'
+                            type='button'
+                          >
+                            Six Deck Average Player
+                          </MenuButton>
+                          <MenuButton
+                            className='dropdown-item'
+                            value='Six Deck Strategy Player'
+                            type='button'
+                          >
+                            Six Deck Strategy Player
+                          </MenuButton>
+                          <MenuButton
+                            className='dropdown-item'
+                            value='Double Deck Average Player'
+                            type='button'
+                          >
+                            Double Deck Average Player
+                          </MenuButton>
+                          <MenuButton
+                            className='dropdown-item'
+                            value='Double Deck Strategy Player'
+                            type='button'
+                          >
+                            Double Deck Strategy Player
+                          </MenuButton>
+                          <MenuButton
+                            className='dropdown-item'
+                            value='Single Deck Average Player'
+                            type='button'
+                          >
+                            Single Deck Average Player
+                          </MenuButton>
+                          <MenuButton
+                            className='dropdown-item'
+                            value='Single Deck Strategy Player'
+                            type='button'
+                          >
+                            Single Deck Strategy Player
+                          </MenuButton>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* end drop down  */}
+                  <ThresholdCalculator
+                    hph={gameData.hph}
+                    houseAdvantage={gameData.houseAdvantage}
+                    betVolatility={gameData.betVolatility}
+                    gameVariant={gameVariant}
                   />
-                </OddsCalculatorContainer>
-              </>
-            )}
+                </ThresholdCalculatorContainer>
+              ) : (
+                <>
+                  <OddsCalculatorContainer className='container-fluid'>
+                    <OddsTableCalculator
+                      wagers={luckyLuckyOdds.wagers}
+                      wagerName={luckyLuckyOdds.wagerName}
+                      defaultWager={1}
+                    />
+                  </OddsCalculatorContainer>
+
+                  <OddsCalculatorContainer className='container-fluid'>
+                    <OddsTableCalculator
+                      wagers={blazingSevenOdds.wagers}
+                      wagerName={blazingSevenOdds.wagerName}
+                      defaultWager={2}
+                    />
+                  </OddsCalculatorContainer>
+                </>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 

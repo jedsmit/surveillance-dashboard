@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 //
 import OddsTableCalculator from '../components/OddsTableCalculator';
 //
 import Colors from '../constants/Colors';
-import { spacing, fontSizes } from '../constants/Sizes';
+import { spacing } from '../constants/Sizes';
 import { tcOdds } from '../data/bonusBetOdds';
 
 //styled-components

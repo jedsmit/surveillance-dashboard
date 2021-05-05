@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 //
+import ContactsTable from '../components/ContactsTable';
+//
+import { tableGamesContacts } from '../data/contacts';
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
 
@@ -76,76 +79,72 @@ const TableGamesDashboard = () => {
                     </MenuLink>
                   </li>
                   <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/baccarat'>
-                        Baccarat
-                      </MenuLink>
-                    </MenuButton>
+                    <MenuLink as={Link} to='/baccarat'>
+                      <MenuButton className='btn btn-lg'>Baccarat</MenuButton>
+                    </MenuLink>
                   </li>
                   <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/craps'>
-                        Craps
-                      </MenuLink>
-                    </MenuButton>
+                    <MenuLink as={Link} to='/craps'>
+                      <MenuButton className='btn btn-lg'>Craps</MenuButton>
+                    </MenuLink>
                   </li>
                   <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/roulette'>
-                        Roulette
-                      </MenuLink>
-                    </MenuButton>
+                    <MenuLink as={Link} to='/roulette'>
+                      <MenuButton className='btn btn-lg'>Roulette</MenuButton>
+                    </MenuLink>
                   </li>
                   <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/paigow'>
+                    <MenuLink as={Link} to='/paigow'>
+                      <MenuButton className='btn btn-lg'>
                         Fortune Pai Gow
-                      </MenuLink>
-                    </MenuButton>
+                      </MenuButton>
+                    </MenuLink>
                   </li>
                   <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/tiles'>
+                    <MenuLink as={Link} to='/tiles'>
+                      <MenuButton className='btn btn-lg'>
                         Pai Gow Tiles
-                      </MenuLink>
-                    </MenuButton>
-                  </li>
-                  <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/threecardpoker'>
-                        Three Card Poker
-                      </MenuLink>
-                    </MenuButton>
+                      </MenuButton>
+                    </MenuLink>
                   </li>
                 </LeftMenuColumn>
               </div>
               <div className='col right'>
                 <RightMenuColumn>
                   <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/fourcardpoker'>
+                    <MenuLink as={Link} to='/threecardpoker'>
+                      <MenuButton className='btn btn-lg'>
+                        Three Card Poker
+                      </MenuButton>
+                    </MenuLink>
+                  </li>
+                  <li>
+                    <MenuLink as={Link} to='/fourcardpoker'>
+                      <MenuButton className='btn btn-lg'>
                         Four Card Poker
-                      </MenuLink>
-                    </MenuButton>
+                      </MenuButton>
+                    </MenuLink>
                   </li>
                   <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/utholdem'>
-                        UT Hold'em
-                      </MenuLink>
-                    </MenuButton>
+                    <MenuLink as={Link} to='/utholdem'>
+                      <MenuButton className='btn btn-lg'>UT Hold'em</MenuButton>
+                    </MenuLink>
                   </li>
                   <li>
-                    <MenuButton className='btn btn-lg'>
-                      <MenuLink as={Link} to='/casinowar'>
-                        Casino War
-                      </MenuLink>
-                    </MenuButton>
+                    <MenuLink as={Link} to='/casinowar'>
+                      <MenuButton className='btn btn-lg'>Casino War</MenuButton>
+                    </MenuLink>
                   </li>
                 </RightMenuColumn>
               </div>
             </div>
           </MenuContainer>
+        </div>
+        <div className='col-sm-6'>
+          <ContactsTable
+            contacts={tableGamesContacts}
+            contactsTitle='Contacts'
+          />
         </div>
       </div>
     </Container>
