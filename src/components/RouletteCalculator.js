@@ -10,7 +10,7 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   color: ${Colors.backgroundColor};
-  background-color: ${Colors.accentColor};
+  background: ${Colors.blueGradient};
   padding: ${spacing.xxs};
   border-radius: 5px;
   overflow: hidden;
@@ -125,7 +125,7 @@ const RouletteCalculator = props => {
           <div className='dropdown'>
             <button
               style={{
-                backgroundColor: Colors.accentColor,
+                background: Colors.blueGradient,
                 color: Colors.backgroundColor,
               }}
               className='btn btn-secondary dropdown-toggle'

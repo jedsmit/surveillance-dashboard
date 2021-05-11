@@ -3,6 +3,8 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import styled from 'styled-components';
+//
+import { fonts } from './constants/Fonts';
 
 // import { useAuthstate } from 'react-firebase-hooks';
 
@@ -31,6 +33,7 @@ import CasinoWarDashboard from './pages/CasinoWarDashboard';
 const Root = styled.div`
   height: 100%;
   width: 100%;
+  font-family: ${fonts.archivo};
 `;
 
 function App() {

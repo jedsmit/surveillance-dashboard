@@ -8,7 +8,7 @@ import Colors from '../constants/Colors';
 const Container = styled.div`
   width: 100%;
   color: ${Colors.backgroundColor};
-  background-color: ${Colors.accentColor};
+  background: ${Colors.blueGradient};
   border-radius: 5px;
 `;
 

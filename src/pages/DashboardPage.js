@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
-import { spacing } from '../constants/Sizes';
+import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
@@ -12,73 +12,91 @@ const Container = styled.div`
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  justify-content: center;
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
   padding: ${spacing.xxs};
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
 `;
 
-const MenuButton = styled.div`
-  background-color: ${Colors.accentColor};
-  border-radius: 40px;
-  width: 100%;
-  max-width: 15vw;
-  margin: ${spacing.xs};
-  :hover {
-    background-color: ${Colors.highlightTextColor};
-  }
-`;
+// const MenuButton = styled.div`
+//   width: 100%;
+//   max-width: 15vw;
+//   margin: ${spacing.xs};
+//   color: ${Colors.primaryTextColor};
+//   :hover {
+//     background-color: ${Colors.purpleTextColor}
+//     color: ${Colors.backgroundColor};;
+//   }
+// `;
 
 const MenuLink = styled.h3`
-  color: ${Colors.backgroundColor};
+  width: 100%;
+  font-size: ${fontSizes.md};
+  color: ${Colors.primaryTextColor};
   text-decoration: none;
+  text-align: start;
   :hover {
     text-decoration: none;
     color: ${Colors.backgroundColor};
+    background-color: ${Colors.purpleTextColor};
   }
 `;
 
 const DashboardPage = () => {
   return (
-    <Container>
-      <TitleText>Agent Dashboard</TitleText>
+    <Container className='container-fluid p-0'>
       <div className='row'>
-        <div className='col-sm-4'>
-          <MenuLink as={Link} to='/tablegames'>
-            <MenuButton className='btn btn-lg'>Table Games</MenuButton>
-          </MenuLink>
-        </div>
-        <div className='col-sm-4'>
-          <MenuLink as={Link} to='/contacts'>
-            <MenuButton className='btn btn-lg'>Contacts</MenuButton>
-          </MenuLink>
-        </div>
-        <div className='col-sm-4'>
-          <MenuLink as={Link} to='/gca-kiosks'>
-            <MenuButton className='btn btn-lg'>GCA & Kiosks</MenuButton>
-          </MenuLink>
+        <div className='col-sm-4 col-xs-12 p-0 m-0'>
+          <TitleText
+            className='py-0 pl-4 text-left'
+            style={{ color: Colors.purpleTextColor }}
+          >
+            Agent
+          </TitleText>
+          <TitleText
+            className='py-0 pl-4 text-left'
+            style={{ backgroundColor: Colors.purpleTextColor }}
+          >
+            {' '}
+            Dashboard
+          </TitleText>
         </div>
       </div>
-      <div className='row'>
-        <div className='col-sm-4'>
-          <MenuLink as={Link} to='/cage'>
-            <MenuButton className='btn btn-lg'>Cage</MenuButton>
-          </MenuLink>
-        </div>
-        <div className='col-sm-4'>
-          <MenuLink as={Link} to='/slots'>
-            <MenuButton className='btn btn-lg'>Slots</MenuButton>
-          </MenuLink>
-        </div>
-        {/* <div className='col-sm-4'>
+      <div className='row pl-3'>
+        <div className='col-sm-4 col-xs-12 pl-4 my-1 text-left'>
+          <div className='row'>
+            <MenuLink as={Link} to='/tablegames'>
+              Table Games
+            </MenuLink>
+          </div>
+          <div className='row'>
+            <MenuLink as={Link} to='/contacts'>
+              Contacts
+            </MenuLink>
+          </div>
+          <div className='row'>
+            <MenuLink as={Link} to='/gca-kiosks'>
+              GCA & Kiosks
+            </MenuLink>
+          </div>
+          <div className='row'>
+            <MenuLink as={Link} to='/cage'>
+              Cage
+            </MenuLink>
+          </div>
+          <div className='row'>
+            <MenuLink as={Link} to='/slots'>
+              Slots
+            </MenuLink>
+          </div>
+          {/* <div className='col-sm-4'>
           <MenuLink as={Link} to='/gca-kiosks'>
             <MenuButton className='btn btn-lg'>GCA & Kiosks</MenuButton>
           </MenuLink>
         </div> */}
+        </div>
       </div>
     </Container>
   );

@@ -5,12 +5,8 @@ import styled from 'styled-components';
 import Colors from '../constants/Colors';
 //styled-components
 const NavContainer = styled.div`
-display: grid;
-grid-template-columns: 95% 5%;
-grid-template-rows: auto;
-grid-template-areas: 
 color: ${Colors.primaryTextColor}
-height: 10vh; 
+height: 10vh;   
 width: 100vw;
 background: ${Colors.darkestBackground};
 `;
@@ -21,16 +17,16 @@ const NavbarText = styled.h3`
   font-size: 1.5em;
   width: auto;
   text-decoration: none;
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.purpleTextColor};
   :hover {
     text-decoration: none;
-    color: ${Colors.accentColor};
+    color: ${Colors.backgroundColor};
   }
 `;
 //
 const Navbar = () => {
   return (
-    <NavContainer className='navbar sticky-top'>
+    <NavContainer className='navbar sticky-top justify-content-end'>
       <NavbarText className='login-text' as={Link} to={'./dashboard'}>
         Login <i className='fas fa-sign-in-alt login-icon'></i>
       </NavbarText>

@@ -20,7 +20,7 @@ const Container = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: ${Colors.backgroundColor};
+  background-color: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
   justify-content: center;
 `;

@@ -10,7 +10,8 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   color: ${Colors.backgroundColor};
-  background-color: ${Colors.accentColor};
+  background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+
   padding: ${spacing.xxs};
   border-radius: 5px;
 `;

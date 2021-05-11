@@ -4,5 +4,6 @@ export default {
   primaryColor: '#627d9b',
   accentColor: '#1cdecd',
   primaryTextColor: '#f0f4f8',
-  highlightTextColor: '#7c63a0',
+  purpleTextColor: '#7c63a0',
+  blueGradient: 'linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%)',
 };

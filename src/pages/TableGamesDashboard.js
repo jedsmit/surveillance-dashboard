@@ -32,13 +32,13 @@ const SubtitleText = styled.h2`
 const MenuContainer = styled.div``;
 
 const MenuButton = styled.div`
-  background-color: ${Colors.accentColor};
+  background-image: ${Colors.blueGradient};
   border-radius: 40px;
   width: 100%;
   max-width: 15vw;
   margin: ${spacing.xs};
   :hover {
-    background-color: ${Colors.highlightTextColor};
+    background: ${Colors.highlightTextColor};
   }
 `;
 

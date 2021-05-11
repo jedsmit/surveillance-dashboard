@@ -11,7 +11,8 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   color: ${Colors.backgroundColor};
-  background-color: ${Colors.accentColor};
+  background-image: ${Colors.blueGradient};
+
   border-radius: 5px;
 `;
 
@@ -20,7 +21,6 @@ const Title = styled.h3`
   padding: ${spacing.xxs};
 `;
 const TableContainer = styled.div`
-  background: ${Colors.accentColor};
   width: 100%;
   color: ${Colors.backgroundColor};
   border-radius: 5px;

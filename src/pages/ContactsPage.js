@@ -16,6 +16,7 @@ import { spacing } from '../constants/Sizes';
 const Container = styled.div`
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
+  min-height: 100vh;
 `;
 
 const TitleText = styled.h1`
@@ -45,15 +46,18 @@ const ContactsPage = () => {
         </div>
 
         <div className='col-sm-4'>
-          <ContactsTable
-            contacts={surveillanceTechContacts}
-            contactsTitle='Surveillance Technicians'
-          />
-
-          <ContactsTable
-            contacts={surveillanceSupContacts}
-            contactsTitle='Surveillance Supervisors'
-          />
+          <div className='row'>
+            <ContactsTable
+              contacts={surveillanceSupContacts}
+              contactsTitle='Surveillance Supervisors'
+            />
+          </div>
+          <div className='row mt-5'>
+            <ContactsTable
+              contacts={surveillanceTechContacts}
+              contactsTitle='Surveillance Technicians'
+            />
+          </div>
         </div>
         <div className='col-sm-4'>
           <ContactsTable

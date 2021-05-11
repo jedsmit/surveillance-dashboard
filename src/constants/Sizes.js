@@ -12,4 +12,6 @@ export const fontSizes = {
   md: '2vw',
   lg: '3vw',
   xl: '4vw',
+  xxl: '5vw',
+  xxxl: '6vw',
 };

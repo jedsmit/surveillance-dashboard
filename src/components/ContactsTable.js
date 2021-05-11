@@ -35,8 +35,8 @@ const ContactsTable = ({ contacts, contactsTitle }) => {
 
       <div className='row'>
         <div className='col justify-content-center'>
-          <table>
-            <TableHeader>
+          <table className='mx-auto'>
+            <TableHeader className='justify-content-center'>
               <th className='px-2 text-left'>Name</th>
               <th className='px-2'>Extension</th>
               <th className='px-2'>Cell #</th>

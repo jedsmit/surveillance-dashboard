@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const TableContainer = styled.div`
-  background: ${Colors.accentColor};
+  background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
   width: 100%;
-  color: ${Colors.backgroundColor};
+  color: black;
   border-radius: 5px;
+  padding: ${spacing.xxs};
 `;
 const Title = styled.h3`
   text-align: center;

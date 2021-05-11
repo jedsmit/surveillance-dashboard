@@ -6,7 +6,7 @@ import Colors from '../constants/Colors';
 //styled-components
 const TableContainer = styled.div`
   width: 100%;
-  background: ${Colors.accentColor};
+  background: ${Colors.blueGradient};
   color: ${Colors.backgroundColor};
   border-radius: 5px;
 `;
