@@ -31,8 +31,9 @@ const TitleText = styled.h1`
 //   }
 // `;
 
-const MenuLink = styled.h3`
+const MenuLink = styled.div`
   width: 100%;
+  padding-left: ${spacing.sm};
   font-size: ${fontSizes.md};
   color: ${Colors.primaryTextColor};
   text-decoration: none;
@@ -48,15 +49,15 @@ const DashboardPage = () => {
   return (
     <Container className='container-fluid p-0'>
       <div className='row'>
-        <div className='col-sm-4 col-xs-12 p-0 m-0'>
+        <div className='col-sm-4 col-xs-12 pt-3 m-0'>
           <TitleText
-            className='py-0 pl-4 text-left'
+            className='py-0 text-left'
             style={{ color: Colors.purpleTextColor }}
           >
             Agent
           </TitleText>
           <TitleText
-            className='py-0 pl-4 text-left'
+            className='py-0 text-left'
             style={{ backgroundColor: Colors.purpleTextColor }}
           >
             {' '}
@@ -64,7 +65,7 @@ const DashboardPage = () => {
           </TitleText>
         </div>
       </div>
-      <div className='row pl-3'>
+      <div className='row'>
         <div className='col-sm-4 col-xs-12 pl-4 my-1 text-left'>
           <div className='row'>
             <MenuLink as={Link} to='/tablegames'>

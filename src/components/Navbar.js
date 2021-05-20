@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { auth } from '../auth/firebase';
+
 //
 import Colors from '../constants/Colors';
 //styled-components
@@ -17,19 +19,26 @@ const NavbarText = styled.h3`
   font-size: 1.5em;
   width: auto;
   text-decoration: none;
-  color: ${Colors.purpleTextColor};
+  color: ${Colors.primaryTextColor};
   :hover {
     text-decoration: none;
-    color: ${Colors.backgroundColor};
+    color: ${Colors.primaryColor};
   }
 `;
 //
-const Navbar = () => {
+const Navbar = ({ user }) => {
   return (
     <NavContainer className='navbar sticky-top justify-content-end'>
-      <NavbarText className='login-text' as={Link} to={'./dashboard'}>
-        Login <i className='fas fa-sign-in-alt login-icon'></i>
-      </NavbarText>
+      {user ? (
+        <NavbarText
+          className='login-text'
+          onClick={() => auth.signOut()}
+          as={Link}
+          to={'/'}
+        >
+          Sign out <i className='fas fa-sign-in-alt login-icon'></i>
+        </NavbarText>
+      ) : null}
     </NavContainer>
   );
 };

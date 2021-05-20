@@ -1,14 +1,18 @@
+import { useEffect, useState } from 'react';
 import './App.css';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
 import styled from 'styled-components';
+import { auth } from './auth/firebase';
 //
 import { fonts } from './constants/Fonts';
-
-// import { useAuthstate } from 'react-firebase-hooks';
-
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+//
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
 //
 import HomePage from './pages/HomePage';
 import Navbar from './components/Navbar';
@@ -28,6 +32,7 @@ import ThreeCardPokerDashboard from './pages/ThreeCardPokerDashboard';
 import FourCardPokerDashboard from './pages/FourCardPokerDashboard';
 import UTHoldemDashboard from './pages/UTHoldemDashboard';
 import CasinoWarDashboard from './pages/CasinoWarDashboard';
+import SignUpPage from './pages/SignUpPage';
 
 //styled-components
 const Root = styled.div`
@@ -37,66 +42,92 @@ const Root = styled.div`
 `;
 
 function App() {
-  return (
-    <Root className='App'>
-      <Router>
-        <Navbar />
+  const [user, setUser] = useState(null);
 
-        <Switch>
-          <Route path='/dashboard'>
-            <DashboardPage />
-          </Route>
-          <Route path='/tablegames'>
-            <TableGamesDashboard />
-          </Route>
-          <Route path='/blackjack'>
-            <BlackjackDashboard />
-          </Route>
-          <Route path='/baccarat'>
-            <BaccaratDashboard />
-          </Route>
-          <Route path='/roulette'>
-            <RouletteDashboard />
-          </Route>
-          <Route path='/craps'>
-            <CrapsDashboard />
-          </Route>
-          <Route path='/paigow'>
-            <PaiGowDashboard />
-          </Route>
-          <Route path='/tiles'>
-            <TilesDashboard />
-          </Route>
-          <Route path='/threecardpoker'>
-            <ThreeCardPokerDashboard />
-          </Route>
-          <Route path='/fourcardpoker'>
-            <FourCardPokerDashboard />
-          </Route>
-          <Route path='/utholdem'>
-            <UTHoldemDashboard />
-          </Route>
-          <Route path='/casinowar'>
-            <CasinoWarDashboard />
-          </Route>
-          <Route path='/contacts'>
-            <ContactsPage />
-          </Route>
-          <Route path='/gca-kiosks'>
-            <GcaKioskPage />
-          </Route>
-          <Route path='/cage'>
-            <CageDashboard />
-          </Route>
-          <Route path='/slots'>
-            <SlotsDashboard />
-          </Route>
-          <Route path='/'>
-            <HomePage />
-          </Route>
-        </Switch>
-      </Router>
-    </Root>
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      const user = {
+        uid: userAuth?.id,
+        email: userAuth?.email,
+      };
+      if (userAuth) {
+        console.log(userAuth);
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+    return unsubscribe;
+  }, []);
+
+  return (
+    <AuthProvider>
+      <Root className='App'>
+        <Router>
+          <Navbar user={user} />
+
+          {!user ? (
+            <Route path='/'>
+              <HomePage />
+            </Route>
+          ) : (
+            <Switch>
+              <Route path='/dashboard'>
+                <DashboardPage />
+              </Route>
+              <Route path='/tablegames'>
+                <TableGamesDashboard />
+              </Route>
+              <Route path='/blackjack'>
+                <BlackjackDashboard />
+              </Route>
+              <Route path='/baccarat'>
+                <BaccaratDashboard />
+              </Route>
+              <Route path='/roulette'>
+                <RouletteDashboard />
+              </Route>
+              <Route path='/craps'>
+                <CrapsDashboard />
+              </Route>
+              <Route path='/paigow'>
+                <PaiGowDashboard />
+              </Route>
+              <Route path='/tiles'>
+                <TilesDashboard />
+              </Route>
+              <Route path='/threecardpoker'>
+                <ThreeCardPokerDashboard />
+              </Route>
+              <Route path='/fourcardpoker'>
+                <FourCardPokerDashboard />
+              </Route>
+              <Route path='/utholdem'>
+                <UTHoldemDashboard />
+              </Route>
+              <Route path='/casinowar'>
+                <CasinoWarDashboard />
+              </Route>
+              <Route path='/contacts'>
+                <ContactsPage />
+              </Route>
+              <Route path='/gca-kiosks'>
+                <GcaKioskPage />
+              </Route>
+              <Route path='/cage'>
+                <CageDashboard />
+              </Route>
+              <Route path='/slots'>
+                <SlotsDashboard />
+              </Route>
+              <Route path='/'>
+                {user ? <Redirect to='/dashboard' /> : <HomePage />}
+              </Route>
+            </Switch>
+          )}
+        </Router>
+      </Root>
+    </AuthProvider>
   );
 }
 

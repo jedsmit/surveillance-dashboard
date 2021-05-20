@@ -11,13 +11,7 @@ const Container = styled.div`
   color: ${Colors.primaryTextColor};
 `;
 
-const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xs};
-`;
-
-const ContactsTitle = styled.h3``;
-
+const ContactsTitle = styled.h4``;
 const Name = styled.td``;
 const PhoneNumber = styled.td``;
 const Extension = styled.td``;
