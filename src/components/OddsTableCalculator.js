@@ -19,6 +19,7 @@ const Container = styled.div`
 const Title = styled.h3`
   margin: 0;
   padding: ${spacing.xxs};
+  font-weight: bold;
 `;
 const TableContainer = styled.div`
   width: 100%;
@@ -26,7 +27,7 @@ const TableContainer = styled.div`
   border-radius: 5px;
   font-size: ${fontSizes.sm};
   padding: ${spacing.sm};
-
+  font-weight: bold;
   th {
     width: 10%;
   }

@@ -11,9 +11,14 @@ const TableContainer = styled.div`
   color: black;
   border-radius: 5px;
   padding: ${spacing.xxs};
+  font-weight: bold;
 `;
 const Title = styled.h3`
   text-align: center;
+  font-weight: bold;
+`;
+const TableRow = styled.div`
+  font-weight: bold;
 `;
 //
 const BasicStrategyTable = () => {
@@ -23,40 +28,40 @@ const BasicStrategyTable = () => {
         <Title className='text-center p-0'>Basic Strategy</Title>
       </div>
 
-      <div className='row'>
+      <TableRow className='row'>
         <div className='col h6' style={{ textDecorationLine: 'underline' }}>
           Pairs
         </div>
-      </div>
+      </TableRow>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>A-A, 8-8, 10-10</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Always</div>
+
+        <div className='col-sm-6 h6 text-right'>Always</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>2-2, 3-3, 7-7</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>2-7</div>
+
+        <div className='col-sm-6 h6 text-right'>2-7</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>4-4</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>5-6</div>
+
+        <div className='col-sm-6 h6 text-right'>5-6</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>5-5</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>2-9</div>
+
+        <div className='col-sm-6  h6 text-right'>2-9</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>6-6</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>2-6</div>
+
+        <div className='col-sm-6 h6 text-right'>2-6</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>9-9</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>7-10-A</div>
+
+        <div className='col-sm-6  h6 text-right'>7-10-A</div>
       </div>
       <div className='row'>
         <div className='col h6' style={{ textDecorationLine: 'underline' }}>
@@ -65,28 +70,28 @@ const BasicStrategyTable = () => {
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>A-2, A-3</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>5-6</div>
+
+        <div className='col-sm-6  h6 text-right'>5-6</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>A-4, A-5</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>4-6</div>
+
+        <div className='col-sm-6  h6 text-right'>4-6</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>A-6</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>3-6</div>
+
+        <div className='col-sm-6  h6 text-right'>3-6</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>A-7</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>2-7-8, 3-6</div>
+
+        <div className='col-sm-6  h6 text-right'>2-7-8, 3-6</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>A-8, A-9</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Always</div>
+
+        <div className='col-sm-6 h6 text-right'>Always</div>
       </div>
       <div className='row'>
         <div className='col h6' style={{ textDecorationLine: 'underline' }}>
@@ -95,38 +100,38 @@ const BasicStrategyTable = () => {
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>8 or less</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Always</div>
+
+        <div className='col-sm-6  h6 text-right'>Always</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>9</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>3-6</div>
+
+        <div className='col-sm-6  h6 text-right'>3-6</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>10</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>2-9</div>
+
+        <div className='col-sm-6  h6 text-right'>2-9</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>11</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Always</div>
+
+        <div className='col-sm-6 h6 text-right'>Always</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>12</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>4-5-6</div>
+
+        <div className='col-sm-6  h6 text-right'>4-5-6</div>
       </div>
       <div className='row'>
-        <div className='col-sm-6 pl-0 h6 text-left'>13-16</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>2-6</div>
+        <div className='col-sm-6  pl-0 h6 text-left'>13-16</div>
+
+        <div className='col-sm-6  h6 text-right'>2-6</div>
       </div>
       <div className='row'>
         <div className='col-sm-6 pl-0 h6 text-left'>17 or more</div>
-        <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Always</div>
+
+        <div className='col-sm-6  h6 text-right'>Always</div>
       </div>
     </TableContainer>
   );

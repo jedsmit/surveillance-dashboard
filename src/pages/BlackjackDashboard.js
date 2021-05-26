@@ -13,7 +13,7 @@ import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 import { blackjack } from '../data/violationData';
 import { bjOdds } from '../data/bonusBetOdds';
 import Colors from '../constants/Colors';
-import { spacing } from '../constants/Sizes';
+import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
@@ -23,45 +23,56 @@ const Container = styled.div`
   background-color: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
   justify-content: center;
+  padding: ${spacing.sm};
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xxs};
+  width: 100%;
+  font-size: ${fontSizes.xxl};
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
-const MenuButton = styled.button``;
+const MenuButton = styled.button`
+  font-weight: bold;
+  background-image: ${Colors.blueGradient};
+  color: ${Colors.backgroundColor};
+`;
 
 const BasicStrategyContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
+  font-weight: bold;
 `;
 
 const HoleCardStrategyContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
+  font-weight: bold;
 `;
 
 const IndexPlayContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
+  font-weight: bold;
 `;
 
 const ViolationsContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
+  font-weight: bold;
 `;
 
 const ThresholdCalculatorContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
+  font-weight: bold;
 `;
 
 const OddsCalculatorContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
+  font-weight: bold;
 `;
 
 const BlackjackDashboard = () => {
@@ -82,16 +93,12 @@ const BlackjackDashboard = () => {
     betVolatility: 0,
     hph: 0,
   });
-  const [indexPlayViolationToggle, setIndexPlayViolationToggle] = useState(
-    false
-  );
-  const [luckyLuckyThresholdToggled, setLuckyLuckyThresholdToggled] = useState(
-    false
-  );
-  const [
-    basicHoleCardStrategyToggle,
-    setBasicHoleCardStrategyToggle,
-  ] = useState(false);
+  const [indexPlayViolationToggle, setIndexPlayViolationToggle] =
+    useState(false);
+  const [luckyLuckyThresholdToggled, setLuckyLuckyThresholdToggled] =
+    useState(false);
+  const [basicHoleCardStrategyToggle, setBasicHoleCardStrategyToggle] =
+    useState(false);
 
   //sets the game type for threshold calculator use
   useEffect(() => {
@@ -160,12 +167,24 @@ const BlackjackDashboard = () => {
   return (
     <>
       <Container className='container-fluid'>
-        <TitleText>Blackjack Dashboard</TitleText>
-        <p>todo: side bets</p>
-
+        <div className='row'>
+          <TitleText
+            className='py-0 pl-4 text-left'
+            style={{ color: Colors.primaryTextColor }}
+          >
+            Blackjack
+          </TitleText>
+          <TitleText
+            className='py-0 pl-4 text-left'
+            style={{ backgroundImage: Colors.blueGradient }}
+          >
+            Dashboard
+          </TitleText>
+        </div>
+        todo: refactor bs table
         <div className='row justify-content-end'>
           {/* Index Play Table or Violations References */}
-          <div className='col-sm-4 col-xs-12'>
+          <div className='col-sm-5 col-xs-12'>
             <div className='row justify-content-left m-0'>
               <div class='custom-control custom-switch m-0'>
                 <input
@@ -201,7 +220,7 @@ const BlackjackDashboard = () => {
           </div>
 
           {/* Basic Strategy or Hole Card Strategy */}
-          <div className='col-sm-5 col-xs-12'>
+          <div className='col-sm-3 col-xs-12'>
             <div className='row justify-content-left m-0'>
               <div class='custom-control custom-switch m-0'>
                 <input
@@ -237,7 +256,7 @@ const BlackjackDashboard = () => {
           </div>
 
           {/* Lucky Lucky odds Table or Threshold Calculator*/}
-          <div className='col-sm-3 col-xs-12'>
+          <div className='col-sm-4 col-xs-12'>
             <div className='row justify-content-left m-0'>
               <div class='custom-control custom-switch m-0'>
                 <input

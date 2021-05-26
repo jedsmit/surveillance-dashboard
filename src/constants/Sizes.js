@@ -5,6 +5,7 @@ export const spacing = {
   md: '2em',
   lg: '3em',
   xl: '4em',
+  xxl: '5em',
 };
 
 export const fontSizes = {

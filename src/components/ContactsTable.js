@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
-import { spacing } from '../constants/Sizes';
+import { fontSizes, spacing } from '../constants/Sizes';
 //
 
 //styled-components
 const Container = styled.div`
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
+  font-size: ${fontSizes.sm};
 `;
 
 const ContactsTitle = styled.h4``;
@@ -18,7 +19,7 @@ const Extension = styled.td``;
 
 const TableHeader = styled.tr``;
 //
-const ContactsTable = ({ contacts, contactsTitle }) => {
+const ContactsTable = ({ contacts, contactsTitle, cell }) => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
@@ -33,7 +34,7 @@ const ContactsTable = ({ contacts, contactsTitle }) => {
             <TableHeader className='justify-content-center'>
               <th className='px-2 text-left'>Name</th>
               <th className='px-2'>Extension</th>
-              <th className='px-2'>Cell #</th>
+              {cell ? <th className='px-2'>Cell #</th> : null}
             </TableHeader>
 
             {contacts.map(contact => {

@@ -27,21 +27,25 @@ const TableContainer = styled.div`
 
 const Title = styled.h3`
   text-align: center;
+  font-weight: bold;
 `;
 
 const DoublePlays = styled.tr`
+  font-weight: bold;
   td {
     background-color: #9fdbe3;
   }
 `;
 
 const StandPlays = styled.tr`
+  font-weight: bold;
   td {
     background-color: #f90909;
   }
 `;
 
 const SplitPlays = styled.tr`
+  font-weight: bold;
   td {
     background-color: #f4f909;
   }

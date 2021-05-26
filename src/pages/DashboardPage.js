@@ -15,21 +15,11 @@ const Container = styled.div`
 `;
 
 const TitleText = styled.h1`
-  padding: ${spacing.xxs};
+  width: 100%;
+  font-size: ${fontSizes.xxl};
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
-
-// const MenuButton = styled.div`
-//   width: 100%;
-//   max-width: 15vw;
-//   margin: ${spacing.xs};
-//   color: ${Colors.primaryTextColor};
-//   :hover {
-//     background-color: ${Colors.purpleTextColor}
-//     color: ${Colors.backgroundColor};;
-//   }
-// `;
 
 const MenuLink = styled.div`
   width: 100%;
@@ -41,7 +31,7 @@ const MenuLink = styled.div`
   :hover {
     text-decoration: none;
     color: ${Colors.backgroundColor};
-    background-color: ${Colors.purpleTextColor};
+    background-image: ${Colors.blueGradient};
   }
 `;
 
@@ -49,21 +39,18 @@ const DashboardPage = () => {
   return (
     <Container className='container-fluid p-0'>
       <div className='row'>
-        <div className='col-sm-4 col-xs-12 pt-3 m-0'>
-          <TitleText
-            className='py-0 text-left'
-            style={{ color: Colors.purpleTextColor }}
-          >
-            Agent
-          </TitleText>
-          <TitleText
-            className='py-0 text-left'
-            style={{ backgroundColor: Colors.purpleTextColor }}
-          >
-            {' '}
-            Dashboard
-          </TitleText>
-        </div>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Agent
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
       </div>
       <div className='row'>
         <div className='col-sm-4 col-xs-12 pl-4 my-1 text-left'>

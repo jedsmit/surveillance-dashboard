@@ -6,17 +6,26 @@ import { auth } from '../auth/firebase';
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
 //
-const Input = styled.div``;
-const Button = styled.button``;
+const Input = styled.div`
+  margin: ${spacing.xxs};
+`;
+const Button = styled.button`
+  margin: ${spacing.xxs};
+`;
+const Form = styled.form`
+  padding-top: ${spacing.xl};
+  padding-right: ${spacing.xxl};
+  justify-content: center;
+`;
 //
 
 const Container = styled.div`
+  font-size: ${fontSizes.sm};
   min-height: 100vh;
   height: 100%;
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  justify-content: center;
 `;
 //
 const SignInForm = () => {
@@ -54,8 +63,8 @@ const SignInForm = () => {
   };
 
   return (
-    <Container>
-      <form>
+    <Container className='container-fluid'>
+      <Form className=''>
         <Input>
           email <input ref={emailRef} type='email' />
         </Input>
@@ -63,8 +72,8 @@ const SignInForm = () => {
           password <input ref={passwordRef} type='password' />
         </Input>
         <Button onClick={signIn}>Sign In</Button>
-        <h6>Not registered? Check your email for access inoformation.</h6>
-      </form>
+        <h6>Not registered? Email Jed for help.</h6>
+      </Form>
     </Container>
   );
 };

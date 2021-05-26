@@ -4,7 +4,7 @@ import styled from 'styled-components';
 //
 import ContactsTable from '../components/ContactsTable';
 //
-import { tableGamesContacts } from '../data/contacts';
+import { tableGamesContacts, pitPhoneContacts } from '../data/contacts';
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
 
@@ -15,26 +15,19 @@ const Container = styled.div`
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
+  html {
+    scroll-behaviour: smooth;
+  }
 `;
 
 const TitleText = styled.h1`
   width: 100%;
+  font-size: ${fontSizes.xxl};
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
 const MenuContainer = styled.div``;
-
-// const MenuButton = styled.div`
-//   background-image: ${Colors.blueGradient};
-//   border-radius: 40px;
-//   width: 100%;
-//   max-width: 15vw;
-//   margin: ${spacing.xs};
-//   :hover {
-//     background: ${Colors.highlightTextColor};
-//   }
-// `;
 
 const MenuLink = styled.div`
   width: 100%;
@@ -46,7 +39,7 @@ const MenuLink = styled.div`
   :hover {
     text-decoration: none;
     color: ${Colors.backgroundColor};
-    background-color: ${Colors.purpleTextColor};
+    background-image: ${Colors.blueGradient};
   }
 `;
 
@@ -55,18 +48,24 @@ const ContactsContainer = styled.div`
 `;
 //
 const TableGamesDashboard = () => {
+  const halfPodiumContacts = Math.ceil(pitPhoneContacts.length / 2);
+  const firstHalfPodiumContacts = pitPhoneContacts.slice(0, halfPodiumContacts);
+  const lastHalfPodiumContacts = pitPhoneContacts.slice(
+    halfPodiumContacts,
+    pitPhoneContacts.length
+  );
   return (
     <Container className='container-fluid p-0'>
       <div className='row'>
         <TitleText
           className='py-0 pl-4 text-left'
-          style={{ color: Colors.purpleTextColor }}
+          style={{ color: Colors.primaryTextColor }}
         >
           Table Games
         </TitleText>
         <TitleText
           className='py-0 pl-4 text-left'
-          style={{ backgroundColor: Colors.purpleTextColor }}
+          style={{ backgroundImage: Colors.blueGradient }}
         >
           Dashboard
         </TitleText>
@@ -125,10 +124,23 @@ const TableGamesDashboard = () => {
             </MenuLink>
           </div>
         </div>
-        <ContactsContainer className='col-sm-4 offset-3 col-xs-12'>
+        <ContactsContainer className='col-sm-4 col-xs-12'>
           <ContactsTable
             contacts={tableGamesContacts}
             contactsTitle='Contacts'
+            cell={true}
+          />
+        </ContactsContainer>
+        <ContactsContainer className='col-sm-2 col-xs-12'>
+          <ContactsTable
+            contacts={firstHalfPodiumContacts}
+            contactsTitle='Pits 1-7'
+          />
+        </ContactsContainer>
+        <ContactsContainer className='col-sm-2 col-xs-12'>
+          <ContactsTable
+            contacts={lastHalfPodiumContacts}
+            contactsTitle='Pits 8-88'
           />
         </ContactsContainer>
       </div>

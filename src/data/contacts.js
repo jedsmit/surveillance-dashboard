@@ -190,6 +190,137 @@ export const tableGamesContacts = [
     contactName: 'Liliana Castaneda',
     extension: '5357',
   },
+  {
+    contactName: 'Scheduler',
+    extension: '5251',
+  },
+  {
+    contactName: 'Shift Manager Office',
+    extension: '5250',
+  },
+  {
+    contactName: 'TG Cell',
+    cellNumber: '530-979-6421',
+  },
+  {
+    contactName: 'TG Cell',
+    cellNumber: '530-979-6422',
+  },
+];
+
+export const pitPhoneContacts = [
+  {
+    contactName: 'Pit 1a',
+    extension: '3011',
+  },
+  {
+    contactName: 'Pit 1b',
+    extension: '3012',
+  },
+  {
+    contactName: 'Pit 1c',
+    extension: '3015',
+  },
+  {
+    contactName: 'Pit 1d',
+    extension: '3016',
+  },
+  {
+    contactName: 'Pit 3a',
+    extension: '3030',
+  },
+  {
+    contactName: 'Pit 3b',
+    extension: '3031',
+  },
+  {
+    contactName: 'Pit 5a',
+    extension: '3050',
+  },
+  {
+    contactName: 'Pit 5b',
+    extension: '3051',
+  },
+  {
+    contactName: 'Pit 5c',
+    extension: '3052',
+  },
+  {
+    contactName: 'Pit 5d',
+    extension: '3053',
+  },
+  {
+    contactName: 'Pit 6a',
+    extension: '3060',
+  },
+  {
+    contactName: 'Pit 6b',
+    extension: '3061',
+  },
+  {
+    contactName: 'Pit 7a',
+    extension: '3070',
+  },
+  {
+    contactName: 'Pit 7b',
+    extension: '3071',
+  },
+  {
+    contactName: 'Pit 8a',
+    extension: '3080',
+  },
+  {
+    contactName: 'Pit 8b',
+    extension: '3081',
+  },
+  {
+    contactName: 'Pit 8c',
+    extension: '3082',
+  },
+  {
+    contactName: 'Pit 8d',
+    extension: '3083',
+  },
+  {
+    contactName: 'Pit 9a',
+    extension: '3090',
+  },
+  {
+    contactName: 'Pit 9b',
+    extension: '3091',
+  },
+  {
+    contactName: 'Pit 10a',
+    extension: '3009',
+  },
+  {
+    contactName: 'Pit 10b',
+    extension: '3008',
+  },
+  {
+    contactName: 'Pit 10c',
+    extension: '3010',
+  },
+  {
+    contactName: 'Pit 20a',
+    extension: '3206',
+  },
+  {
+    contactName: 'Pit 20b',
+    extension: '3205',
+  },
+  {
+    contactName: 'Pit 20c',
+    extension: '3207',
+  },
+  {
+    contactName: 'Pit 20d',
+    extension: '3208',
+  },
+  {
+    contactName: 'Pit 88',
+    extension: '3088',
+  },
 ];
 
 export const slotContacts = [

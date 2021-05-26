@@ -2,16 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
-
+import { spacing, fontSizes } from '../constants/Sizes';
 //styled-components
 const TableContainer = styled.div`
-  background: ${Colors.blueGradient};
+  background-image: ${Colors.blueGradient};
   width: 100%;
   color: ${Colors.backgroundColor};
-  border-radius: 5px;
+  font-weight: bold;
+  padding: ${spacing.xxs};
 `;
 const Title = styled.h3`
   text-align: center;
+  font-weight: bold;
 `;
 //
 const BaccaratDrawingRulesTable = () => {
@@ -22,52 +24,52 @@ const BaccaratDrawingRulesTable = () => {
       </div>
 
       <div className='row'>
-        <div className='col h6' style={{ textDecorationLine: 'underline' }}>
+        <div className='col' style={{ textDecorationLine: 'underline' }}>
           Player's Hand
         </div>
       </div>
       <div className='row'>
-        <div className='col-sm-6 pl-0 h6 text-left'>0-5</div>
+        <div className='col-sm-6 pl-0  text-left'>0-5</div>
         <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Hit</div>
+        <div className='col-sm-4  text-right'>Hit</div>
       </div>
       <div className='row'>
-        <div className='col-sm-6 pl-0 h6 text-left'>6-7</div>
+        <div className='col-sm-6 pl-0  text-left'>6-7</div>
         <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Stand</div>
+        <div className='col-sm-4  text-right'>Stand</div>
       </div>
       <div className='row'>
-        <div className='col-sm-6 pl-0 h6 text-left'>8-9</div>
+        <div className='col-sm-6 pl-0  text-left'>8-9</div>
         <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Natural</div>
+        <div className='col-sm-4  text-right'>Natural</div>
       </div>
 
       <div className='row'>
-        <div className='col h6' style={{ textDecorationLine: 'underline' }}>
+        <div className='col ' style={{ textDecorationLine: 'underline' }}>
           Banker's Hand
         </div>
       </div>
       <div className='row'>
-        <div className='col-sm-6 pl-0 h6 text-left'>3</div>
+        <div className='col-sm-6 pl-0  text-left'>3</div>
         <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>
+        <div className='col-sm-4 htext-right'>
           Stand if the Player draws an 8
         </div>
       </div>
       <div className='row'>
-        <div className='col-sm-6 pl-0 h6 text-left'>4</div>
+        <div className='col-sm-6 pl-0  text-left'>4</div>
         <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Hit if Player draws 2-7</div>
+        <div className='col-sm-4 htext-right'>Hit if Player draws 2-7</div>
       </div>
       <div className='row'>
-        <div className='col-sm-6 pl-0 h6 text-left'>5</div>
+        <div className='col-sm-6 pl-0  text-left'>5</div>
         <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Hit if Player draws 5-7</div>
+        <div className='col-sm-4 htext-right'>Hit if Player draws 5-7</div>
       </div>
       <div className='row'>
-        <div className='col-sm-6 pl-0 h6 text-left'>6</div>
+        <div className='col-sm-6 pl-0  text-left'>6</div>
         <div className='col'></div>
-        <div className='col-sm-4 h6 text-right'>Hit if Player draws 6-7</div>
+        <div className='col-sm-4 htext-right'>Hit if Player draws 6-7</div>
       </div>
     </TableContainer>
   );

@@ -42,8 +42,10 @@ const HomePage = () => {
         </TitleText>
       </div>
 
-      <div className='row mx-auto'>
-        <SignInForm />
+      <div className='row justify-content-center'>
+        <div className='col-sm-3 text-right'>
+          <SignInForm />
+        </div>
       </div>
     </Container>
   );

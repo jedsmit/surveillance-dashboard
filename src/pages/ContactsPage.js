@@ -10,7 +10,7 @@ import {
   surveillanceAgentContacts,
 } from '../data/contacts';
 import Colors from '../constants/Colors';
-import { spacing } from '../constants/Sizes';
+import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`

@@ -13,7 +13,9 @@ const TableContainer = styled.div`
   width: 100%;
   border-radius: 5px;
 `;
-const Title = styled.h3``;
+const Title = styled.h3`
+  font-weight: bold;
+`;
 const ViolationsTable = styled.table`
   width: 90%;
 `;

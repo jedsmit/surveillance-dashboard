@@ -12,6 +12,7 @@ const TableContainer = styled.div`
 `;
 const Title = styled.h3`
   text-align: center;
+  font-weight: bold;
 `;
 //
 const HoleCardStrategyTable = () => {

@@ -20,14 +20,15 @@ const Container = styled.div`
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xxs};
+  width: 100%;
+  font-size: ${fontSizes.xxl};
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
 const DrawingRulesContainer = styled.div`
   margin-top: ${spacing.md};
+  width: 100%;
 `;
 
 const ThresholdCalculatorContainer = styled.div`
@@ -36,11 +37,13 @@ const ThresholdCalculatorContainer = styled.div`
 
 const CommissionCalculatorContainer = styled.div`
   margin-top: ${spacing.md};
+  width: 100%;
+  justify-content: center;
 `;
 //
 const BaccaratDashboard = () => {
   const { beanBaccarat, miniBaccarat } = thresholdCalculatorData;
-  const [gameVariant, setGameVariant] = useState('Select Variant');
+  const [gameVariant, setGameVariant] = useState('Select Baccarat Variant');
   const [gameData, setGameData] = useState({
     houseAdvantage: 0,
     betVolatility: 0,
@@ -67,13 +70,30 @@ const BaccaratDashboard = () => {
 
   // console.log(gameData);
   return (
-    <Container className='container-fluid'>
-      <TitleText>Baccarat Dashboard</TitleText>
-      <p>todo: side bets</p>
+    <Container className='container-fluid p-0'>
       <div className='row'>
-        <div className='col'>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Baccarat
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
+      </div>
+      <div className='row'>
+        <div className='col-sm-4 offset-1 pt-4'>
           <div className='dropdown'>
             <button
+              style={{
+                backgroundImage: Colors.blueGradient,
+                color: Colors.backgroundColor,
+                fontWeight: 'bold',
+              }}
               className='btn btn-secondary dropdown-toggle'
               type='button'
               id='dropdownMenuButton'
@@ -102,8 +122,8 @@ const BaccaratDashboard = () => {
           </div>
         </div>
       </div>
-      <div className='row justify-content-center'>
-        <div className='col-sm-4'>
+      <div className='row'>
+        <div className='col-sm-4 offset-1'>
           <ThresholdCalculatorContainer className='container-fluid'>
             <ThresholdCalculator
               hph={gameData.hph}
@@ -119,7 +139,7 @@ const BaccaratDashboard = () => {
             <CommissionCalculator />
           </CommissionCalculatorContainer>
         </div>
-        <div className='col-sm-6'>
+        <div className='col-sm-4'>
           {/* Drawing Rules */}
           <DrawingRulesContainer className='container-fluid'>
             <BaccaratDrawingRulesTable />
