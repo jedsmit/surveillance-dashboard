@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 //
-import ThresholdCalculator from '../components/ThresholdCalculator';
-import RouletteCalculator from '../components/RouletteCalculator';
+
 //
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
-import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 
 //styled-components
 const Container = styled.div`

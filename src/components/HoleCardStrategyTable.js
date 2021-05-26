@@ -8,7 +8,6 @@ const TableContainer = styled.div`
   width: 100%;
   background: ${Colors.blueGradient};
   color: ${Colors.backgroundColor};
-  border-radius: 5px;
 `;
 const Title = styled.h3`
   text-align: center;

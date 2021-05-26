@@ -352,11 +352,35 @@ export const cageContacts = [
     extension: '5259',
   },
   {
-    contactName: 'Kathleen Jackson',
-    extension: '5364',
+    contactName: 'Main Bank',
+    extension: '3800',
   },
   {
-    contactName: 'Kathleen Jackson',
-    extension: '5364',
+    contactName: 'Employee Bank In',
+    extension: '3801',
+  },
+  {
+    contactName: 'Employee Bank Out',
+    extension: '3802',
+  },
+  {
+    contactName: 'Chip Vault',
+    extension: '3803',
+  },
+  {
+    contactName: 'Marker Bank',
+    extension: '5343',
+  },
+  {
+    contactName: 'Shift Manager',
+    extension: '5572',
+  },
+  {
+    contactName: 'Soft Count',
+    extension: '3210',
+  },
+  {
+    contactName: 'Window 1',
+    extension: '6572',
   },
 ];

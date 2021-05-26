@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 //
-import ThresholdCalculator from '../components/ThresholdCalculator';
+
 import RouletteCalculator from '../components/RouletteCalculator';
 //
-import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
+
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
 
@@ -13,28 +13,42 @@ const Container = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: ${Colors.backgroundColor};
+  background-color: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
+  justify-content: center;
+  padding: ${spacing.sm};
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xxs};
+  width: 100%;
+  font-size: ${fontSizes.xxl};
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
 const CalculatorContainer = styled.div`
-  width: 30%;
   font-size: ${fontSizes.sm};
 `;
 
 const RouletteDashboard = () => {
   return (
     <Container className='container-fluid'>
-      <TitleText>Roulette Dashboard</TitleText>
       <div className='row'>
-        <div className='col'>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Roulette
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
+      </div>
+      <div className='row'>
+        <div className='col-sm-4 mx-auto'>
           <CalculatorContainer>
             <RouletteCalculator />
           </CalculatorContainer>

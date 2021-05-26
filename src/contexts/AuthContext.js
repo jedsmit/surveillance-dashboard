@@ -16,5 +16,5 @@ export function AuthProvider({ children }) {
   const value = {
     currentUser,
   };
-  return <AuthContext.Provider>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

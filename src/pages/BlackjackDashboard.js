@@ -181,15 +181,15 @@ const BlackjackDashboard = () => {
             Dashboard
           </TitleText>
         </div>
-        todo: refactor bs table
+
         <div className='row justify-content-end'>
           {/* Index Play Table or Violations References */}
-          <div className='col-sm-5 col-xs-12'>
+          <div className='col-sm-4 col-xs-12'>
             <div className='row justify-content-left m-0'>
-              <div class='custom-control custom-switch m-0'>
+              <div className='custom-control custom-switch m-0 pt-2'>
                 <input
                   type='checkbox'
-                  class='custom-control-input'
+                  className='custom-control-input'
                   id='customSwitch1'
                   checked={indexPlayViolationToggle}
                   onChange={() =>
@@ -197,9 +197,9 @@ const BlackjackDashboard = () => {
                   }
                 />
                 <label
-                  class='custom-control-label'
+                  className='custom-control-label'
                   for='customSwitch1'
-                  style={{ fontSize: '.7em' }}
+                  style={{ fontSize: '1em' }}
                 >
                   Toggle Common Violations/Index Plays
                 </label>
@@ -220,12 +220,12 @@ const BlackjackDashboard = () => {
           </div>
 
           {/* Basic Strategy or Hole Card Strategy */}
-          <div className='col-sm-3 col-xs-12'>
+          <div className='col-sm-4 col-xs-12'>
             <div className='row justify-content-left m-0'>
-              <div class='custom-control custom-switch m-0'>
+              <div className='custom-control custom-switch m-0 pt-2'>
                 <input
                   type='checkbox'
-                  class='custom-control-input'
+                  className='custom-control-input'
                   id='customSwitch2'
                   checked={basicHoleCardStrategyToggle}
                   onChange={() =>
@@ -233,9 +233,9 @@ const BlackjackDashboard = () => {
                   }
                 />
                 <label
-                  class='custom-control-label'
+                  className='custom-control-label'
                   for='customSwitch2'
-                  style={{ fontSize: '.7em' }}
+                  style={{ fontSize: '1em' }}
                 >
                   Toggle Basic Strategy/Hole Card Strategy
                 </label>
@@ -258,10 +258,10 @@ const BlackjackDashboard = () => {
           {/* Lucky Lucky odds Table or Threshold Calculator*/}
           <div className='col-sm-4 col-xs-12'>
             <div className='row justify-content-left m-0'>
-              <div class='custom-control custom-switch m-0'>
+              <div className='custom-control custom-switch m-0 pt-2'>
                 <input
                   type='checkbox'
-                  class='custom-control-input'
+                  className='custom-control-input'
                   id='customSwitch3'
                   checked={luckyLuckyThresholdToggled}
                   onChange={() =>
@@ -269,9 +269,9 @@ const BlackjackDashboard = () => {
                   }
                 />
                 <label
-                  class='custom-control-label'
+                  className='custom-control-label'
                   for='customSwitch3'
-                  style={{ fontSize: '.7em' }}
+                  style={{ fontSize: '1em' }}
                 >
                   Toggle Lucky Luck Odds/Threshold Calculator
                 </label>

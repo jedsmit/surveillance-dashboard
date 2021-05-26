@@ -37,8 +37,8 @@ const ThresholdCalculatorContainer = styled.div`
 
 const CommissionCalculatorContainer = styled.div`
   margin-top: ${spacing.md};
-  width: 100%;
-  justify-content: center;
+  width: 80%;
+  margin-left: 10%;
 `;
 //
 const BaccaratDashboard = () => {
@@ -86,7 +86,7 @@ const BaccaratDashboard = () => {
         </TitleText>
       </div>
       <div className='row'>
-        <div className='col-sm-4 offset-1 pt-4'>
+        <div className='col-sm-4  pt-4'>
           <div className='dropdown'>
             <button
               style={{
@@ -123,7 +123,7 @@ const BaccaratDashboard = () => {
         </div>
       </div>
       <div className='row'>
-        <div className='col-sm-4 offset-1'>
+        <div className='col-sm-4'>
           <ThresholdCalculatorContainer className='container-fluid'>
             <ThresholdCalculator
               hph={gameData.hph}
@@ -133,7 +133,7 @@ const BaccaratDashboard = () => {
             />
           </ThresholdCalculatorContainer>
         </div>
-        <div className='col-sm-2'>
+        <div className='col-sm-4'>
           {/* Commission Calculator */}
           <CommissionCalculatorContainer>
             <CommissionCalculator />

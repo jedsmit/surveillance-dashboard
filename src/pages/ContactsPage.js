@@ -14,30 +14,39 @@ import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
-  background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
   min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background-color: ${Colors.backgroundColor};
+  color: ${Colors.primaryTextColor};
+  justify-content: center;
+  padding: ${spacing.sm};
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xs};
+  width: 100%;
+  font-size: ${fontSizes.xxl};
+  background: ${Colors.backgroundColor};
+  color: ${Colors.backgroundColor};
 `;
-
-const Name = styled.td``;
-const PhoneNumber = styled.td``;
-const Extension = styled.td``;
-
-const TableHeader = styled.tr``;
 
 //
 const ContactsPage = () => {
   return (
     <Container>
       <div className='row'>
-        <div className='col'>
-          <TitleText>Contacts</TitleText>
-        </div>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          TGA
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Contacts
+        </TitleText>
       </div>
 
       <div className='row'>
@@ -46,17 +55,21 @@ const ContactsPage = () => {
         </div>
 
         <div className='col-sm-4'>
-          <div className='row'>
-            <ContactsTable
-              contacts={surveillanceSupContacts}
-              contactsTitle='Surveillance Supervisors'
-            />
+          <div className='col'>
+            <div className='row'>
+              <ContactsTable
+                contacts={surveillanceSupContacts}
+                contactsTitle='Surveillance Supervisors'
+              />
+            </div>
           </div>
-          <div className='row mt-5'>
-            <ContactsTable
-              contacts={surveillanceTechContacts}
-              contactsTitle='Surveillance Technicians'
-            />
+          <div className='row'>
+            <div className='col'>
+              <ContactsTable
+                contacts={surveillanceTechContacts}
+                contactsTitle='Surveillance Technicians'
+              />
+            </div>
           </div>
         </div>
         <div className='col-sm-4'>

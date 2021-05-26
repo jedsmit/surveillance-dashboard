@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
-import { spacing, fontSizes } from '../constants/Sizes';
+import { spacing } from '../constants/Sizes';
 //styled-components
 const TableContainer = styled.div`
   background-image: ${Colors.blueGradient};

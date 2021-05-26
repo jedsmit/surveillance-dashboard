@@ -12,8 +12,6 @@ const Container = styled.div`
   width: 100%;
   color: ${Colors.backgroundColor};
   background-image: ${Colors.blueGradient};
-
-  border-radius: 5px;
 `;
 
 const Title = styled.h3`
@@ -24,7 +22,6 @@ const Title = styled.h3`
 const TableContainer = styled.div`
   width: 100%;
   color: ${Colors.backgroundColor};
-  border-radius: 5px;
   font-size: ${fontSizes.sm};
   padding: ${spacing.sm};
   font-weight: bold;

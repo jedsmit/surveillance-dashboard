@@ -1,30 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
-import { spacing } from '../constants/Sizes';
+import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: ${Colors.backgroundColor};
+  background-color: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
   justify-content: center;
+  padding: ${spacing.sm};
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xs};
+  width: 100%;
+  font-size: ${fontSizes.xxl};
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
 const CrapsDashboard = () => {
   return (
     <Container className='container-fluid'>
-      <TitleText>Craps Dashboard</TitleText>
+      <div className='row'>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Craps
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
+      </div>
       <p>Todo: odds tables, commission calc</p>
     </Container>
   );

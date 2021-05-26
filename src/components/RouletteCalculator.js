@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import NumberFormat from 'react-number-format';
 //
 import Colors from '../constants/Colors';
-import { spacing, fontSizes } from '../constants/Sizes';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
@@ -12,7 +12,6 @@ const Container = styled.div`
   color: ${Colors.backgroundColor};
   background: ${Colors.blueGradient};
   padding: ${spacing.xxs};
-  border-radius: 5px;
   overflow: hidden;
   padding-bottom: 0px;
 `;
@@ -114,7 +113,7 @@ const RouletteCalculator = props => {
   };
 
   return (
-    <>
+    <div className='container-fluid'>
       <div className='row justify-content-center'>
         <h3>Roulette Calculator</h3>
       </div>
@@ -343,7 +342,7 @@ const RouletteCalculator = props => {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   );
 };
 

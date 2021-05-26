@@ -2,14 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
-import { fontSizes, spacing } from '../constants/Sizes';
+import { spacing } from '../constants/Sizes';
 //
 
 //styled-components
 const Container = styled.div`
-  background: ${Colors.backgroundColor};
+  height: 100%;
+  width: 100%;
+  background-color: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  font-size: ${fontSizes.sm};
+  justify-content: center;
+  padding: ${spacing.sm};
 `;
 
 const ContactsTitle = styled.h4``;
