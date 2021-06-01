@@ -15,6 +15,7 @@ const Container = styled.div`
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
+  padding: ${spacing.sm};
   html {
     scroll-behaviour: smooth;
   }
@@ -22,7 +23,7 @@ const Container = styled.div`
 
 const TitleText = styled.h1`
   width: 100%;
-  font-size: ${fontSizes.xxl};
+
   background: ${Colors.backgroundColor};
   color: ${Colors.backgroundColor};
 `;
@@ -55,16 +56,16 @@ const TableGamesDashboard = () => {
     pitPhoneContacts.length
   );
   return (
-    <Container className='container-fluid p-0'>
+    <Container className='container-fluid'>
       <div className='row'>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 display-3 text-left'
           style={{ color: Colors.primaryTextColor }}
         >
           Table Games
         </TitleText>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 display-3 text-left'
           style={{ backgroundImage: Colors.blueGradient }}
         >
           Dashboard
@@ -73,7 +74,7 @@ const TableGamesDashboard = () => {
       <div className='row'>
         <div className='col-sm-4 col-xs-12 my-1 text-left'>
           <div className='row'>
-            <MenuLink as={Link} to='/blackjack'>
+            <MenuLink className='display-5' as={Link} to='/blackjack'>
               Blackjack
             </MenuLink>
           </div>

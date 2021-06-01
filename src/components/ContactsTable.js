@@ -25,9 +25,9 @@ const TableHeader = styled.tr``;
 const ContactsTable = ({ contacts, contactsTitle, cell }) => {
   return (
     <Container className='container-fluid'>
-      <div className='row'>
+      <div className='row mx-auto'>
         <div className='col'>
-          <ContactsTitle>{contactsTitle}</ContactsTitle>
+          <ContactsTitle className='text-center'>{contactsTitle}</ContactsTitle>
         </div>
       </div>
 
@@ -44,7 +44,9 @@ const ContactsTable = ({ contacts, contactsTitle, cell }) => {
               return (
                 <tr>
                   <Name className='text-left px-2'>{contact.contactName}</Name>
-                  <Extension className='px-2'>{contact.extension}</Extension>
+                  <Extension className='px-2 text-center'>
+                    {contact.extension}
+                  </Extension>
                   <PhoneNumber className='text-right px-2'>
                     {contact.cellNumber}
                   </PhoneNumber>

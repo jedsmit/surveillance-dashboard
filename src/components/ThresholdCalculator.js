@@ -71,10 +71,12 @@ const ThresholdCalculator = ({
 
   return (
     <Container className='container-fluid'>
-      <div className='row justify-content-center'>
+      <div className='row justify-content-center text-center'>
         <div className='col-6'>
           <TitleText>Threshold Calculator</TitleText>
-
+          <h6 style={{ fontWeight: 'bold' }}>
+            (Select game variant if applicable)
+          </h6>
           <Form>
             <div className='form-group'>
               <label className='m-2' for='averageWager'>

@@ -37,7 +37,7 @@ const MenuLink = styled.div`
 
 const DashboardPage = () => {
   return (
-    <Container className='container-fluid p-0'>
+    <Container className='container-fluid'>
       <div className='row'>
         <TitleText
           className='py-0 pl-4 text-left'

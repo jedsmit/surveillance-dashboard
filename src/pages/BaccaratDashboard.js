@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const TitleText = styled.h1`
   width: 100%;
-  font-size: ${fontSizes.xxl};
+
   background: ${Colors.backgroundColor};
   color: ${Colors.backgroundColor};
 `;
@@ -70,23 +70,23 @@ const BaccaratDashboard = () => {
 
   // console.log(gameData);
   return (
-    <Container className='container-fluid p-0'>
+    <Container className='container-fluid'>
       <div className='row'>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 text-left display-3'
           style={{ color: Colors.primaryTextColor }}
         >
           Baccarat
         </TitleText>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 text-left display-3'
           style={{ backgroundImage: Colors.blueGradient }}
         >
           Dashboard
         </TitleText>
       </div>
       <div className='row'>
-        <div className='col-sm-4  pt-4'>
+        <div className='col-sm-4 text-center pt-4'>
           <div className='dropdown'>
             <button
               style={{
@@ -123,7 +123,7 @@ const BaccaratDashboard = () => {
         </div>
       </div>
       <div className='row'>
-        <div className='col-sm-4'>
+        <div className='col-xs-12 col-sm-4'>
           <ThresholdCalculatorContainer className='container-fluid'>
             <ThresholdCalculator
               hph={gameData.hph}
@@ -133,13 +133,13 @@ const BaccaratDashboard = () => {
             />
           </ThresholdCalculatorContainer>
         </div>
-        <div className='col-sm-4'>
+        <div className='col-xs-12 col-sm-3'>
           {/* Commission Calculator */}
           <CommissionCalculatorContainer>
             <CommissionCalculator />
           </CommissionCalculatorContainer>
         </div>
-        <div className='col-sm-4'>
+        <div className='col-xs-12 col-sm-5'>
           {/* Drawing Rules */}
           <DrawingRulesContainer className='container-fluid'>
             <BaccaratDrawingRulesTable />

@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const TitleText = styled.h3`
   width: 100%;
-  font-size: ${fontSizes.md};
+
   color: ${Colors.backgroundColor};
   font-weight: bold;
 `;
@@ -40,10 +40,11 @@ const CommissionCalculator = () => {
   }, [winTotal]);
 
   return (
-    <Container className='container-fluid'>
+    <Container className='container-fluid text-center'>
       <div className='form-group'>
         <label for='win'>
-          <TitleText>Win total</TitleText>
+          <TitleText>Commission Calculator</TitleText>
+          <h6 style={{ fontWeight: 'bold' }}>Enter win total</h6>
         </label>
         <WinInput
           as={NumberFormat}

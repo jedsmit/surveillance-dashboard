@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 //
 import OddsTableCalculator from '../components/OddsTableCalculator';
+import HouseWayTable from '../components/HouseWayTable';
 //
 import Colors from '../constants/Colors';
 import { spacing, fontSize } from '../constants/Sizes';
@@ -18,10 +19,9 @@ const Container = styled.div`
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xxs};
+  width: 100%;
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
 const OddsCalculatorContainer = styled.div`
@@ -29,14 +29,32 @@ const OddsCalculatorContainer = styled.div`
   width: 100%;
 `;
 
+const HouseWayContainer = styled.div`
+  margin-top: ${spacing.md};
+  width: 100%;
+  font-weight: bold;
+`;
+
 const PaiGowDashboard = () => {
   const { fortuneOdds, progressiveOdds } = pgOdds;
   return (
     <Container className='container-fluid'>
-      <TitleText>Fortune Pai Gow Dashboard</TitleText>
-      <p>To do: house way</p>
       <div className='row'>
-        <div className='col-sm-4'>
+        <TitleText
+          className='py-0 pl-4 text-left display-3'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Pai Gow
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left display-3'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
+      </div>
+      <div className='row'>
+        <div className='col-sm-3'>
           <OddsCalculatorContainer className='container-fluid'>
             <OddsTableCalculator
               wagers={fortuneOdds.wagers}
@@ -45,7 +63,7 @@ const PaiGowDashboard = () => {
             />
           </OddsCalculatorContainer>
         </div>
-        <div className='col-sm-4'>
+        <div className='col-sm-3'>
           <OddsCalculatorContainer className='container-fluid'>
             <OddsTableCalculator
               wagers={progressiveOdds.wagers}
@@ -53,6 +71,11 @@ const PaiGowDashboard = () => {
               defaultWager={5}
             />
           </OddsCalculatorContainer>
+        </div>
+        <div className='col-sm-6'>
+          <HouseWayContainer className='container-fluid'>
+            <HouseWayTable />
+          </HouseWayContainer>
         </div>
       </div>
     </Container>

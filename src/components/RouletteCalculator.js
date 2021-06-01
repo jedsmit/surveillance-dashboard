@@ -118,9 +118,9 @@ const RouletteCalculator = props => {
         <h3>Roulette Calculator</h3>
       </div>
 
-      <div className='row justify-content-center py-5'>
-        <h4>Select Denom</h4>
-        <div className='col-sm-3'>
+      <div className='row justify-content-center py-4'>
+        <h4>Select Chip Denom</h4>
+        <div className='col-sm-3 text-center'>
           <div className='dropdown'>
             <button
               style={{

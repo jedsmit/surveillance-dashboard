@@ -35,7 +35,7 @@ const CategoryTitle = styled.h3``;
 
 const GcaKioskPage = () => {
   return (
-    <Container>
+    <Container className='container-fluid'>
       <div className='row'>
         <div className='col'>
           <TitleText>GCA/Kiosk Locations</TitleText>

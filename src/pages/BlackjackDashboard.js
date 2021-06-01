@@ -28,7 +28,7 @@ const Container = styled.div`
 
 const TitleText = styled.h1`
   width: 100%;
-  font-size: ${fontSizes.xxl};
+
   background: ${Colors.backgroundColor};
   color: ${Colors.backgroundColor};
 `;
@@ -169,13 +169,13 @@ const BlackjackDashboard = () => {
       <Container className='container-fluid'>
         <div className='row'>
           <TitleText
-            className='py-0 pl-4 text-left'
+            className='py-0 pl-4 text-left display-3'
             style={{ color: Colors.primaryTextColor }}
           >
             Blackjack
           </TitleText>
           <TitleText
-            className='py-0 pl-4 text-left'
+            className='py-0 pl-4 text-left display-3'
             style={{ backgroundImage: Colors.blueGradient }}
           >
             Dashboard

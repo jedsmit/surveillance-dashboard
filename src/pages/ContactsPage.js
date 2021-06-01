@@ -33,7 +33,7 @@ const TitleText = styled.h1`
 //
 const ContactsPage = () => {
   return (
-    <Container>
+    <Container className='container-fluid'>
       <div className='row'>
         <TitleText
           className='py-0 pl-4 text-left'
