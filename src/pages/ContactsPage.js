@@ -55,8 +55,8 @@ const ContactsPage = () => {
         </div>
 
         <div className='col-sm-4'>
-          <div className='col'>
-            <div className='row'>
+          <div className='row'>
+            <div className='col'>
               <ContactsTable
                 contacts={surveillanceSupContacts}
                 contactsTitle='Surveillance Supervisors'

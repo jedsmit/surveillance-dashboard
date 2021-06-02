@@ -14,6 +14,7 @@ const Container = styled.div`
   color: ${Colors.primaryTextColor};
   font-size: 2em;
   justify-content: center;
+  padding: ${spacing.sm};
 `;
 
 const TitleText = styled.h1`

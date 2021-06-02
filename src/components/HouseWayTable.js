@@ -29,10 +29,10 @@ const ViolationReferences = () => {
       <div className='row justify-content-center'>
         <StrategyTable className='container-fluid'>
           <tr>
-            <th className='text-left' style={{ textDecoration: 'underline' }}>
+            <th className='text-center' style={{ textDecoration: 'underline' }}>
               Hand
             </th>
-            <th className='text-right' style={{ textDecoration: 'underline' }}>
+            <th className='text-center' style={{ textDecoration: 'underline' }}>
               Rule
             </th>
           </tr>

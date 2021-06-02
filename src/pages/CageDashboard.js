@@ -8,24 +8,38 @@ import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
-  background: ${Colors.backgroundColor};
+  background-color: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
   justify-content: center;
+  padding: ${spacing.sm};
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xs};
+  width: 100%;
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
 const CageDashboard = () => {
   return (
     <Container className='container-fluid'>
-      <TitleText>Cage Dashboard</TitleText>
+      <div className='row'>
+        <TitleText
+          className='py-0 pl-4 text-left display-3'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Cage
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left display-3'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
+      </div>
     </Container>
   );
 };

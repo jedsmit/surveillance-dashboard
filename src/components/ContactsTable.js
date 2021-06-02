@@ -7,12 +7,10 @@ import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
-  height: 100%;
   width: 100%;
   background-color: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
   justify-content: center;
-  padding: ${spacing.sm};
 `;
 
 const ContactsTitle = styled.h4``;
@@ -24,7 +22,7 @@ const TableHeader = styled.tr``;
 //
 const ContactsTable = ({ contacts, contactsTitle, cell }) => {
   return (
-    <Container className='container-fluid'>
+    <Container className='container'>
       <div className='row mx-auto'>
         <div className='col'>
           <ContactsTitle className='text-center'>{contactsTitle}</ContactsTitle>

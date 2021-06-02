@@ -53,7 +53,7 @@ const OddsTableCalculator = ({ wagers, wagerName, defaultWager }) => {
       </div>
       <TableContainer>
         <table>
-          <tr>
+          <tr className='text-center'>
             <th>Wager</th>
             <th>Winning Hand</th>
             <th>Win</th>
@@ -63,7 +63,7 @@ const OddsTableCalculator = ({ wagers, wagerName, defaultWager }) => {
             let winCombo = wager.winCombo;
             let win = bonusWager * payoutMultiplier;
             return (
-              <tr>
+              <tr className='text-center'>
                 <td>
                   <WagerInput
                     as={NumberFormat}

@@ -15,13 +15,13 @@ const Container = styled.div`
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
   justify-content: center;
+  padding: ${spacing.sm};
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xxs};
+  width: 100%;
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
 const OddsCalculatorContainer = styled.div`
@@ -33,8 +33,21 @@ const UTHoldemDashboard = () => {
   const { tripsOdds, badBeatOdds, utBlindOdds } = utOdds;
   return (
     <Container className='container-fluid'>
-      <TitleText>Ultimate Texas Hold'em Dashboard</TitleText>
-      <p>To do: odds table, basic strategy</p>
+      <div className='row'>
+        <TitleText
+          className='py-0 pl-4 text-left display-3'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Ultimate Texas Hold 'em
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left display-3'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
+      </div>
+
       <div className='row'>
         <div className='col-sm-4'>
           <OddsCalculatorContainer className='container-fluid'>
