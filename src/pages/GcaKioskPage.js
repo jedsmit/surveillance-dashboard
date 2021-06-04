@@ -54,13 +54,13 @@ const GcaKioskPage = () => {
       </div>
 
       <div className='row'>
-        <div className='col-4 '>
+        <div className='col-5'>
           <GCAKioskLocationTable machines={cxcMachines} title='CXC Machines' />
         </div>
 
-        <div className='col-8 '>
+        <div className='col'>
           <div className='row '>
-            <div className='col '>
+            <div className='col'>
               <GCAKioskLocationTable
                 machines={atmMachines}
                 title='ATM Machines'
@@ -68,8 +68,8 @@ const GcaKioskPage = () => {
             </div>
             <div className='col'>
               <GCAKioskLocationTable
-                machines={gpMachines}
-                title='GP Machines'
+                machines={enrollmentKiosks}
+                title='Enrollment Kiosks'
               />
             </div>
           </div>
@@ -77,8 +77,8 @@ const GcaKioskPage = () => {
           <div className='row'>
             <div className='col'>
               <GCAKioskLocationTable
-                machines={enrollmentKiosks}
-                title='Enrollment Kiosks'
+                machines={gpMachines}
+                title='GP Machines'
               />
             </div>
 
@@ -91,7 +91,7 @@ const GcaKioskPage = () => {
           </div>
 
           <div className='row'>
-            <div className='col'>
+            <div className='col-6'>
               <GCAKioskLocationTable machines={jxcKiosks} title='JXC Kiosks' />
             </div>
           </div>
