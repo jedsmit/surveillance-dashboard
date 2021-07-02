@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import NumberFormat from 'react-number-format';
+
 //
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';

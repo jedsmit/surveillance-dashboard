@@ -12,17 +12,17 @@ const Container = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: ${Colors.backgroundColor};
+  background-color: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
   justify-content: center;
   padding: ${spacing.sm};
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xxs};
+  width: 100%;
+
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
 
 const OddsCalculatorContainer = styled.div`
@@ -34,7 +34,20 @@ const FourCardPokerDashboard = () => {
   const { acesUpOdds, autoBonusOdds, badBeatOdds } = fcPoker;
   return (
     <Container className='container-fluid'>
-      <TitleText>Four Card Poker Dashboard</TitleText>
+      <div className='row'>
+        <TitleText
+          className='py-0 pl-4 text-left display-3'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Four Card Poker
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 text-left display-3'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
+      </div>
       <p>To do: odds table, violations</p>
       <div className='row'>
         <div className='col-sm-4'>

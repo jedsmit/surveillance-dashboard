@@ -3,10 +3,13 @@ import styled from 'styled-components';
 //
 import OddsTableCalculator from '../components/OddsTableCalculator';
 import CommissionCalculator from '../components/CommissionCalculator';
+import CrapsCalculator from '../components/CrapsCalculator';
+import TestCrapsCalc from '../components/TestCrapsCalc';
 //
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
-import { crapsOdds } from '../data/bonusBetOdds';
+import { crapsOdds } from '../data/crapsOdds';
+import { crapsOperations } from '../data/crapsOperations';
 
 //styled-components
 const Container = styled.div`
@@ -21,7 +24,6 @@ const Container = styled.div`
 
 const TitleText = styled.h1`
   width: 100%;
-  font-size: ${fontSizes.xxl};
   background: ${Colors.backgroundColor};
   color: ${Colors.backgroundColor};
 `;
@@ -51,68 +53,36 @@ const CommissionCalculatorContainer = styled.div`
 `;
 
 const CrapsDashboard = () => {
-  const { placeBets, buyBets, layBets, oddsBets, propBets } = crapsOdds;
+  const {
+    placeBets,
+    buyBets,
+    layBets,
+    passlineOddsBets,
+    dontPassOddsBets,
+    propBets,
+  } = crapsOdds;
   return (
     <Container className='container-fluid'>
       <div className='row'>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 text-left display-3'
           style={{ color: Colors.primaryTextColor }}
         >
           Craps
         </TitleText>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 text-left display-3'
           style={{ backgroundImage: Colors.blueGradient }}
         >
           Dashboard
         </TitleText>
       </div>
-      <p>Todo: odds tables, commission calc</p>
+
       <div className='row'>
-        <div className='col'>
+        <div className='col-6'>
           <PlaceBetOddsContainer>
-            <OddsTableCalculator
-              wagers={placeBets.wagers}
-              wagerName={placeBets.wagerName}
-              defaultWager={5}
-            />
+            <TestCrapsCalc data={placeBets} />
           </PlaceBetOddsContainer>
-          <OddsBetContainer>
-            <OddsTableCalculator
-              wagers={oddsBets.wagers}
-              wagerName={oddsBets.wagerName}
-              defaultWager={5}
-            />
-          </OddsBetContainer>
-        </div>
-        <div className='col'>
-          <CommissionCalculatorContainer>
-            <CommissionCalculator />
-          </CommissionCalculatorContainer>
-          <BuyBetOddsContainer>
-            <OddsTableCalculator
-              wagers={buyBets.wagers}
-              wagerName={buyBets.wagerName}
-              defaultWager={5}
-            />
-          </BuyBetOddsContainer>
-          <LayBetOddsContainer>
-            <OddsTableCalculator
-              wagers={layBets.wagers}
-              wagerName={layBets.wagerName}
-              defaultWager={5}
-            />
-          </LayBetOddsContainer>
-        </div>
-        <div className='col'>
-          <PropBetOddsContainer>
-            <OddsTableCalculator
-              wagers={propBets.wagers}
-              wagerName={propBets.wagerName}
-              defaultWager={5}
-            />
-          </PropBetOddsContainer>
         </div>
       </div>
     </Container>

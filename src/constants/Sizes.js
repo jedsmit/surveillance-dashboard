@@ -9,10 +9,10 @@ export const spacing = {
 };
 
 export const fontSizes = {
-  sm: '1vw',
-  md: '2vw',
-  lg: '3vw',
-  xl: '4vw',
-  xxl: '5vw',
-  xxxl: '6vw',
+  sm: '1em',
+  md: '1.5em',
+  lg: '2em',
+  xl: '2.25em',
+  xxl: '2.5em',
+  xxxl: '3em',
 };

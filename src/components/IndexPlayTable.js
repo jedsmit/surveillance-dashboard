@@ -65,7 +65,7 @@ const IndexPlayTable = () => {
           <h5 style={{ textDecorationLine: 'underline' }}>Player's Total</h5>
         </div>
         <div className='col-10'>
-          <table>
+          <table className='text-center'>
             <tr>
               <th></th>
               <th>2</th>

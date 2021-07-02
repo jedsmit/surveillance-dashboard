@@ -9,7 +9,11 @@ export const tgaContacts = [
     extension: '5217',
     cellNumber: '530-979-6339',
   },
-  { contactName: 'Jed Smit', extension: '5375', cellNumber: '530-979-6348' },
+  {
+    contactName: 'Jed Smit',
+    extension: '5375',
+    cellNumber: '530-979-6348',
+  },
   {
     contactName: 'Kaylin Kelly',
     extension: '5212',
@@ -382,5 +386,40 @@ export const cageContacts = [
   {
     contactName: 'Window 1',
     extension: '6572',
+  },
+];
+
+export const securityContacts = [
+  {
+    contactName: 'Mark Longshore',
+    extension: '5214',
+  },
+  {
+    contactName: 'Rob Codarre',
+    extension: '5216',
+  },
+  {
+    contactName: 'Security Supervisor',
+    extension: '5218',
+  },
+  {
+    contactName: 'Monica Dulai',
+    extension: '5235',
+  },
+  {
+    contactName: 'Security Dispatch',
+    extension: '5220',
+  },
+  {
+    contactName: 'Edward 1',
+    extension: '5220',
+  },
+  {
+    contactName: 'Henry 1',
+    extension: '7901',
+  },
+  {
+    contactName: 'Henry 2',
+    extension: '7900',
   },
 ];

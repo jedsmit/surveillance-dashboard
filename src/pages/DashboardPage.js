@@ -16,7 +16,6 @@ const Container = styled.div`
 
 const TitleText = styled.h1`
   width: 100%;
-  font-size: ${fontSizes.xxl};
   background: ${Colors.backgroundColor};
   color: ${Colors.backgroundColor};
 `;
@@ -24,7 +23,7 @@ const TitleText = styled.h1`
 const MenuLink = styled.div`
   width: 100%;
   padding-left: ${spacing.sm};
-  font-size: ${fontSizes.md};
+  font-size: ${fontSizes.lg};
   color: ${Colors.primaryTextColor};
   text-decoration: none;
   text-align: start;
@@ -40,13 +39,13 @@ const DashboardPage = () => {
     <Container className='container-fluid'>
       <div className='row'>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 text-left display-3'
           style={{ color: Colors.primaryTextColor }}
         >
           Agent
         </TitleText>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 text-left display-3'
           style={{ backgroundImage: Colors.blueGradient }}
         >
           Dashboard
@@ -79,11 +78,6 @@ const DashboardPage = () => {
               Slots
             </MenuLink>
           </div>
-          {/* <div className='col-sm-4'>
-          <MenuLink as={Link} to='/gca-kiosks'>
-            <MenuButton className='btn btn-lg'>GCA & Kiosks</MenuButton>
-          </MenuLink>
-        </div> */}
         </div>
       </div>
     </Container>

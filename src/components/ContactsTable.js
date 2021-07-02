@@ -38,9 +38,9 @@ const ContactsTable = ({ contacts, contactsTitle, cell }) => {
               {cell ? <th className='px-2'>Cell #</th> : null}
             </TableHeader>
 
-            {contacts.map(contact => {
+            {contacts.map((contact, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <Name className='text-left px-2'>{contact.contactName}</Name>
                   <Extension className='px-2 text-center'>
                     {contact.extension}
