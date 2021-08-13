@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 //
+import TilesOrderOfOperations from '../components/TilesOrderOfOperations';
+import BoChart from '../components/BoChart';
+import CommissionCalculator from '../components/CommissionCalculator';
+//
 import Colors from '../constants/Colors';
 import { spacing } from '../constants/Sizes';
 
@@ -23,6 +27,25 @@ const TitleText = styled.h1`
 
 //
 const TilesDashboard = () => {
+  const tiles = {
+    geeJoon: [1, 2],
+    teen: [1, 2],
+    day: [1, 2],
+    yun: [1, 2],
+    ngo: [1, 2],
+    mui: [1, 2],
+    cheungSaam: [1, 2],
+    banTant: [1, 2],
+    fooTao: [1, 2],
+    pingFung: [1, 2],
+    kukoChut: [1, 2],
+    lingLumLuk: [1, 2],
+    chapGow: [1, 2],
+    chapBaht: [1, 2],
+    chapChut: [1, 2],
+    chapNg: [1, 2],
+  };
+
   return (
     <Container className='container-fluid'>
       <div className='row'>
@@ -40,6 +63,17 @@ const TilesDashboard = () => {
         </TitleText>
       </div>
       <p>todo: house way, tiles chart, commission calc</p>
+      <div className='row mx-auto'>
+        <div className='col-sm-6'>
+          <TilesOrderOfOperations />
+        </div>
+        <div className='col-sm-3'>
+          <BoChart />
+        </div>
+        <div className='col-sm-3'>
+          <CommissionCalculator />
+        </div>
+      </div>
     </Container>
   );
 };

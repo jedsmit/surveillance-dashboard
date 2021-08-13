@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
-import { spacing } from '../constants/Sizes';
 //styled components
 const Container = styled.div`
   height: 100%;

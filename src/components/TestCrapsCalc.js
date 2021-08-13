@@ -1,60 +1,73 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import NumberFormat from 'react-number-format';
 //
-import { crapsOperations } from '../data/crapsOperations';
+import {
+  crapsOperations,
+  placeBets,
+  dontBets,
+  passBets,
+  comeBets,
+  dontComeBets,
+  hopBets,
+  hornBets,
+  miscBets,
+  hardwayBets,
+} from '../data/crapsOperations';
 //
 import Colors from '../constants/Colors';
-import { spacing, fontSizes } from '../constants/Sizes';
-import { crapsOdds } from '../data/crapsOdds';
+import { spacing } from '../constants/Sizes';
 
 // styled components
-const Container = styled.div`
-  height: 100%;
-  width: 100%;
-  color: ${Colors.backgroundColor};
-  background-image: ${Colors.blueGradient};
+// const Container = styled.div`
+//   height: 100%;
+//   width: 100%;
+//   color: ${Colors.backgroundColor};
+//   background-image: ${Colors.blueGradient};
+// `;
+
+// const Title = styled.h3`
+//   margin: 0;
+//   padding: ${spacing.xxs};
+//   font-weight: bold;
+// `;
+
+const BetGroupContainer = styled.div`
+  padding: ${spacing.xs};
+  border: solid #3eadcf;
 `;
+// const TableContainer = styled.div`
+//   width: 100%;
+//   color: ${Colors.backgroundColor};
+//   font-size: ${fontSizes.sm};
+//   padding: ${spacing.sm};
+//   font-weight: bold;
+//   th {
+//     width: 10%;
+//   }
 
-const Title = styled.h3`
-  margin: 0;
-  padding: ${spacing.xxs};
-  font-weight: bold;
-`;
+//   tr {
+//     height: 10%;
+//   }
 
-const TableContainer = styled.div`
-  width: 100%;
-  color: ${Colors.backgroundColor};
-  font-size: ${fontSizes.sm};
-  padding: ${spacing.sm};
-  font-weight: bold;
-  th {
-    width: 10%;
-  }
+//   td {
+//     border: solid;
+//     border-width: 0.25px;
+//   }
+// `;
 
-  tr {
-    height: 10%;
-  }
+// const WagerInput = styled.div`
+//   width: 50%;
+//   text-align: center;
+// `;
 
-  td {
-    border: solid;
-    border-width: 0.25px;
-  }
-`;
+// const NumberField = styled.div`
+//   width: 30%;
+// `;
 
-const WagerInput = styled.div`
-  width: 50%;
-  text-align: center;
-`;
+// const WagerName = styled.div``;
 
-const NumberField = styled.div`
-  width: 30%;
-`;
-
-const WagerName = styled.div``;
-
-const WagerWin = styled.div``;
-//
+// const WagerWin = styled.div``;
+// //
 
 const TestCrapsCalculator = () => {
   //state
@@ -69,6 +82,7 @@ const TestCrapsCalculator = () => {
     passOdds4: 0,
     passOdds5: 0,
     passOdds6: 0,
+    passOdds8: 0,
     passOdds9: 0,
     passOdds10: 0,
     dontPassOdds4: 0,
@@ -115,6 +129,19 @@ const TestCrapsCalculator = () => {
     hardway8: 0,
     hardway4: 0,
     hardway10: 0,
+    cAndE: 0,
+    anySevens: 0,
+    anyCraps: 0,
+    horn: 0,
+    horn2: 0,
+    horn3: 0,
+    horn11: 0,
+    horn12: 0,
+    hornHigh2: 0,
+    hornHigh3: 0,
+    hornHigh11: 0,
+    hornHigh12: 0,
+    world: 0,
   });
   const [wins, setWins] = useState({
     pass: 0,
@@ -124,6 +151,7 @@ const TestCrapsCalculator = () => {
     passOdds4: 0,
     passOdds5: 0,
     passOdds6: 0,
+    passOdds8: 0,
     passOdds9: 0,
     passOdds10: 0,
     dontPassOdds4: 0,
@@ -170,6 +198,19 @@ const TestCrapsCalculator = () => {
     hardway8: 0,
     hardway4: 0,
     hardway10: 0,
+    cAndE: 0,
+    anySevens: 0,
+    anyCraps: 0,
+    horn: 0,
+    horn2: 0,
+    horn3: 0,
+    horn11: 0,
+    horn12: 0,
+    hornHigh2: 0,
+    hornHigh3: 0,
+    hornHigh11: 0,
+    hornHigh12: 0,
+    world: 0,
   });
 
   //possible states: comeoutRoll, intermediateRoll
@@ -202,21 +243,21 @@ const TestCrapsCalculator = () => {
   //   setWins({ ...wins, [name]: win });
   // };
 
-  useEffect(() => {
-    console.log(dice);
-  }, [dice]);
+  // useEffect(() => {
+  //   console.log(dice);
+  // }, [dice]);
 
-  useEffect(() => {
-    console.log(point);
-  }, [point]);
+  // useEffect(() => {
+  //   console.log(point);
+  // }, [point]);
 
-  useEffect(() => {
-    console.log(roll);
-  }, [roll]);
+  // useEffect(() => {
+  //   console.log(roll);
+  // }, [roll]);
 
-  useEffect(() => {
-    console.log(wins);
-  }, [wins]);
+  // useEffect(() => {
+  //   console.log(wins);
+  // }, [wins]);
 
   useEffect(() => {
     let total = parseInt(dice.one) + parseInt(dice.two);
@@ -240,25 +281,159 @@ const TestCrapsCalculator = () => {
               dice.one,
               dice.two
             ),
+            dontPass: crapsOperations.dontPass.comeoutRoll.winCalc(
+              wagers.dontPass
+            ),
+            dontCome: crapsOperations.dontCome.comeoutRoll.winCalc(
+              wagers.dontCome
+            ),
+            cAndE: crapsOperations.cAndE.nextRoll.winCalc(
+              wagers.cAndE,
+              diceTotal
+            ),
+            anyCraps: crapsOperations.anyCraps.nextRoll.winCalc(
+              wagers.anyCraps
+            ),
+            horn: crapsOperations.horn.nextRoll.winCalc(wagers.horn, diceTotal),
+            horn2: crapsOperations.horn2.nextRoll.winCalc(wagers.horn2),
+            hornHigh2: crapsOperations.hornHigh2.nextRoll.winCalc(
+              wagers.hornHigh2,
+              diceTotal
+            ),
+            hornHigh3: crapsOperations.hornHigh3.nextRoll.winCalc(
+              wagers.hornHigh3,
+              diceTotal
+            ),
+            hornHigh11: crapsOperations.hornHigh11.nextRoll.winCalc(
+              wagers.hornHigh11,
+              diceTotal
+            ),
+            hornHigh12: crapsOperations.hornHigh12.nextRoll.winCalc(
+              wagers.hornHigh12,
+              diceTotal
+            ),
+            world: crapsOperations.world.nextRoll.winCalc(
+              wagers.world,
+              diceTotal
+            ),
           };
           setWins(newWins);
           console.log(newWins);
           break;
         case 3:
           console.log('case 3');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              diceTotal
+            ),
+            dontPass: crapsOperations.dontPass.comeoutRoll.winCalc(
+              wagers.dontPass
+            ),
+            dontCome: crapsOperations.dontCome.comeoutRoll.winCalc(
+              wagers.dontCome
+            ),
+            cAndE: crapsOperations.cAndE.nextRoll.winCalc(
+              wagers.cAndE,
+              diceTotal
+            ),
+            anyCraps: crapsOperations.anyCraps.nextRoll.winCalc(
+              wagers.anyCraps
+            ),
+            horn: crapsOperations.horn.nextRoll.winCalc(wagers.horn, diceTotal),
+            horn3: crapsOperations.horn3.nextRoll.winCalc(wagers.horn3),
+            hornHigh2: crapsOperations.hornHigh2.nextRoll.winCalc(
+              wagers.hornHigh2,
+              diceTotal
+            ),
+            hornHigh3: crapsOperations.hornHigh3.nextRoll.winCalc(
+              wagers.hornHigh3,
+              diceTotal
+            ),
+            hornHigh11: crapsOperations.hornHigh11.nextRoll.winCalc(
+              wagers.hornHigh11,
+              diceTotal
+            ),
+            hornHigh12: crapsOperations.hornHigh12.nextRoll.winCalc(
+              wagers.hornHigh12,
+              diceTotal
+            ),
+            world: crapsOperations.world.nextRoll.winCalc(
+              wagers.world,
+              diceTotal
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
         case 4:
           console.log('case 4');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              diceTotal
+            ),
+            hop3and1: crapsOperations.hop3and1.nextRoll.winCalc(
+              wagers.hop3and1,
+              dice.one,
+              dice.two
+            ),
+            hop2and2: crapsOperations.hop2and2.nextRoll.winCalc(
+              wagers.hop2and2,
+              dice.one,
+              dice.two
+            ),
+            hardway4: crapsOperations.hardway4.anyRoll.winCalc(
+              wagers.hardway4,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
         case 5:
           console.log('case 5');
+          var newWins = {
+            ...wins,
+            hop4and1: crapsOperations.hop4and1.nextRoll.winCalc(
+              wagers.hop4and1,
+              dice.one,
+              dice.two
+            ),
+            hop3and2: crapsOperations.hop3and2.nextRoll.winCalc(
+              wagers.hop3and2,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
         case 6:
           console.log('case 6');
           var newWins = {
             ...wins,
+            big6: crapsOperations.big6.anyRoll.winCalc(wagers.big6),
             hop5and1: crapsOperations.hop5and1.nextRoll.winCalc(
-              wagers.dontPass,
+              wagers.hop5and1,
+              dice.one,
+              dice.two
+            ),
+            hop4and2: crapsOperations.hop4and2.nextRoll.winCalc(
+              wagers.hop4and2,
+              dice.one,
+              dice.two
+            ),
+            hop3and3: crapsOperations.hop3and3.nextRoll.winCalc(
+              wagers.hop3and3,
+              dice.one,
+              dice.two
+            ),
+            hardway6: crapsOperations.hardway6.anyRoll.winCalc(
+              wagers.hardway6,
               dice.one,
               dice.two
             ),
@@ -271,34 +446,518 @@ const TestCrapsCalculator = () => {
           var newWins = {
             ...wins,
             pass: crapsOperations.pass.comeoutRoll.winCalc(wagers.pass),
+            come: crapsOperations.come.comeoutRoll.winCalc(wagers.come),
+            anySevens: crapsOperations.anySevens.nextRoll.winCalc(
+              wagers.anySevens
+            ),
           };
           setWins(newWins);
-
+          break;
+        case 8:
+          console.log('case 8');
+          var newWins = {
+            ...wins,
+            big8: crapsOperations.big8.anyRoll.winCalc(wagers.big8),
+            hop5and3: crapsOperations.hop5and3.nextRoll.winCalc(
+              wagers.hop5and3,
+              dice.one,
+              dice.two
+            ),
+            hop6and2: crapsOperations.hop6and2.nextRoll.winCalc(
+              wagers.hop6and2,
+              dice.one,
+              dice.two
+            ),
+            hop4and4: crapsOperations.hop4and4.nextRoll.winCalc(
+              wagers.hop4and4,
+              dice.one,
+              dice.two
+            ),
+            hardway8: crapsOperations.hardway8.anyRoll.winCalc(
+              wagers.hardway8,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
+          break;
+        case 9:
+          console.log('case 9');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              diceTotal
+            ),
+            hop6and3: crapsOperations.hop6and3.nextRoll.winCalc(
+              wagers.hop6and3,
+              dice.one,
+              dice.two
+            ),
+            hop5and4: crapsOperations.hop5and4.nextRoll.winCalc(
+              wagers.hop5and4,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
+          break;
+        case 10:
+          console.log('case 10');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              diceTotal
+            ),
+            hop6and4: crapsOperations.hop6and4.nextRoll.winCalc(
+              wagers.hop6and4,
+              dice.one,
+              dice.two
+            ),
+            hop5and5: crapsOperations.hop5and5.nextRoll.winCalc(
+              wagers.hop5and5,
+              dice.one,
+              dice.two
+            ),
+            hardway10: crapsOperations.hardway10.anyRoll.winCalc(
+              wagers.hardway10,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
+          break;
+        case 11:
+          console.log('case 11');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              dice.one,
+              dice.two
+            ),
+            pass: crapsOperations.pass.comeoutRoll.winCalc(wagers.pass),
+            come: crapsOperations.come.comeoutRoll.winCalc(wagers.come),
+            cAndE: crapsOperations.cAndE.nextRoll.winCalc(
+              wagers.cAndE,
+              diceTotal
+            ),
+            horn: crapsOperations.horn.nextRoll.winCalc(wagers.horn, diceTotal),
+            horn11: crapsOperations.horn11.nextRoll.winCalc(wagers.horn11),
+            hornHigh2: crapsOperations.hornHigh2.nextRoll.winCalc(
+              wagers.hornHigh2,
+              diceTotal
+            ),
+            hornHigh3: crapsOperations.hornHigh3.nextRoll.winCalc(
+              wagers.hornHigh3,
+              diceTotal
+            ),
+            hornHigh11: crapsOperations.hornHigh11.nextRoll.winCalc(
+              wagers.hornHigh11,
+              diceTotal
+            ),
+            hornHigh12: crapsOperations.hornHigh12.nextRoll.winCalc(
+              wagers.hornHigh12,
+              diceTotal
+            ),
+            world: crapsOperations.world.nextRoll.winCalc(
+              wagers.world,
+              diceTotal
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
+          break;
+        case 12:
+          console.log('case 12');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              dice.one,
+              dice.two
+            ),
+            cAndE: crapsOperations.cAndE.nextRoll.winCalc(
+              wagers.cAndE,
+              diceTotal
+            ),
+            horn: crapsOperations.horn.nextRoll.winCalc(wagers.horn, diceTotal),
+            horn12: crapsOperations.horn12.nextRoll.winCalc(wagers.horn12),
+            hornHigh2: crapsOperations.hornHigh2.nextRoll.winCalc(
+              wagers.hornHigh2,
+              diceTotal
+            ),
+            hornHigh3: crapsOperations.hornHigh3.nextRoll.winCalc(
+              wagers.hornHigh3,
+              diceTotal
+            ),
+            hornHigh11: crapsOperations.hornHigh11.nextRoll.winCalc(
+              wagers.hornHigh11,
+              diceTotal
+            ),
+            hornHigh12: crapsOperations.hornHigh12.nextRoll.winCalc(
+              wagers.hornHigh12,
+              diceTotal
+            ),
+            world: crapsOperations.world.nextRoll.winCalc(
+              wagers.world,
+              diceTotal
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
       }
     } else if (roll === 'intermediateRoll') {
       switch (diceTotal) {
         case 2:
           console.log('int case 2');
+          console.log('case 2');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              dice.one,
+              dice.two
+            ),
+
+            dontCome: crapsOperations.dontCome.comeoutRoll.winCalc(
+              wagers.dontCome
+            ),
+            cAndE: crapsOperations.cAndE.nextRoll.winCalc(
+              wagers.cAndE,
+              diceTotal
+            ),
+            anyCraps: crapsOperations.anyCraps.nextRoll.winCalc(
+              wagers.anyCraps
+            ),
+            horn: crapsOperations.horn.nextRoll.winCalc(wagers.horn, diceTotal),
+            horn2: crapsOperations.horn2.nextRoll.winCalc(wagers.horn2),
+            hornHigh2: crapsOperations.hornHigh2.nextRoll.winCalc(
+              wagers.hornHigh2,
+              diceTotal
+            ),
+            hornHigh3: crapsOperations.hornHigh3.nextRoll.winCalc(
+              wagers.hornHigh3,
+              diceTotal
+            ),
+            hornHigh11: crapsOperations.hornHigh11.nextRoll.winCalc(
+              wagers.hornHigh11,
+              diceTotal
+            ),
+            hornHigh12: crapsOperations.hornHigh12.nextRoll.winCalc(
+              wagers.hornHigh12,
+              diceTotal
+            ),
+            world: crapsOperations.world.nextRoll.winCalc(
+              wagers.world,
+              diceTotal
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
         case 3:
           console.log('int case 3');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              diceTotal
+            ),
+            dontCome: crapsOperations.dontCome.comeoutRoll.winCalc(
+              wagers.dontCome
+            ),
+            cAndE: crapsOperations.cAndE.nextRoll.winCalc(
+              wagers.cAndE,
+              diceTotal
+            ),
+            anyCraps: crapsOperations.anyCraps.nextRoll.winCalc(
+              wagers.anyCraps
+            ),
+            horn: crapsOperations.horn.nextRoll.winCalc(wagers.horn, diceTotal),
+            horn3: crapsOperations.horn3.nextRoll.winCalc(wagers.horn3),
+            hornHigh2: crapsOperations.hornHigh2.nextRoll.winCalc(
+              wagers.hornHigh2,
+              diceTotal
+            ),
+            hornHigh3: crapsOperations.hornHigh3.nextRoll.winCalc(
+              wagers.hornHigh3,
+              diceTotal
+            ),
+            hornHigh11: crapsOperations.hornHigh11.nextRoll.winCalc(
+              wagers.hornHigh11,
+              diceTotal
+            ),
+            hornHigh12: crapsOperations.hornHigh12.nextRoll.winCalc(
+              wagers.hornHigh12,
+              diceTotal
+            ),
+            world: crapsOperations.world.nextRoll.winCalc(
+              wagers.world,
+              diceTotal
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
         case 4:
           console.log('int case 4');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              diceTotal
+            ),
+            hop3and1: crapsOperations.hop3and1.nextRoll.winCalc(
+              wagers.hop3and1,
+              dice.one,
+              dice.two
+            ),
+            hop2and2: crapsOperations.hop2and2.nextRoll.winCalc(
+              wagers.hop2and2,
+              dice.one,
+              dice.two
+            ),
+            hardway4: crapsOperations.hardway4.anyRoll.winCalc(
+              wagers.hardway4,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
         case 5:
           console.log('int case 5');
+          var newWins = {
+            ...wins,
+            hop4and1: crapsOperations.hop4and1.nextRoll.winCalc(
+              wagers.hop4and1,
+              dice.one,
+              dice.two
+            ),
+            hop3and2: crapsOperations.hop3and2.nextRoll.winCalc(
+              wagers.hop3and2,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
         case 6:
           console.log('int case 6');
+          var newWins = {
+            ...wins,
+            big6: crapsOperations.big6.anyRoll.winCalc(wagers.big6),
+            hop5and1: crapsOperations.hop5and1.nextRoll.winCalc(
+              wagers.hop5and1,
+              dice.one,
+              dice.two
+            ),
+            hop4and2: crapsOperations.hop4and2.nextRoll.winCalc(
+              wagers.hop4and2,
+              dice.one,
+              dice.two
+            ),
+            hop3and3: crapsOperations.hop3and3.nextRoll.winCalc(
+              wagers.hop3and3,
+              dice.one,
+              dice.two
+            ),
+            hardway6: crapsOperations.hardway6.anyRoll.winCalc(
+              wagers.hardway6,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
         case 7:
           console.log('int case 7');
+          var newWins = {
+            ...wins,
+            dontPass: crapsOperations.dontPass.intermediateRoll.winCalc(
+              wagers.dontPass
+            ),
+            come: crapsOperations.come.comeoutRoll.winCalc(wagers.come),
+            anySevens: crapsOperations.anySevens.comeoutRoll.winCalc(
+              wagers.anySevens
+            ),
+          };
+          setWins(newWins);
+          break;
+        case 8:
+          console.log('case 8');
+          var newWins = {
+            ...wins,
+            big8: crapsOperations.big8.anyRoll.winCalc(wagers.big8),
+            hop5and3: crapsOperations.hop5and3.nextRoll.winCalc(
+              wagers.hop5and3,
+              dice.one,
+              dice.two
+            ),
+            hop6and2: crapsOperations.hop6and2.nextRoll.winCalc(
+              wagers.hop6and2,
+              dice.one,
+              dice.two
+            ),
+            hop4and4: crapsOperations.hop4and4.nextRoll.winCalc(
+              wagers.hop4and4,
+              dice.one,
+              dice.two
+            ),
+            hardway8: crapsOperations.hardway8.anyRoll.winCalc(
+              wagers.hardway8,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
+          break;
+        case 9:
+          console.log('case 9');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              diceTotal
+            ),
+            hop6and3: crapsOperations.hop6and3.nextRoll.winCalc(
+              wagers.hop6and3,
+              dice.one,
+              dice.two
+            ),
+            hop5and4: crapsOperations.hop5and4.nextRoll.winCalc(
+              wagers.hop5and4,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
+          break;
+        case 10:
+          console.log('case 10');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              diceTotal
+            ),
+            hop6and4: crapsOperations.hop6and4.nextRoll.winCalc(
+              wagers.hop6and4,
+              dice.one,
+              dice.two
+            ),
+            hop5and5: crapsOperations.hop5and5.nextRoll.winCalc(
+              wagers.hop5and5,
+              dice.one,
+              dice.two
+            ),
+            hardway10: crapsOperations.hardway10.anyRoll.winCalc(
+              wagers.hardway10,
+              dice.one,
+              dice.two
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
+          break;
+        case 11:
+          console.log('case 11');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              dice.one,
+              dice.two
+            ),
+            pass: crapsOperations.pass.comeoutRoll.winCalc(wagers.pass),
+            come: crapsOperations.come.comeoutRoll.winCalc(wagers.come),
+            cAndE: crapsOperations.cAndE.nextRoll.winCalc(
+              wagers.cAndE,
+              diceTotal
+            ),
+            horn: crapsOperations.horn.nextRoll.winCalc(wagers.horn, diceTotal),
+            horn11: crapsOperations.horn11.nextRoll.winCalc(wagers.horn11),
+            hornHigh2: crapsOperations.hornHigh2.nextRoll.winCalc(
+              wagers.hornHigh2,
+              diceTotal
+            ),
+            hornHigh3: crapsOperations.hornHigh3.nextRoll.winCalc(
+              wagers.hornHigh3,
+              diceTotal
+            ),
+            hornHigh11: crapsOperations.hornHigh11.nextRoll.winCalc(
+              wagers.hornHigh11,
+              diceTotal
+            ),
+            hornHigh12: crapsOperations.hornHigh12.nextRoll.winCalc(
+              wagers.hornHigh12,
+              diceTotal
+            ),
+            world: crapsOperations.world.nextRoll.winCalc(
+              wagers.world,
+              diceTotal
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
+          break;
+        case 12:
+          console.log('case 12');
+          var newWins = {
+            ...wins,
+            field: crapsOperations.field.nextRoll.winCalc(
+              wagers.field,
+              dice.one,
+              dice.two
+            ),
+            cAndE: crapsOperations.cAndE.nextRoll.winCalc(
+              wagers.cAndE,
+              diceTotal
+            ),
+            horn: crapsOperations.horn.nextRoll.winCalc(wagers.horn, diceTotal),
+            horn12: crapsOperations.horn12.nextRoll.winCalc(wagers.horn12),
+            hornHigh2: crapsOperations.hornHigh2.nextRoll.winCalc(
+              wagers.hornHigh2,
+              diceTotal
+            ),
+            hornHigh3: crapsOperations.hornHigh3.nextRoll.winCalc(
+              wagers.hornHigh3,
+              diceTotal
+            ),
+            hornHigh11: crapsOperations.hornHigh11.nextRoll.winCalc(
+              wagers.hornHigh11,
+              diceTotal
+            ),
+            hornHigh12: crapsOperations.hornHigh12.nextRoll.winCalc(
+              wagers.hornHigh12,
+              diceTotal
+            ),
+            world: crapsOperations.world.nextRoll.winCalc(
+              wagers.world,
+              diceTotal
+            ),
+          };
+          setWins(newWins);
+          console.log(newWins);
           break;
       }
     }
   };
+
+  const halfHopBetNamesArray = Math.floor(hopBets.length / 2);
+  const hopBetsOne = hopBets.slice(0, halfHopBetNamesArray);
+  const hopBetsTwo = hopBets.slice(halfHopBetNamesArray + 1, hopBets.length);
 
   return (
     <div className='container-fluid'>
@@ -442,21 +1101,266 @@ const TestCrapsCalculator = () => {
           </span>
           <span>Total: {diceTotal}</span>
         </div>
+        <button
+          className='btn btn-secondary m-2'
+          onClick={runCalc}
+          style={{
+            backgroundImage: Colors.blueGradient,
+            color: 'black',
+            fontWeight: 'bold',
+          }}
+        >
+          Calculate Win
+        </button>
       </div>
 
-      <div className='row'>
+      <div className='row my-3'>
         <div className='col'>
-          Passline{' '}
-          <input type='number' name='pass' onChange={handleWagerChange}></input>
+          <BetGroupContainer className='container-fluid'>
+            {passBets.map((game, index) => {
+              return (
+                <div className='row'>
+                  <div className='col-8' key={index}>
+                    {game.label}{' '}
+                    <input
+                      type='number'
+                      name={game.abbr}
+                      onChange={handleWagerChange}
+                    ></input>
+                  </div>
+                  <div className='col-4'>
+                    Win{' '}
+                    <div style={{ backgroundColor: Colors.blueGradient }}>
+                      ${wins[game.abbr]}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </BetGroupContainer>
         </div>
         <div className='col'>
-          Win{' '}
-          <div style={{ backgroundColor: Colors.blueGradient }}>
-            ${wins.pass}
-          </div>
+          <BetGroupContainer className='container-fluid'>
+            {dontBets.map((game, index) => {
+              return (
+                <div className='row'>
+                  <div className='col-8' key={index}>
+                    {game.label}{' '}
+                    <input
+                      type='number'
+                      name={game.abbr}
+                      onChange={handleWagerChange}
+                    ></input>
+                  </div>
+                  <div className='col-4'>
+                    Win{' '}
+                    <div style={{ backgroundColor: Colors.blueGradient }}>
+                      ${wins[game.abbr]}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </BetGroupContainer>
+        </div>
+        <div className='col'>
+          <BetGroupContainer className='container-fluid'>
+            {comeBets.map((game, index) => {
+              return (
+                <div className='row'>
+                  <div className='col-8' key={index}>
+                    {game.label}{' '}
+                    <input
+                      type='number'
+                      name={game.abbr}
+                      onChange={handleWagerChange}
+                    ></input>
+                  </div>
+                  <div className='col-4'>
+                    Win{' '}
+                    <div style={{ backgroundColor: Colors.blueGradient }}>
+                      ${wins[game.abbr]}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </BetGroupContainer>
+        </div>
+        <div className='col'>
+          <BetGroupContainer className='container-fluid'>
+            {dontComeBets.map((game, index) => {
+              return (
+                <div className='row'>
+                  <div className='col-8' key={index}>
+                    {game.label}{' '}
+                    <input
+                      type='number'
+                      name={game.abbr}
+                      onChange={handleWagerChange}
+                    ></input>
+                  </div>
+                  <div className='col-4'>
+                    Win{' '}
+                    <div style={{ backgroundColor: Colors.blueGradient }}>
+                      ${wins[game.abbr]}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </BetGroupContainer>
+        </div>
+        <div className='col'>
+          <BetGroupContainer className='container-fluid'>
+            {placeBets.map((game, index) => {
+              return (
+                <div className='row'>
+                  <div className='col-8' key={index}>
+                    {game.label}{' '}
+                    <input
+                      type='number'
+                      name={game.abbr}
+                      onChange={handleWagerChange}
+                    ></input>
+                  </div>
+                  <div className='col-4'>
+                    Win{' '}
+                    <div style={{ backgroundColor: Colors.blueGradient }}>
+                      ${wins[game.abbr]}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </BetGroupContainer>
         </div>
       </div>
-      <div className='row'>
+      <div className='row my-3'>
+        <div className='col'>
+          <BetGroupContainer className='container-fluid'>
+            {hornBets.map((game, index) => {
+              return (
+                <div className='row'>
+                  <div className='col-8' key={index}>
+                    {game.label}{' '}
+                    <input
+                      type='number'
+                      name={game.abbr}
+                      onChange={handleWagerChange}
+                    ></input>
+                  </div>
+                  <div className='col-4'>
+                    Win{' '}
+                    <div style={{ backgroundColor: Colors.blueGradient }}>
+                      ${wins[game.abbr]}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </BetGroupContainer>
+        </div>
+        <div className='col'>
+          <BetGroupContainer className='container-fluid'>
+            {miscBets.map((game, index) => {
+              return (
+                <div className='row'>
+                  <div className='col-8' key={index}>
+                    {game.label}{' '}
+                    <input
+                      type='number'
+                      name={game.abbr}
+                      onChange={handleWagerChange}
+                    ></input>
+                  </div>
+                  <div className='col-4'>
+                    Win{' '}
+                    <div style={{ backgroundColor: Colors.blueGradient }}>
+                      ${wins[game.abbr]}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </BetGroupContainer>
+        </div>
+        <div className='col'>
+          <BetGroupContainer className='container-fluid'>
+            {hardwayBets.map((game, index) => {
+              return (
+                <div className='row'>
+                  <div className='col-8' key={index}>
+                    {game.label}{' '}
+                    <input
+                      type='number'
+                      name={game.abbr}
+                      onChange={handleWagerChange}
+                    ></input>
+                  </div>
+                  <div className='col-4'>
+                    Win{' '}
+                    <div style={{ backgroundColor: Colors.blueGradient }}>
+                      ${wins[game.abbr]}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </BetGroupContainer>
+        </div>
+        <div className='col-5'>
+          <BetGroupContainer className='container-fluid'>
+            <div className='row'>
+              <div className='col-6'>
+                {hopBetsOne.map((game, index) => {
+                  return (
+                    <div className='row'>
+                      <div className='col-8' key={index}>
+                        {game.label}{' '}
+                        <input
+                          type='number'
+                          name={game.abbr}
+                          onChange={handleWagerChange}
+                        ></input>
+                      </div>
+                      <div className='col-4'>
+                        Win{' '}
+                        <div style={{ backgroundColor: Colors.blueGradient }}>
+                          ${wins[game.abbr]}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className='col-6'>
+                {hopBetsTwo.map((game, index) => {
+                  return (
+                    <div className='row'>
+                      <div className='col-8' key={index}>
+                        {game.label}{' '}
+                        <input
+                          type='number'
+                          name={game.abbr}
+                          onChange={handleWagerChange}
+                        ></input>
+                      </div>
+                      <div className='col-4'>
+                        Win{' '}
+                        <div style={{ backgroundColor: Colors.blueGradient }}>
+                          ${wins[game.abbr]}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </BetGroupContainer>
+        </div>
+      </div>
+      {/* <div className='row'>
         <div className='col'>
           Don't Pass{' '}
           <input
@@ -472,6 +1376,7 @@ const TestCrapsCalculator = () => {
           </div>
         </div>
       </div>
+
       <div className='row'>
         <div className='col'>
           Field{' '}
@@ -487,8 +1392,7 @@ const TestCrapsCalculator = () => {
             ${wins.field}
           </div>
         </div>
-      </div>
-      <button onClick={runCalc}>calc</button>
+      </div> */}
     </div>
   );
 };

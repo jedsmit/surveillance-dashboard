@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import NumberFormat from 'react-number-format';
 //
 import Colors from '../constants/Colors';
-import { spacing, fontSizes } from '../constants/Sizes';
+import { spacing } from '../constants/Sizes';
 
 // styled components
 const Container = styled.div`
@@ -52,7 +52,7 @@ const CommissionCalculator = () => {
           thousandSeparator={true}
           prefix={'$'}
           onValueChange={values => {
-            const { formattedValue, value } = values;
+            const { value } = values;
             setWinTotal(value);
           }}
         />

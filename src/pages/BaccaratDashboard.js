@@ -7,7 +7,7 @@ import CommissionCalculator from '../components/CommissionCalculator';
 //
 import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 import Colors from '../constants/Colors';
-import { spacing, fontSizes } from '../constants/Sizes';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 //
 import OddsTableCalculator from '../components/OddsTableCalculator';
@@ -10,6 +10,7 @@ import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
 import { crapsOdds } from '../data/crapsOdds';
 import { crapsOperations } from '../data/crapsOperations';
+import CrapsCheatSheet from '../components/CrapsCheatSheet';
 
 //styled-components
 const Container = styled.div`
@@ -53,6 +54,8 @@ const CommissionCalculatorContainer = styled.div`
 `;
 
 const CrapsDashboard = () => {
+  const [cheatSheetCalculatorToggle, setCheatSheetCalculatorToggle] =
+    useState(true);
   const {
     placeBets,
     buyBets,
@@ -77,12 +80,37 @@ const CrapsDashboard = () => {
           Dashboard
         </TitleText>
       </div>
-
+      <div className='row justify-content-left m-0'>
+        <div className='custom-control custom-switch m-0 pt-2'>
+          <input
+            type='checkbox'
+            className='custom-control-input'
+            id='customSwitch1'
+            checked={cheatSheetCalculatorToggle}
+            onChange={() =>
+              setCheatSheetCalculatorToggle(!cheatSheetCalculatorToggle)
+            }
+          />
+          <label
+            className='custom-control-label'
+            for='customSwitch1'
+            style={{ fontSize: '1em' }}
+          >
+            Toggle Cheat Sheet/Calculator
+          </label>
+        </div>
+      </div>
       <div className='row'>
-        <div className='col-6'>
-          <PlaceBetOddsContainer>
-            <TestCrapsCalc data={placeBets} />
-          </PlaceBetOddsContainer>
+        <div className='col-12'>
+          {cheatSheetCalculatorToggle ? (
+            <PlaceBetOddsContainer>
+              <CrapsCheatSheet />
+            </PlaceBetOddsContainer>
+          ) : (
+            <PlaceBetOddsContainer>
+              <TestCrapsCalc data={placeBets} />
+            </PlaceBetOddsContainer>
+          )}
         </div>
       </div>
     </Container>

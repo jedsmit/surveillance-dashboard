@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 //
+import ContactsTable from '../components/ContactsTable';
+//
 import Colors from '../constants/Colors';
-import { spacing, fontSize } from '../constants/Sizes';
-
+import { spacing } from '../constants/Sizes';
+import { slotContacts } from '../data/contacts';
 //styled-components
 const Container = styled.div`
   min-height: 100vh;
@@ -16,20 +18,39 @@ const Container = styled.div`
 `;
 
 const TitleText = styled.h1`
-  margin: 0;
-  padding: ${spacing.xxs};
+  width: 100%;
   background: ${Colors.backgroundColor};
-  color: ${Colors.primaryTextColor};
+  color: ${Colors.backgroundColor};
 `;
+
+const ContactsContainer = styled.div`
+  width: 100%;
+`;
+
 //
 const SlotsDashboard = () => {
   return (
     <Container className='container-fluid'>
-      <TitleText>Slots Dashboard</TitleText>
       <div className='row'>
-        <div className='col'>
-          Todo: Add violations, floor map, phone numbers
-        </div>
+        <TitleText
+          className='py-0 pl-4 display-3 text-left'
+          style={{ color: Colors.primaryTextColor }}
+        >
+          Slots
+        </TitleText>
+        <TitleText
+          className='py-0 pl-4 display-3 text-left'
+          style={{ backgroundImage: Colors.blueGradient }}
+        >
+          Dashboard
+        </TitleText>
+        <ContactsContainer className='col-sm-4 col-xs-12'>
+          <ContactsTable
+            contacts={slotContacts}
+            contactsTitle='Contacts'
+            cell={true}
+          />
+        </ContactsContainer>
       </div>
     </Container>
   );

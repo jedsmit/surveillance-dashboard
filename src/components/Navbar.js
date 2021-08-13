@@ -14,7 +14,6 @@ background: ${Colors.darkestBackground};
 `;
 
 const NavbarText = styled.h3`
-  justify-self: end;
   margin: 0;
   font-size: 1.5em;
   width: auto;
@@ -28,16 +27,26 @@ const NavbarText = styled.h3`
 //
 const Navbar = ({ user }) => {
   return (
-    <NavContainer className='navbar sticky-top justify-content-end'>
+    <NavContainer className='navbar sticky-top'>
       {user ? (
-        <NavbarText
-          className='login-text'
-          onClick={() => auth.signOut()}
-          as={Link}
-          to={'/'}
-        >
-          Sign out <i className='fas fa-sign-in-alt login-icon'></i>
-        </NavbarText>
+        <div className='row w-100 p-2'>
+          <div className='col-6 text-left'>
+            {' '}
+            <NavbarText as={Link} to={'/'}>
+              <i className='fas fa-home login-icon'></i> Go Home
+            </NavbarText>
+          </div>
+          <div className='col-6 text-right'>
+            <NavbarText
+              className='login-text'
+              onClick={() => auth.signOut()}
+              as={Link}
+              to={'/'}
+            >
+              Sign out <i className='fas fa-sign-in-alt login-icon'></i>
+            </NavbarText>
+          </div>
+        </div>
       ) : null}
     </NavContainer>
   );

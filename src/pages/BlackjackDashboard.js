@@ -13,7 +13,7 @@ import { thresholdCalculatorData } from '../data/thresholdCalculatorData';
 import { blackjack } from '../data/violationData';
 import { bjOdds } from '../data/bonusBetOdds';
 import Colors from '../constants/Colors';
-import { spacing, fontSizes } from '../constants/Sizes';
+import { spacing } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`

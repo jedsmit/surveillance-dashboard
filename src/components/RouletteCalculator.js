@@ -32,6 +32,11 @@ const RouletteCalculator = props => {
     streetWager: 0,
     cornerWager: 0,
     doubleStreetWager: 0,
+    columnWager: 0,
+    dozensWager: 0,
+    hiLowWager: 0,
+    evenOddWager: 0,
+    redBlackWager: 0,
   });
 
   const [wins, setWins] = useState({
@@ -40,6 +45,11 @@ const RouletteCalculator = props => {
     streetWin: 0,
     cornerWin: 0,
     doubleStreetWin: 0,
+    columnWin: 0,
+    dozensWin: 0,
+    hiLowWin: 0,
+    evenOddWin: 0,
+    redBlackWin: 0,
   });
 
   const [denomToggle, setDenomToggle] = useState(false);
@@ -66,6 +76,25 @@ const RouletteCalculator = props => {
     calcDoubleStreetWin(wagers.doubleStreetWager);
   }, [wagers.doubleStreetWager]);
 
+  useEffect(() => {
+    calcColumnWin(wagers.columnWager);
+  }, [wagers.columnWager]);
+
+  useEffect(() => {
+    calcDozensWin(wagers.dozensWager);
+  }, [wagers.dozensWager]);
+
+  useEffect(() => {
+    calcHiLowWin(wagers.hiLowWager);
+  }, [wagers.hiLowWager]);
+
+  useEffect(() => {
+    calcEvenOddWin(wagers.evenOddWager);
+  }, [wagers.evenOddWager]);
+
+  useEffect(() => {
+    calcRedBlackWin(wagers.redBlackWager);
+  }, [wagers.redBlackWager]);
   //add up the win totals
   const totalWin = Object.values(wins).reduce(
     (accumulator, currentValue) => accumulator + currentValue
@@ -103,6 +132,31 @@ const RouletteCalculator = props => {
   const calcDoubleStreetWin = () => {
     let win = wagers.doubleStreetWager * 5;
     setWins({ ...wins, doubleStreetWin: win });
+  };
+
+  const calcColumnWin = () => {
+    let win = wagers.columnWager * 5;
+    setWins({ ...wins, columnWin: win });
+  };
+
+  const calcDozensWin = () => {
+    let win = wagers.dozensWager * 5;
+    setWins({ ...wins, dozensWin: win });
+  };
+
+  const calcHiLowWin = () => {
+    let win = wagers.hiLowWager * 5;
+    setWins({ ...wins, hiLowWin: win });
+  };
+
+  const calcEvenOddWin = () => {
+    let win = wagers.evenOddWager * 5;
+    setWins({ ...wins, evenOddWin: win });
+  };
+
+  const calcRedBlackWin = () => {
+    let win = wagers.redBlackWager * 5;
+    setWins({ ...wins, redBlackWin: win });
   };
 
   const handleMenuItemClick = e => {
@@ -299,6 +353,155 @@ const RouletteCalculator = props => {
               <NumberField
                 as={NumberFormat}
                 value={wins.doubleStreetWin}
+                thousandSeparator
+                suffix={' units'}
+                displayType={'text'}
+              />
+            </WagerWin>
+          </div>
+        </div>
+        {/* Column */}
+        <div className='row p-1'>
+          <div className='col-sm-4'>
+            <WagerName className='text-left'>Column</WagerName>
+          </div>
+          <div className='col-sm-4'>
+            <NumberField
+              as={NumberFormat}
+              thousandSeparator
+              name='columnWager'
+              onChange={handleWagerChange}
+              displayType={'input'}
+            />{' '}
+            Units
+          </div>
+
+          <div className='col-sm-4 d-flex justify-content-end'>
+            <WagerWin>
+              Win{' '}
+              <NumberField
+                as={NumberFormat}
+                value={wins.columnWin}
+                thousandSeparator
+                suffix={' units'}
+                displayType={'text'}
+              />
+            </WagerWin>
+          </div>
+        </div>
+
+        {/* Dozens*/}
+        <div className='row p-1'>
+          <div className='col-sm-4'>
+            <WagerName className='text-left'>Dozens</WagerName>
+          </div>
+          <div className='col-sm-4'>
+            <NumberField
+              as={NumberFormat}
+              thousandSeparator
+              name='dozensWager'
+              onChange={handleWagerChange}
+              displayType={'input'}
+            />{' '}
+            Units
+          </div>
+
+          <div className='col-sm-4 d-flex justify-content-end'>
+            <WagerWin>
+              Win{' '}
+              <NumberField
+                as={NumberFormat}
+                value={wins.dozensWin}
+                thousandSeparator
+                suffix={' units'}
+                displayType={'text'}
+              />
+            </WagerWin>
+          </div>
+        </div>
+
+        {/* Hi Low */}
+        <div className='row p-1'>
+          <div className='col-sm-4'>
+            <WagerName className='text-left'>Hi Low</WagerName>
+          </div>
+          <div className='col-sm-4'>
+            <NumberField
+              as={NumberFormat}
+              thousandSeparator
+              name='hiLowWager'
+              onChange={handleWagerChange}
+              displayType={'input'}
+            />{' '}
+            Units
+          </div>
+
+          <div className='col-sm-4 d-flex justify-content-end'>
+            <WagerWin>
+              Win{' '}
+              <NumberField
+                as={NumberFormat}
+                value={wins.hiLowWin}
+                thousandSeparator
+                suffix={' units'}
+                displayType={'text'}
+              />
+            </WagerWin>
+          </div>
+        </div>
+
+        {/* Even Odd */}
+        <div className='row p-1'>
+          <div className='col-sm-4'>
+            <WagerName className='text-left'>Even Odd</WagerName>
+          </div>
+          <div className='col-sm-4'>
+            <NumberField
+              as={NumberFormat}
+              thousandSeparator
+              name='evenOddWager'
+              onChange={handleWagerChange}
+              displayType={'input'}
+            />{' '}
+            Units
+          </div>
+
+          <div className='col-sm-4 d-flex justify-content-end'>
+            <WagerWin>
+              Win{' '}
+              <NumberField
+                as={NumberFormat}
+                value={wins.evenOddWin}
+                thousandSeparator
+                suffix={' units'}
+                displayType={'text'}
+              />
+            </WagerWin>
+          </div>
+        </div>
+
+        {/* Red Black */}
+        <div className='row p-1'>
+          <div className='col-sm-4'>
+            <WagerName className='text-left'>Red Black</WagerName>
+          </div>
+          <div className='col-sm-4'>
+            <NumberField
+              as={NumberFormat}
+              thousandSeparator
+              name='redBlackWager'
+              onChange={handleWagerChange}
+              displayType={'input'}
+            />{' '}
+            Units
+          </div>
+
+          <div className='col-sm-4 d-flex justify-content-end'>
+            <WagerWin>
+              Win{' '}
+              <NumberField
+                as={NumberFormat}
+                value={wins.redBlackWin}
                 thousandSeparator
                 suffix={' units'}
                 displayType={'text'}

@@ -30,7 +30,6 @@ import ThreeCardPokerDashboard from './pages/ThreeCardPokerDashboard';
 import FourCardPokerDashboard from './pages/FourCardPokerDashboard';
 import UTHoldemDashboard from './pages/UTHoldemDashboard';
 import CasinoWarDashboard from './pages/CasinoWarDashboard';
-import SignUpPage from './pages/SignUpPage';
 
 //styled-components
 const Root = styled.div`

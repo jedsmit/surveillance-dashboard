@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
-import { spacing } from '../constants/Sizes';
 //
 
 //styled-components
@@ -23,26 +22,28 @@ const TableHeader = styled.tr``;
 const ContactsTable = ({ contacts, contactsTitle, cell }) => {
   return (
     <Container className='container'>
-      <div className='row mx-auto'>
+      <div className='row'>
         <div className='col'>
-          <ContactsTitle className='text-center'>{contactsTitle}</ContactsTitle>
+          <ContactsTitle className='text-center mx-auto'>
+            {contactsTitle}
+          </ContactsTitle>
         </div>
       </div>
 
       <div className='row'>
-        <div className='col justify-content-center'>
+        <div className='col mx-auto'>
           <table className='mx-auto'>
             <TableHeader className='justify-content-center'>
-              <th className='px-2 text-left'>Name</th>
-              <th className='px-2'>Extension</th>
-              {cell ? <th className='px-2'>Cell #</th> : null}
+              <th className='px-1 text-left'>Name</th>
+              <th className='px-1 text-right'>Extension</th>
+              {cell ? <th className='px-1'>Cell #</th> : null}
             </TableHeader>
 
             {contacts.map((contact, index) => {
               return (
                 <tr key={index}>
                   <Name className='text-left px-2'>{contact.contactName}</Name>
-                  <Extension className='px-2 text-center'>
+                  <Extension className='px-2 text-right'>
                     {contact.extension}
                   </Extension>
                   <PhoneNumber className='text-right px-2'>
