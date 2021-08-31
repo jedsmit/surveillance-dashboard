@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
 //
 import OddsTableCalculator from '../components/OddsTableCalculator';
@@ -30,6 +30,22 @@ const OddsCalculatorContainer = styled.div`
   width: 100%;
 `;
 
+const BasicStrategyContainer = styled.div`
+  margin-top: ${spacing.md};
+  width: 100%;
+  background-image: ${Colors.blueGradient};
+  color: ${Colors.backgroundColor};
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: ${spacing.xxs};
+  padding-top: ${spacing.xxs};
+`;
+
+const SubSectionTitle = styled.h3`
+  color: ${Colors.backgroundColor};
+  text-align: center;
+  font-weight: bold;
+`;
 //
 const ThreeCardPokerDashboard = () => {
   const { pairPlusOdds, anteBonusOdds, badBeatOdds } = tcOdds;
@@ -49,7 +65,7 @@ const ThreeCardPokerDashboard = () => {
           Dashboard
         </TitleText>
       </div>
-      <p>To do: odds table, basic strategy</p>
+
       <div className='row'>
         <div className='col-sm-4'>
           <OddsCalculatorContainer className='container-fluid'>
@@ -62,6 +78,10 @@ const ThreeCardPokerDashboard = () => {
         </div>
 
         <div className='col-sm-4'>
+          <BasicStrategyContainer>
+            <SubSectionTitle>Basic Strategy</SubSectionTitle>
+            <p>Play any hand Q-6 or better.</p>
+          </BasicStrategyContainer>
           <OddsCalculatorContainer className='container-fluid'>
             <OddsTableCalculator
               wagers={anteBonusOdds.wagers}

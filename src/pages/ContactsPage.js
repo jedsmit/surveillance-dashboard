@@ -17,15 +17,17 @@ const Container = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background-color: ${Colors.backgroundColor};
+  background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-  justify-content: center;
   padding: ${spacing.sm};
+  html {
+    scroll-behaviour: smooth;
+  }
 `;
 
 const TitleText = styled.h1`
   width: 100%;
-  font-size: ${fontSizes.xxl};
+
   background: ${Colors.backgroundColor};
   color: ${Colors.backgroundColor};
 `;
@@ -36,13 +38,13 @@ const ContactsPage = () => {
     <Container className='container-fluid'>
       <div className='row'>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 display-3 text-left'
           style={{ color: Colors.primaryTextColor }}
         >
           TGA
         </TitleText>
         <TitleText
-          className='py-0 pl-4 text-left'
+          className='py-0 pl-4 display-3 text-left'
           style={{ backgroundImage: Colors.blueGradient }}
         >
           Contacts

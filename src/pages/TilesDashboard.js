@@ -62,7 +62,7 @@ const TilesDashboard = () => {
           Dashboard
         </TitleText>
       </div>
-      <p>todo: house way, tiles chart, commission calc</p>
+
       <div className='row mx-auto'>
         <div className='col-sm-6'>
           <TilesOrderOfOperations />

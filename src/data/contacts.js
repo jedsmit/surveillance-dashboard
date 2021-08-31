@@ -360,11 +360,11 @@ export const cageContacts = [
     extension: '3800',
   },
   {
-    contactName: 'Employee Bank In',
+    contactName: 'Employee Bank Inside',
     extension: '3801',
   },
   {
-    contactName: 'Employee Bank Out',
+    contactName: 'Employee Bank Outside',
     extension: '3802',
   },
   {
@@ -386,6 +386,34 @@ export const cageContacts = [
   {
     contactName: 'Window 1',
     extension: '6572',
+  },
+  {
+    contactName: 'Window 2',
+    extension: 'xxxx',
+  },
+  {
+    contactName: 'Window 3',
+    extension: 'xxxx',
+  },
+  {
+    contactName: 'Window 4',
+    extension: 'xxxx',
+  },
+  {
+    contactName: 'Window 5',
+    extension: 'xxxx',
+  },
+  {
+    contactName: 'Window 6',
+    extension: 'xxxx',
+  },
+  {
+    contactName: 'Window 7',
+    extension: 'xxxx',
+  },
+  {
+    contactName: 'Window 8',
+    extension: 'xxxx',
   },
 ];
 

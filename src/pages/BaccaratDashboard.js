@@ -22,7 +22,6 @@ const Container = styled.div`
 
 const TitleText = styled.h1`
   width: 100%;
-
   background: ${Colors.backgroundColor};
   color: ${Colors.backgroundColor};
 `;

@@ -7,6 +7,7 @@ import { spacing } from '../constants/Sizes';
 //styled-components
 const Container = styled.div`
   width: 100%;
+  justify-content: center;
 `;
 
 const SectionContainer = styled.div`
@@ -96,6 +97,24 @@ const CrapsCheatSheet = () => {
               3-2, 6-5
             </ShortcutContainer>
           </SectionContainer>
+          <SectionContainer>
+            {' '}
+            <SectionTitle>All Day Hardways</SectionTitle>
+            <SubSectionTitle>Rules</SubSectionTitle>
+            <p>
+              All Day Hardways are multi-roll wagers that the hardway number
+              will come before a seven.
+            </p>
+            <p>Hardway bets may be placed or taken down at any time.</p>
+            <p>
+              Hardways win when the number is rolled as a pair (e.g., two sixes
+              makes a hardway 12).
+            </p>
+            <p>
+              Hardways lose when the number comes mixed, i.e., not a pair, or
+              when a 7 is rolled.
+            </p>
+          </SectionContainer>
         </div>
         <div className='col-sm-4'>
           <SectionContainer>
@@ -147,6 +166,27 @@ const CrapsCheatSheet = () => {
               <SubSectionTitle>Shortcuts</SubSectionTitle>6x || 1-2, 2-3, 5-6
             </ShortcutContainer>
           </SectionContainer>
+          <SectionContainer>
+            {' '}
+            <SectionTitle>Place Bets</SectionTitle>
+            <SubSectionTitle>Rules</SubSectionTitle>
+            <p>
+              Place bets are wagers that a given point number will come before
+              7.
+            </p>
+            <p>Place bets may be placed to taken down at any time.</p>
+            <p>
+              Place bets must be made in specific increments. 4, 10, 5, aand 9
+              must be placed in 5 unit increments. 6 and 8 must be placed in 6
+              unit increments with a single unit offset on thop of the bet.
+            </p>
+            <p>4 and 10 pay 9-5, 5 and 9 pay 7-5, and 6 and 8 pay 7-6.</p>
+            <p>Place bets are off on the come out roll.</p>
+            <ShortcutContainer className='text-center'>
+              <SubSectionTitle>Shortcuts</SubSectionTitle>5, 5, 6 || 9-5, 7-5,
+              7-6
+            </ShortcutContainer>
+          </SectionContainer>
         </div>
         <div className='col-sm-4'>
           <SectionContainer>
@@ -184,32 +224,12 @@ const CrapsCheatSheet = () => {
             </p>
             <p>Buy amd Lay bets are capped with lammers to identify them.</p>
             <p>
-              Players must pay commission at the time they place these bets.
+              Players must pay commission at the time they place these bets
+              becuase they pay true odds.
             </p>
             <p>Buy bet commssion is 5% of the amount being wagered.</p>
             <p>Lay bet commssion is 5% of the amount the player would win.</p>
             <p>Buy bets are off on the come out roll.</p>
-          </SectionContainer>
-          <SectionContainer>
-            {' '}
-            <SectionTitle>Place Bets</SectionTitle>
-            <SubSectionTitle>Rules</SubSectionTitle>
-            <p>
-              Place bets are wagers that a given point number will come before
-              7.
-            </p>
-            <p>Place bets may be placed to taken down at any time.</p>
-            <p>
-              Place bets must be made in specific increments. 4, 10, 5, aand 9
-              must be placed in 5 unit increments. 6 and 8 must be placed in 6
-              unit increments with a single unit offset on thop of the bet.
-            </p>
-            <p>4 and 10 pay 9-5, 5 and 9 pay 7-5, and 6 and 8 pay 7-6.</p>
-            <p>Place bets are off on the come out roll.</p>
-            <ShortcutContainer className='text-center'>
-              <SubSectionTitle>Shortcuts</SubSectionTitle>5, 5, 6 || 9-5, 7-5,
-              7-6
-            </ShortcutContainer>
           </SectionContainer>
         </div>
       </div>

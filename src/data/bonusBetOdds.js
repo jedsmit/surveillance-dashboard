@@ -10,6 +10,7 @@ export const bjOdds = {
       { winCombo: '21 Total (Three Card Non-Suited)', payoutMultiplier: 3 },
       { winCombo: '20 Total (Three Card Total)', payoutMultiplier: 2 },
       { winCombo: '19 Total (Three Card Total)', payoutMultiplier: 2 },
+      { winCombo: '19 Total (Single Deck*)', payoutMultiplier: 1 },
     ],
   },
   blazingSevenOdds: {

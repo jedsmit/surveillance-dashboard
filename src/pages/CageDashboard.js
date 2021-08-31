@@ -5,6 +5,10 @@ import styled from 'styled-components';
 //
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
+import { cageContacts } from '../data/contacts';
+//
+import ContactsTable from '../components/ContactsTable';
+import ChipsDisplay from '../components/ChipsDisplay';
 
 //styled-components
 const Container = styled.div`
@@ -39,6 +43,18 @@ const CageDashboard = () => {
         >
           Dashboard
         </TitleText>
+      </div>
+      <div className='row'>
+        <div className='col-4-sm'>
+          <ContactsTable
+            contacts={cageContacts}
+            contactsTitle='Cage Contacts'
+            cell={false}
+          />
+        </div>
+        <div className='col-4-sm'>
+          <ChipsDisplay />
+        </div>
       </div>
     </Container>
   );

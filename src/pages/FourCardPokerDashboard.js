@@ -48,7 +48,7 @@ const FourCardPokerDashboard = () => {
           Dashboard
         </TitleText>
       </div>
-      <p>To do: odds table, violations</p>
+
       <div className='row'>
         <div className='col-sm-4'>
           <OddsCalculatorContainer className='container-fluid'>

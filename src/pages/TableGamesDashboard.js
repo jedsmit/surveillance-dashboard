@@ -119,11 +119,11 @@ const TableGamesDashboard = () => {
               UT Hold'em
             </MenuLink>
           </div>
-          <div className='row'>
+          {/* <div className='row'>
             <MenuLink as={Link} to='/casinowar'>
               Casino War
             </MenuLink>
-          </div>
+          </div> */}
         </div>
         <ContactsContainer className='col-sm-4 col-xs-12'>
           <ContactsTable

@@ -80,7 +80,7 @@ const CrapsDashboard = () => {
           Dashboard
         </TitleText>
       </div>
-      <div className='row justify-content-left m-0'>
+      {/* <div className='row justify-content-left m-0'>
         <div className='custom-control custom-switch m-0 pt-2'>
           <input
             type='checkbox'
@@ -99,7 +99,7 @@ const CrapsDashboard = () => {
             Toggle Cheat Sheet/Calculator
           </label>
         </div>
-      </div>
+      </div> */}
       <div className='row'>
         <div className='col-12'>
           {cheatSheetCalculatorToggle ? (
@@ -108,7 +108,8 @@ const CrapsDashboard = () => {
             </PlaceBetOddsContainer>
           ) : (
             <PlaceBetOddsContainer>
-              <TestCrapsCalc data={placeBets} />
+              {/* <TestCrapsCalc data={placeBets} /> */}
+              <p>under construction</p>
             </PlaceBetOddsContainer>
           )}
         </div>

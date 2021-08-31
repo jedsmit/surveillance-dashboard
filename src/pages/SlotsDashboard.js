@@ -48,7 +48,7 @@ const SlotsDashboard = () => {
           <ContactsTable
             contacts={slotContacts}
             contactsTitle='Contacts'
-            cell={true}
+            cell={false}
           />
         </ContactsContainer>
       </div>

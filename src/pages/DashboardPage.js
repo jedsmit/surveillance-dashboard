@@ -78,6 +78,11 @@ const DashboardPage = () => {
               Slots
             </MenuLink>
           </div>
+          <div className='row'>
+            <MenuLink as={Link} to='/security'>
+              Security
+            </MenuLink>
+          </div>
         </div>
       </div>
     </Container>

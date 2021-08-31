@@ -30,6 +30,7 @@ import ThreeCardPokerDashboard from './pages/ThreeCardPokerDashboard';
 import FourCardPokerDashboard from './pages/FourCardPokerDashboard';
 import UTHoldemDashboard from './pages/UTHoldemDashboard';
 import CasinoWarDashboard from './pages/CasinoWarDashboard';
+import SecurityDashboard from './pages/SecurityDashboard';
 
 //styled-components
 const Root = styled.div`
@@ -116,6 +117,9 @@ function App() {
               </Route>
               <Route path='/slots'>
                 <SlotsDashboard />
+              </Route>
+              <Route path='/security'>
+                <SecurityDashboard />
               </Route>
               <Route path='/'>
                 {user ? <Redirect to='/dashboard' /> : <HomePage />}

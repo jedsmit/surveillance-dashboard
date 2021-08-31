@@ -35,7 +35,7 @@ const TitleText = styled.h1`
 
 const MenuButton = styled.button`
   font-weight: bold;
-  background-image: ${Colors.blueGradient};
+
   color: ${Colors.backgroundColor};
 `;
 
@@ -286,6 +286,11 @@ const BlackjackDashboard = () => {
                     <div className='col'>
                       <div className='dropdown'>
                         <MenuButton
+                          style={{
+                            backgroundImage: Colors.blueGradient,
+                            color: Colors.backgroundColor,
+                            fontWeight: 'bold',
+                          }}
                           className='btn btn-secondary dropdown-toggle'
                           type='button'
                           id='dropdownMenuButton'
@@ -365,6 +370,7 @@ const BlackjackDashboard = () => {
                       wagerName={luckyLuckyOdds.wagerName}
                       defaultWager={1}
                     />
+                    <p>*On single deck, 19 pays 1-1</p>
                   </OddsCalculatorContainer>
 
                   <OddsCalculatorContainer className='container-fluid'>
