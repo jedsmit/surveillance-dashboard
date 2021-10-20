@@ -135,27 +135,27 @@ const RouletteCalculator = props => {
   };
 
   const calcColumnWin = () => {
-    let win = wagers.columnWager * 5;
+    let win = wagers.columnWager * 2;
     setWins({ ...wins, columnWin: win });
   };
 
   const calcDozensWin = () => {
-    let win = wagers.dozensWager * 5;
+    let win = wagers.dozensWager * 2;
     setWins({ ...wins, dozensWin: win });
   };
 
   const calcHiLowWin = () => {
-    let win = wagers.hiLowWager * 5;
+    let win = wagers.hiLowWager * 1;
     setWins({ ...wins, hiLowWin: win });
   };
 
   const calcEvenOddWin = () => {
-    let win = wagers.evenOddWager * 5;
+    let win = wagers.evenOddWager * 1;
     setWins({ ...wins, evenOddWin: win });
   };
 
   const calcRedBlackWin = () => {
-    let win = wagers.redBlackWager * 5;
+    let win = wagers.redBlackWager * 1;
     setWins({ ...wins, redBlackWin: win });
   };
 
@@ -215,7 +215,7 @@ const RouletteCalculator = props => {
         {/* Straight-up */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Straight-up</WagerName>
+            <WagerName className='text-left'>Straight-up (35-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -244,7 +244,7 @@ const RouletteCalculator = props => {
         {/* Split */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Split</WagerName>
+            <WagerName className='text-left'>Split (17-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -274,7 +274,7 @@ const RouletteCalculator = props => {
         {/* Street */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Street</WagerName>
+            <WagerName className='text-left'>Street (11-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -304,7 +304,7 @@ const RouletteCalculator = props => {
         {/* Corner */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Corner</WagerName>
+            <WagerName className='text-left'>Corner (8-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -334,7 +334,7 @@ const RouletteCalculator = props => {
         {/* Double Street */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Double Street</WagerName>
+            <WagerName className='text-left'>Double Street (5-1) </WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -363,7 +363,7 @@ const RouletteCalculator = props => {
         {/* Column */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Column</WagerName>
+            <WagerName className='text-left'>Column (2-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -393,7 +393,7 @@ const RouletteCalculator = props => {
         {/* Dozens*/}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Dozens</WagerName>
+            <WagerName className='text-left'>Dozens (2-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -423,7 +423,7 @@ const RouletteCalculator = props => {
         {/* Hi Low */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Hi Low</WagerName>
+            <WagerName className='text-left'>Hi Low (1-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -453,7 +453,7 @@ const RouletteCalculator = props => {
         {/* Even Odd */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Even Odd</WagerName>
+            <WagerName className='text-left'>Even Odd (1-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField
@@ -483,7 +483,7 @@ const RouletteCalculator = props => {
         {/* Red Black */}
         <div className='row p-1'>
           <div className='col-sm-4'>
-            <WagerName className='text-left'>Red Black</WagerName>
+            <WagerName className='text-left'>Red Black (1-1)</WagerName>
           </div>
           <div className='col-sm-4'>
             <NumberField

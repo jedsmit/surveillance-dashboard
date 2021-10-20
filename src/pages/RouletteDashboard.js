@@ -47,7 +47,7 @@ const RouletteDashboard = () => {
         </TitleText>
       </div>
       <div className='row'>
-        <div className='col-sm-4 mx-auto'>
+        <div className='col-sm-6 mx-auto'>
           <CalculatorContainer>
             <RouletteCalculator />
           </CalculatorContainer>
