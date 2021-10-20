@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
 import OddsTableCalculator from '../components/OddsTableCalculator';
 import HouseWayTable from '../components/HouseWayTable';
 //
@@ -19,12 +20,6 @@ const Container = styled.div`
   padding: ${spacing.sm};
 `;
 
-const TitleText = styled.h1`
-  width: 100%;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
-`;
-
 const OddsCalculatorContainer = styled.div`
   margin-top: ${spacing.md};
   width: 100%;
@@ -41,18 +36,7 @@ const PaiGowDashboard = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Pai Gow
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Fortune Pai Gow' />
       </div>
       <div className='row'>
         <div className='col-sm-3'>

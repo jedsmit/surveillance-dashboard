@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
 import ContactsTable from '../components/ContactsTable';
 //
 import {
@@ -25,30 +26,12 @@ const Container = styled.div`
   }
 `;
 
-const TitleText = styled.h1`
-  width: 100%;
-
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
-`;
-
 //
 const ContactsPage = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 display-3 text-left'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          TGA
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 display-3 text-left'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Contacts
-        </TitleText>
+        <TitleText title='Contacts' />
       </div>
 
       <div className='row'>

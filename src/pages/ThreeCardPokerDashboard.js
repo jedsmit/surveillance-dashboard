@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
 import OddsTableCalculator from '../components/OddsTableCalculator';
 //
 import Colors from '../constants/Colors';
@@ -16,13 +17,6 @@ const Container = styled.div`
   color: ${Colors.primaryTextColor};
   justify-content: center;
   padding: ${spacing.sm};
-`;
-
-const TitleText = styled.h1`
-  width: 100%;
-
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
 `;
 
 const OddsCalculatorContainer = styled.div`
@@ -52,18 +46,7 @@ const ThreeCardPokerDashboard = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Three Card Poker
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Three Card Poker' />
       </div>
 
       <div className='row'>

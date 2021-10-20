@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
 import GCAKioskLocationTable from '../components/GCAKioskLocationTable';
 //
 import {
@@ -25,12 +26,6 @@ const Container = styled.div`
   padding: ${spacing.sm};
 `;
 
-const TitleText = styled.h1`
-  width: 100%;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
-`;
-
 const CategoryTitle = styled.h3``;
 
 const GcaKioskPage = () => {
@@ -38,18 +33,7 @@ const GcaKioskPage = () => {
     <Container className='container-fluid'>
       <div className='row'>
         <div className='col'>
-          <TitleText
-            className='py-0 pl-4 text-left display-3'
-            style={{ color: Colors.primaryTextColor }}
-          >
-            GCA/Kiosk
-          </TitleText>
-          <TitleText
-            className='py-0 pl-4 text-left display-3'
-            style={{ backgroundImage: Colors.blueGradient }}
-          >
-            Locations
-          </TitleText>
+          <TitleText title='GCA/Kiosk' subtitle='Locations' />
         </div>
       </div>
 

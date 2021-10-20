@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
 import OddsTableCalculator from '../components/OddsTableCalculator';
 import CommissionCalculator from '../components/CommissionCalculator';
 import CrapsCalculator from '../components/CrapsCalculator';
@@ -21,12 +22,6 @@ const Container = styled.div`
   color: ${Colors.primaryTextColor};
   justify-content: center;
   padding: ${spacing.sm};
-`;
-
-const TitleText = styled.h1`
-  width: 100%;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
 `;
 
 const PlaceBetOddsContainer = styled.div`
@@ -67,18 +62,7 @@ const CrapsDashboard = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Craps
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Craps' />
       </div>
       {/* <div className='row justify-content-left m-0'>
         <div className='custom-control custom-switch m-0 pt-2'>

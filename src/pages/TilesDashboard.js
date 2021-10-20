@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
 import TilesOrderOfOperations from '../components/TilesOrderOfOperations';
 import BoChart from '../components/BoChart';
 import CommissionCalculator from '../components/CommissionCalculator';
@@ -17,12 +18,6 @@ const Container = styled.div`
   color: ${Colors.primaryTextColor};
   justify-content: center;
   padding: ${spacing.sm};
-`;
-
-const TitleText = styled.h1`
-  width: 100%;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
 `;
 
 //
@@ -49,18 +44,7 @@ const TilesDashboard = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Pai Gow Tiles
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Pai Gow Tiles' />
       </div>
 
       <div className='row mx-auto'>

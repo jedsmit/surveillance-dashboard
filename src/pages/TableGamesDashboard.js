@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
 import ContactsTable from '../components/ContactsTable';
 //
 import { tableGamesContacts, pitPhoneContacts } from '../data/contacts';
@@ -19,13 +20,6 @@ const Container = styled.div`
   html {
     scroll-behaviour: smooth;
   }
-`;
-
-const TitleText = styled.h1`
-  width: 100%;
-
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
 `;
 
 const MenuContainer = styled.div``;
@@ -58,18 +52,7 @@ const TableGamesDashboard = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 display-3 text-left'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Table Games
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 display-3 text-left'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Table Games' />
       </div>
       <div className='row'>
         <div className='col-sm-3 col-xs-12 my-1 text-left'>

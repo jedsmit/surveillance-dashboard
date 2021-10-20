@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
+//
 import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
 
@@ -12,12 +14,6 @@ const Container = styled.div`
   width: 100%;
   background: ${Colors.backgroundColor};
   color: ${Colors.primaryTextColor};
-`;
-
-const TitleText = styled.h1`
-  width: 100%;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
 `;
 
 const MenuLink = styled.div`
@@ -38,18 +34,7 @@ const DashboardPage = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Agent
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Agent' />
       </div>
       <div className='row'>
         <div className='col-sm-4 col-xs-12 pl-4 my-1 text-left'>

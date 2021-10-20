@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 //
+import TitleText from '../components/TitleText';
 import BaccaratDrawingRulesTable from '../components/BaccaratDawingRulesTable';
 import ThresholdCalculator from '../components/ThresholdCalculator';
 import CommissionCalculator from '../components/CommissionCalculator';
@@ -18,12 +19,6 @@ const Container = styled.div`
   color: ${Colors.primaryTextColor};
   justify-content: center;
   padding: ${spacing.sm};
-`;
-
-const TitleText = styled.h1`
-  width: 100%;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
 `;
 
 const DrawingRulesContainer = styled.div`
@@ -72,18 +67,7 @@ const BaccaratDashboard = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Baccarat
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Baccarat' />
       </div>
       <div className='row'>
         <div className='col-sm-4 text-center pt-4'>

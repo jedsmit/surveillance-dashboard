@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 //
-
+import TitleText from '../components/TitleText';
 import RouletteCalculator from '../components/RouletteCalculator';
 //
 
@@ -19,12 +19,6 @@ const Container = styled.div`
   padding: ${spacing.sm};
 `;
 
-const TitleText = styled.h1`
-  width: 100%;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
-`;
-
 const CalculatorContainer = styled.div`
   font-size: ${fontSizes.sm};
 `;
@@ -33,19 +27,9 @@ const RouletteDashboard = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Roulette
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Roulette' />
       </div>
+
       <div className='row'>
         <div className='col-sm-6 mx-auto'>
           <CalculatorContainer>

@@ -7,6 +7,7 @@ import Colors from '../constants/Colors';
 import { spacing, fontSizes } from '../constants/Sizes';
 import { cageContacts } from '../data/contacts';
 //
+import TitleText from '../components/TitleText';
 import ContactsTable from '../components/ContactsTable';
 import ChipsDisplay from '../components/ChipsDisplay';
 
@@ -21,28 +22,11 @@ const Container = styled.div`
   padding: ${spacing.sm};
 `;
 
-const TitleText = styled.h1`
-  width: 100%;
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
-`;
-
 const CageDashboard = () => {
   return (
     <Container className='container-fluid'>
       <div className='row'>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ color: Colors.primaryTextColor }}
-        >
-          Cage
-        </TitleText>
-        <TitleText
-          className='py-0 pl-4 text-left display-3'
-          style={{ backgroundImage: Colors.blueGradient }}
-        >
-          Dashboard
-        </TitleText>
+        <TitleText title='Cage' />
       </div>
       <div className='row'>
         <div className='col-4-sm'>

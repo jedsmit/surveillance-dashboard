@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 //
+import TitleText from '../components/TitleText';
 import BasicStrategyTable from '../components/BasicStrategyTable';
 import IndexPlayTable from '../components/IndexPlayTable';
 import ThresholdCalculator from '../components/ThresholdCalculator';
@@ -24,13 +25,6 @@ const Container = styled.div`
   color: ${Colors.primaryTextColor};
   justify-content: center;
   padding: ${spacing.sm};
-`;
-
-const TitleText = styled.h1`
-  width: 100%;
-
-  background: ${Colors.backgroundColor};
-  color: ${Colors.backgroundColor};
 `;
 
 const MenuButton = styled.button`
@@ -168,18 +162,7 @@ const BlackjackDashboard = () => {
     <>
       <Container className='container-fluid'>
         <div className='row'>
-          <TitleText
-            className='py-0 pl-4 text-left display-3'
-            style={{ color: Colors.primaryTextColor }}
-          >
-            Blackjack
-          </TitleText>
-          <TitleText
-            className='py-0 pl-4 text-left display-3'
-            style={{ backgroundImage: Colors.blueGradient }}
-          >
-            Dashboard
-          </TitleText>
+          <TitleText title='Blackjack' />
         </div>
 
         <div className='row justify-content-end'>
