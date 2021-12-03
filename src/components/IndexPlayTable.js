@@ -187,6 +187,44 @@ const IndexPlayTable = () => {
               <td></td>
             </SplitPlays>
           </table>
+          <div className='m-3'>
+            <p
+              style={{
+                backgroundColor: '#9fdbe3',
+                outlineStyle: 'solid',
+                outlineColor: 'black',
+              }}
+            >
+              Double if TC is greater than or equal to the given value.
+            </p>
+            <p
+              style={{
+                backgroundColor: '#f90909',
+                outlineStyle: 'solid',
+                outlineColor: 'black',
+              }}
+            >
+              Stand if TC is greater than or equal to the given value.
+            </p>
+            <p
+              style={{
+                backgroundColor: '#39bf36',
+                outlineStyle: 'solid',
+                outlineColor: 'black',
+              }}
+            >
+              Hit if TC is less than or equal to the given value.
+            </p>
+            <p
+              style={{
+                backgroundColor: '#f4f909',
+                outlineStyle: 'solid',
+                outlineColor: 'black',
+              }}
+            >
+              Split if TC is greater than or equal to the given value.
+            </p>
+          </div>
         </div>
       </div>
     </TableContainer>

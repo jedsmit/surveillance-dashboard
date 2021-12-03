@@ -35,6 +35,8 @@ import SecurityDashboard from './pages/SecurityDashboard';
 //styled-components
 const Root = styled.div`
   height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
   width: 100%;
   font-family: ${fonts.archivo};
 `;
