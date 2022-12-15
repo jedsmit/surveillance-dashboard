@@ -68,6 +68,11 @@ const DashboardPage = () => {
               Security
             </MenuLink>
           </div>
+          <div className='row'>
+            <MenuLink as={Link} to='/training'>
+              Training
+            </MenuLink>
+          </div>
         </div>
       </div>
     </Container>

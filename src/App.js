@@ -31,6 +31,8 @@ import FourCardPokerDashboard from './pages/FourCardPokerDashboard';
 import UTHoldemDashboard from './pages/UTHoldemDashboard';
 import CasinoWarDashboard from './pages/CasinoWarDashboard';
 import SecurityDashboard from './pages/SecurityDashboard';
+import CardCountTrainer from './pages/CardCountTrainer';
+import TrainingDashboard from './pages/TrainingDashboard';
 
 //styled-components
 const Root = styled.div`
@@ -122,6 +124,12 @@ function App() {
               </Route>
               <Route path='/security'>
                 <SecurityDashboard />
+              </Route>
+              <Route path='/training'>
+                <TrainingDashboard />
+              </Route>
+              <Route path='/cardcounttrainer'>
+                <CardCountTrainer />
               </Route>
               <Route path='/'>
                 {user ? <Redirect to='/dashboard' /> : <HomePage />}

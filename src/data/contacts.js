@@ -40,7 +40,7 @@ export const tgaContacts = [
     cellNumber: '707-580-8315',
   },
   {
-    contactName: 'Kanchan Kaushal',
+    contactName: 'Mayra Hernandez',
     extension: '5659',
     cellNumber: 'N/A',
   },
@@ -87,14 +87,19 @@ export const surveillanceTechContacts = [
     extension: '5268',
     cellNumber: '530-796-1173',
   },
+  {
+    contactName: 'Eric Navarro',
+    extension: '5268',
+    cellNumber: '530-796-8527',
+  },
+  {
+    contactName: 'Ivan Estrada',
+    extension: '5268',
+    cellNumber: '530-204-7458',
+  },
 ];
 
 export const surveillanceSupContacts = [
-  {
-    contactName: 'Alberto Sotelo',
-    extension: '5219',
-    cellNumber: '530-383-8559',
-  },
   {
     contactName: 'Brian George',
     extension: '5219',
@@ -125,24 +130,19 @@ export const surveillanceSupContacts = [
     extension: '5219',
     cellNumber: '916-224-8202',
   },
-];
-
-export const surveillanceAgentContacts = [
   {
     contactName: 'Alvaro Ramos',
     extension: '5219',
     cellNumber: '530-635-2884',
   },
   {
-    contactName: 'Ashley Robinson',
+    contactName: 'Nancy Guzman',
     extension: '5219',
-    cellNumber: '530-650-5102',
+    cellNumber: '530-635-7721',
   },
-  {
-    contactName: 'Celena Corona',
-    extension: '5219',
-    cellNumber: '530-787-3025',
-  },
+];
+
+export const surveillanceAgentContacts = [
   {
     contactName: 'Eric Thomas',
     extension: '5219',
@@ -152,16 +152,6 @@ export const surveillanceAgentContacts = [
     contactName: 'Justin Bailey',
     extension: '5219',
     cellNumber: '530-219-9564',
-  },
-  {
-    contactName: 'Nancy Guzman',
-    extension: '5219',
-    cellNumber: '530-635-7721',
-  },
-  {
-    contactName: 'Reyna Davis',
-    extension: '5219',
-    cellNumber: '530-848-3775',
   },
   {
     contactName: 'Rubilyn Victolero',
@@ -174,14 +164,29 @@ export const surveillanceAgentContacts = [
     cellNumber: '530-902-7829',
   },
   {
-    contactName: 'Mark Geyer',
-    extension: '5219',
-    cellNumber: '530-276-3082',
-  },
-  {
     contactName: 'Kyle Grunert',
     extension: '5219',
     cellNumber: '530-312-3581',
+  },
+  {
+    contactName: 'Yasmine Ceja',
+    extension: '5219',
+    cellNumber: '530-312-0139',
+  },
+  {
+    contactName: 'Kayla Wall',
+    extension: '5219',
+    cellNumber: '530-619-9032',
+  },
+  {
+    contactName: 'Mark Jarnigan',
+    extension: '5219',
+    cellNumber: '530-383-1645',
+  },
+  {
+    contactName: 'Megan Benamati',
+    extension: '5219',
+    cellNumber: '530-519-5938',
   },
 ];
 
