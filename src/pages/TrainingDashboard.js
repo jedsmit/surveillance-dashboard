@@ -44,6 +44,7 @@ const TrainingDashboard = () => {
       <div className='row'>
         <div className='col-sm-3 col-xs-12 my-1 text-left'>
           <div className='row'>
+            {/* UNDER CONSTRUCTION */}
             <MenuLink className='display-5' as={Link} to='/cardcounttrainer'>
               Count Trainer
             </MenuLink>
