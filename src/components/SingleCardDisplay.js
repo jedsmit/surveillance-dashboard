@@ -11,8 +11,8 @@ const MainContainer = styled.div`
 `;
 
 const CardWrapper = styled.div`
-  width: 50vw;
-  height: 50vh;
+  width: 50%;
+  height: 50%;
 `;
 
 const CardImage = styled.img`

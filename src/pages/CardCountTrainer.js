@@ -8,7 +8,7 @@ import SingleCardDisplay from '../components/SingleCardDisplay';
 //
 import { cards, cards2, cards6 } from '../data/cards';
 import Colors from '../constants/Colors';
-import { spacing } from '../constants/Sizes';
+import { spacing, fontSizes } from '../constants/Sizes';
 
 //styled-components
 const Container = styled.div`
@@ -25,6 +25,9 @@ const MenuButton = styled.button`
   color: ${Colors.backgroundColor};
 `;
 const SettingsContainer = styled.div`
+  padding: ${spacing.sm};
+`;
+const SingleCardContainer = styled.div`
   padding: ${spacing.sm};
 `;
 //
@@ -61,6 +64,7 @@ function CardCountTrainer() {
   };
 
   const begin = numDecks => {
+    setCountDisplay(false);
     console.log(numDecks);
     if (numDecks === '1') {
       dealCards(singleDeckArray);
@@ -70,7 +74,7 @@ function CardCountTrainer() {
       dealCards(sixDeckArray);
     }
   };
-  // deals all cards in the chosen interval after removing 1-3 cards randomly
+  // deals all cards in the chosen interval after removing 1-4 cards randomly
   const dealCards = arr => {
     console.log(arr);
     shuffle(arr);
@@ -94,128 +98,177 @@ function CardCountTrainer() {
       <div className='row'>
         <TitleText title={'Count'} subtitle='Trainer' />
       </div>
-
-      {/* Dropdown speed selector */}
-      <SettingsContainer>
-        <div className='dropdown'>
-          <MenuButton
-            style={{
-              backgroundImage: Colors.blueGradient,
-              color: Colors.backgroundColor,
-              fontWeight: 'bold',
-              margin: spacing.sm,
-            }}
-            className='btn btn-secondary dropdown-toggle'
-            type='button'
-            id='dropdownMenuButton'
-            data-toggle='dropdown'
-            aria-haspopup='true'
-            aria-expanded='false'
-          >
-            {dealSpeed / 1000 + ' seconds'}
-          </MenuButton>
-          <div
-            className='dropdown-menu'
-            aria-labelledby='dropdownMenuButton'
-            onClick={e => {
-              setDealSpeed(e.target.value);
-            }}
-          >
-            <MenuButton className='dropdown-item' value='2000' type='button'>
-              2 Seconds
-            </MenuButton>
-            <MenuButton className='dropdown-item' value='1500' type='button'>
-              1 1/2 Second
-            </MenuButton>
-            <MenuButton className='dropdown-item' value='1000' type='button'>
-              1 Second
-            </MenuButton>
-            <MenuButton className='dropdown-item' value='500' type='button'>
-              1/2 Second
-            </MenuButton>
-          </div>
-        </div>
-
-        {/* Number of decks selector, sets array of cards as state */}
-
-        <div className='dropdown'>
-          <MenuButton
-            style={{
-              backgroundImage: Colors.blueGradient,
-              color: Colors.backgroundColor,
-              fontWeight: 'bold',
-              margin: spacing.sm,
-            }}
-            className='btn btn-secondary dropdown-toggle'
-            type='button'
-            id='dropdownMenuButton'
-            data-toggle='dropdown'
-            aria-haspopup='true'
-            aria-expanded='false'
-          >
-            Number of decks
-          </MenuButton>
-          <div
-            className='dropdown-menu'
-            aria-labelledby='dropdownMenuButton'
-            onClick={e => {
-              setNumDecks(e.target.value);
-            }}
-          >
-            <MenuButton
-              className='dropdown-item'
-              value='1'
-              type='button'
-              name='1 deck'
-            >
-              1 Deck
-            </MenuButton>
-            <MenuButton
-              className='dropdown-item'
-              value='2'
-              type='button'
-              name='2 decks'
-            >
-              2 Decks
-            </MenuButton>
-            <MenuButton
-              className='dropdown-item'
-              value='6'
-              type='button'
-              name='6 decks'
-            >
-              6 Decks
-            </MenuButton>
-          </div>
-        </div>
-        <MenuButton
-          className='btn btn-secondary'
-          onClick={() => begin(numDecks)}
-          style={{
-            background: Colors.blueGradient,
-            color: Colors.backgroundColor,
-            margin: spacing.sm,
-          }}
-        >
-          Begin
-        </MenuButton>
-      </SettingsContainer>
-
-      <div>
-        <SingleCardDisplay cardImage={currentCardImage} />
-      </div>
-      <button
-        className='btn btn-secondary'
-        onClick={() => toggleCountDisplay()}
-        style={{
-          background: Colors.blueGradient,
-          color: Colors.backgroundColor,
-        }}
+      <div
+        className='row'
+        style={{ fontSize: fontSizes.md, margin: spacing.xxs }}
       >
-        Answer
-      </button>
+        Welcome to the Count Trainer! Use this tool to proactice your running
+        count. First select the speed and the number of decks. Then press the
+        "Begin" button to start. After the cards stop, press the "Answer" button
+        to see if your count is correct.{' '}
+      </div>
+      {/* Dropdown speed selector */}
+      <div className='row'>
+        <div className='col-sm-6'>
+          <SettingsContainer>
+            <div className='row'>
+              <div className='dropdown'>
+                <MenuButton
+                  style={{
+                    backgroundImage: Colors.blueGradient,
+                    color: Colors.backgroundColor,
+                    fontWeight: 'bold',
+                    margin: spacing.sm,
+                  }}
+                  className='btn btn-secondary dropdown-toggle'
+                  type='button'
+                  id='dropdownMenuButton'
+                  data-toggle='dropdown'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                >
+                  Speed = {dealSpeed / 1000 + ' seconds per card'}
+                </MenuButton>
+                <div
+                  className='dropdown-menu'
+                  aria-labelledby='dropdownMenuButton'
+                  onClick={e => {
+                    setDealSpeed(e.target.value);
+                  }}
+                >
+                  <MenuButton
+                    className='dropdown-item'
+                    value='2000'
+                    type='button'
+                  >
+                    2 Seconds
+                  </MenuButton>
+                  <MenuButton
+                    className='dropdown-item'
+                    value='1500'
+                    type='button'
+                  >
+                    1 1/2 Second
+                  </MenuButton>
+                  <MenuButton
+                    className='dropdown-item'
+                    value='1000'
+                    type='button'
+                  >
+                    1 Second
+                  </MenuButton>
+                  <MenuButton
+                    className='dropdown-item'
+                    value='500'
+                    type='button'
+                  >
+                    1/2 Second
+                  </MenuButton>
+                </div>
+              </div>
 
-      {countDisplay ? <div>{count}</div> : null}
+              {/* Number of decks selector, sets array of cards as state */}
+
+              <div className='dropdown'>
+                <MenuButton
+                  style={{
+                    backgroundImage: Colors.blueGradient,
+                    color: Colors.backgroundColor,
+                    fontWeight: 'bold',
+                    margin: spacing.sm,
+                  }}
+                  className='btn btn-secondary dropdown-toggle'
+                  type='button'
+                  id='dropdownMenuButton'
+                  data-toggle='dropdown'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                >
+                  Number of decks = {numDecks}
+                </MenuButton>
+                <div
+                  className='dropdown-menu'
+                  aria-labelledby='dropdownMenuButton'
+                  onClick={e => {
+                    setNumDecks(e.target.value);
+                  }}
+                >
+                  <MenuButton
+                    className='dropdown-item'
+                    value='1'
+                    type='button'
+                    name='1 deck'
+                  >
+                    1 Deck
+                  </MenuButton>
+                  <MenuButton
+                    className='dropdown-item'
+                    value='2'
+                    type='button'
+                    name='2 decks'
+                  >
+                    2 Decks
+                  </MenuButton>
+                  <MenuButton
+                    className='dropdown-item'
+                    value='6'
+                    type='button'
+                    name='6 decks'
+                  >
+                    6 Decks
+                  </MenuButton>
+                </div>
+              </div>
+              <MenuButton
+                className='btn btn-secondary'
+                onClick={() => begin(numDecks)}
+                style={{
+                  background: Colors.blueGradient,
+                  color: Colors.backgroundColor,
+                  margin: spacing.sm,
+                }}
+              >
+                Begin
+              </MenuButton>
+              <MenuButton
+                className='btn btn-secondary'
+                onClick={() => toggleCountDisplay()}
+                style={{
+                  background: Colors.blueGradient,
+                  color: Colors.backgroundColor,
+                  margin: spacing.sm,
+                }}
+              >
+                Answer
+              </MenuButton>
+
+              {countDisplay ? (
+                <MenuButton
+                  disabled
+                  style={{
+                    background: Colors.blueGradient,
+                    color: Colors.backgroundColor,
+                    margin: spacing.sm,
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {count}
+                </MenuButton>
+              ) : null}
+            </div>
+          </SettingsContainer>
+        </div>
+        <div className='col-sm-6'>
+          <SingleCardContainer
+            style={{
+              margin: spacing.sm,
+              justifyContent: 'right',
+            }}
+          >
+            <SingleCardDisplay cardImage={currentCardImage} />
+          </SingleCardContainer>
+        </div>
+      </div>
     </Container>
   );
 }
