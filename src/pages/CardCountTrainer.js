@@ -40,13 +40,9 @@ const SingleCardContainer = styled.div`
 
 // const randNum = Math.floor(Math.random() * (52 + 1));
 
-const singleDeckArray = cards;
-const doubleDeckArray = cards2;
-const sixDeckArray = cards6;
-
-const shuffle = arr => {
-  arr.sort(() => 0.5 - Math.random());
-};
+// let singleDeckArray = cards;
+// let doubleDeckArray = cards2;
+// let sixDeckArray = cards6;
 
 function CardCountTrainer() {
   // console.log(doubleDeckArray);
@@ -56,6 +52,14 @@ function CardCountTrainer() {
   const [numDecks, setNumDecks] = useState(1);
   const [dealSpeed, setDealSpeed] = useState(1000);
 
+  const oneDeck = cards;
+  const twoDeck = cards2;
+  const sixDeck = cards6;
+
+  const shuffle = arr => {
+    arr.sort(() => 0.5 - Math.random());
+  };
+
   const drawCard = arr => {
     let drawnCard = arr.pop();
     const { value, image } = drawnCard;
@@ -63,17 +67,6 @@ function CardCountTrainer() {
     setCount(count => count + value);
   };
 
-  const begin = numDecks => {
-    setCountDisplay(false);
-    console.log(numDecks);
-    if (numDecks === '1') {
-      dealCards(singleDeckArray);
-    } else if (numDecks === '2') {
-      dealCards(doubleDeckArray);
-    } else if (numDecks === '6') {
-      dealCards(sixDeckArray);
-    }
-  };
   // deals all cards in the chosen interval after removing 1-4 cards randomly
   const dealCards = arr => {
     console.log(arr);
@@ -87,6 +80,23 @@ function CardCountTrainer() {
         clearInterval(cardInterval);
       }
     }, dealSpeed);
+  };
+
+  const begin = numDecks => {
+    setCurrentCardImage('');
+    setCount(0);
+    setCountDisplay(false);
+    const singleDeckArray = oneDeck.map(i => i);
+    const doubleDeckArray = twoDeck.map(i => i);
+    const sixDeckArray = sixDeck.map(i => i);
+    console.log(numDecks);
+    if (numDecks === '1') {
+      dealCards(singleDeckArray);
+    } else if (numDecks === '2') {
+      dealCards(doubleDeckArray);
+    } else if (numDecks === '6') {
+      dealCards(sixDeckArray);
+    }
   };
 
   const toggleCountDisplay = () => {
