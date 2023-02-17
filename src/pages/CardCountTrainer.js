@@ -49,8 +49,8 @@ function CardCountTrainer() {
   const [currentCardImage, setCurrentCardImage] = useState('');
   const [count, setCount] = useState(0);
   const [countDisplay, setCountDisplay] = useState(false);
-  const [numDecks, setNumDecks] = useState(1);
-  const [dealSpeed, setDealSpeed] = useState(1000);
+  const [numDecks, setNumDecks] = useState(null);
+  const [dealSpeed, setDealSpeed] = useState(null);
 
   const oneDeck = cards;
   const twoDeck = cards2;
@@ -86,9 +86,12 @@ function CardCountTrainer() {
     setCurrentCardImage('');
     setCount(0);
     setCountDisplay(false);
-    const singleDeckArray = oneDeck.map(i => i);
-    const doubleDeckArray = twoDeck.map(i => i);
-    const sixDeckArray = sixDeck.map(i => i);
+    // const singleDeckArray = oneDeck.map(i => i);
+    // const doubleDeckArray = twoDeck.map(i => i);
+    // const sixDeckArray = sixDeck.map(i => i);
+    const singleDeckArray = [...oneDeck];
+    const doubleDeckArray = [...twoDeck];
+    const sixDeckArray = [...sixDeck];
     console.log(numDecks);
     if (numDecks === '1') {
       dealCards(singleDeckArray);
